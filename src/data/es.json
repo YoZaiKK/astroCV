@@ -244,7 +244,21 @@
     "error": "Falló la solicitud de la demo. Intenta de nuevo o reinicia la demo.",
     "resultsSummary": "{{count}} conexiones encontradas.",
     "engineeringNotes": "Cómo funciona esta demo",
-    "whatItDemonstrates": "Qué demuestra"
+    "whatItDemonstrates": "Qué demuestra",
+    "cards": {
+      "conway": {
+        "infoTooltip": "Proyecto escolar",
+        "rocketTooltip": "Abrir repositorio de Conway's Life"
+      },
+      "clock": {
+        "infoTooltip": "No pierdas el rastro del tiempo",
+        "rocketTooltip": "Abrir repositorio de World Clock"
+      },
+      "kanban": {
+        "infoTooltip": "Último proyecto universitario, desarrollado para obtener el título con tesis",
+        "rocketTooltip": "Abrir repositorio de Kanban"
+      }
+    }
   },
   "notes": {
     "title": "Notas de ingeniería",

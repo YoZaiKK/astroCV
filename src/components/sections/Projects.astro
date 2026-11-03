@@ -2,6 +2,7 @@
 import SectionHeading from '../ui/SectionHeading.astro';
 import ConwaysLife from '../ConwaysLife/ConwaysLife.astro';
 import WorldClockCard from '../ui/WorldClockCard.astro';
+import MiniKanban from '../lab/mini-kanban/MiniKanban.astro';
 import { publishedProjects } from '../../data/content';
 import { t } from '../../i18n';
 
@@ -14,6 +15,7 @@ const isValidUrl = (value: string | null) => value !== null && /^https?:\/\//.te
 		<div class="project-grid">
 			<ConwaysLife />
 			<WorldClockCard />
+			<MiniKanban storageKey="portfolio:lab:mini-kanban:v1" />
 			{publishedProjects.map((project) => (
 				<article class="project-card">
 					{isValidUrl(project.imageUrl) && <img src={project.imageUrl} alt={t('accessibility.projectImageAlt', { project: t(`${project.contentKey}.title`) })} />}

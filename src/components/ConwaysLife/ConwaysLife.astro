@@ -3,6 +3,7 @@ import { Play, Pause } from '@lucide/astro';
 import { createInitialGrid } from './helpers';
 import './styles.css';
 import LabCardIcons from '../ui/LabCardIcons.astro';
+import { t } from '../../i18n';
 
 const grid = createInitialGrid();
 ---
@@ -10,7 +11,11 @@ const grid = createInitialGrid();
 <div class="conways-life-demo">
 	<conways-life role="group" aria-label="Conways life">
 		<div class="life-card">
-			<LabCardIcons description="Conway's Game of Life: edit cells and press Play to evolve the pattern." />
+			<LabCardIcons
+				infoTooltip={t('lab.cards.conway.infoTooltip')}
+				rocketTooltip={t('lab.cards.conway.rocketTooltip')}
+				rocketHref="https://github.com/YoZaiKK/gameOfLife"
+			/>
 			<div class="life-header">
 				<h3>Conways life</h3>
 				<button class="life-play" type="button" data-play aria-label="Play simulation" aria-pressed="false" disabled>

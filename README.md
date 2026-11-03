@@ -19,6 +19,15 @@ The Lab section includes Conway's Life plus a world clock card (CDMX / Tokyo / l
 
 ![Frontend Lab cards](public/images/readme-lab-components.png)
 
+### Latest Lab updates
+
+- Mini Kanban controls updated with Lucide-style directional icons and red trash action.
+- Info/Rocket actions positioned in the top-right corner with instant tooltip behavior.
+- Info/Rocket actions also available on Conway and World Clock cards with repository links.
+
+![Mini Kanban latest controls](public/images/readme-mini-kanban-card.png)
+![Mini Kanban tooltip and corner actions](public/images/readme-mini-kanban-tooltip.png)
+
 ### Neumorphism style update
 
 Soft neumorphism cards were extended across core sections (About, Experience, Skills, Education, and Lab).

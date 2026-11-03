@@ -14,9 +14,11 @@ export const setLocale = (locale: Locale) => {
 
 export const getLocale = () => activeLocale;
 
-const getMessage = (key: string): string => {
-	const messages = dictionaries[activeLocale];
-	const value = key.split('.').reduce<unknown>((current, part) => {
+const getMessageFromDictionary = (
+	messages: MessageTree,
+	key: string,
+): unknown =>
+	key.split('.').reduce<unknown>((current, part) => {
 		if (current && typeof current === 'object' && part in current) {
 			return (current as MessageTree)[part];
 		}
@@ -24,11 +26,14 @@ const getMessage = (key: string): string => {
 		return undefined;
 	}, messages);
 
-	if (typeof value !== 'string') {
-		throw new Error(`Missing string translation for "${key}".`);
-	}
+const getMessage = (key: string): string => {
+	const localized = getMessageFromDictionary(dictionaries[activeLocale], key);
+	if (typeof localized === 'string') return localized;
 
-	return value;
+	const fallback = getMessageFromDictionary(dictionaries.en, key);
+	if (typeof fallback === 'string') return fallback;
+
+	throw new Error(`Missing string translation for "${key}".`);
 };
 
 export const t = (key: string, values: InterpolationValues = {}): string =>

@@ -1,4 +1,8 @@
-.world-clock-demo { width: 100%; max-width: 32rem; min-width: 0; }
+.world-clock-demo {
+	width: 100%;
+	max-width: 32rem;
+	min-width: 0;
+}
 .world-clock-card {
 	position: relative;
 	display: grid;
@@ -12,16 +16,33 @@
 	background: var(--color-surface);
 	box-shadow: var(--shadow);
 }
-.world-clock-header, .world-clock-footer, .world-clock-body {
+.world-clock-header,
+.world-clock-footer,
+.world-clock-body {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	gap: 0.75rem;
 }
-.world-clock-header h3 { margin: 0; font-size: clamp(1rem, 2vw, 1.2rem); }
-.world-clock-header { padding-top: 1rem; }
-.world-clock-location { color: var(--color-muted); font-size: 0.85rem; text-align: right; }
-.world-clock-body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(6rem, 8rem); justify-content: center; min-height: 0; }
+.world-clock-header h3 {
+	margin: 0;
+	font-size: clamp(1rem, 2vw, 1.2rem);
+}
+.world-clock-header {
+	padding-top: calc(1rem + 10px);
+	padding-right: calc(2rem + 10px);
+}
+.world-clock-location {
+	color: var(--color-muted);
+	font-size: 0.85rem;
+	text-align: right;
+}
+.world-clock-body {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(6rem, 8rem);
+	justify-content: center;
+	min-height: 0;
+}
 .analog-clock {
 	position: relative;
 	display: grid;
@@ -34,7 +55,12 @@
 	overflow: hidden;
 	border: 6px solid var(--color-ink);
 	border-radius: 50%;
-	background: repeating-conic-gradient(from -1.5deg, var(--color-ink) 0deg 3deg, transparent 3deg 30deg), var(--color-surface);
+	background: repeating-conic-gradient(
+			from -1.5deg,
+			var(--color-ink) 0deg 3deg,
+			transparent 3deg 30deg
+		),
+		var(--color-surface);
 }
 .analog-clock::after {
 	position: absolute;
@@ -54,11 +80,29 @@
 	border-radius: 999px;
 	background: var(--color-ink);
 }
-.clock-hand-hour { height: 30%; }
-.clock-hand-minute { height: 42%; }
-.clock-hand-second { width: 2px; height: 47%; background: var(--color-accent); }
-.clock-center { z-index: 2; width: 0.75rem; height: 0.75rem; border-radius: 50%; background: var(--color-accent); }
-.clock-controls { display: grid; flex: 0 1 8rem; gap: 0.5rem; }
+.clock-hand-hour {
+	height: 30%;
+}
+.clock-hand-minute {
+	height: 42%;
+}
+.clock-hand-second {
+	width: 2px;
+	height: 47%;
+	background: var(--color-accent);
+}
+.clock-center {
+	z-index: 2;
+	width: 0.75rem;
+	height: 0.75rem;
+	border-radius: 50%;
+	background: var(--color-accent);
+}
+.clock-controls {
+	display: grid;
+	flex: 0 1 8rem;
+	gap: 0.5rem;
+}
 .clock-controls button {
 	min-height: 2.75rem;
 	padding: 0.4rem 0.75rem;
@@ -70,24 +114,69 @@
 	text-align: left;
 	cursor: pointer;
 }
-.clock-controls button:hover { background: var(--color-surface-muted); }
-.clock-controls button[aria-pressed='true'] { border-color: var(--color-accent); color: var(--color-on-accent); background: var(--color-accent); }
-.clock-controls button:disabled { cursor: default; opacity: 0.6; }
-.clock-time { color: var(--color-muted); font-size: 0.95rem; font-variant-numeric: tabular-nums; }
-.clock-templates { display: none; }
+.clock-controls button:hover {
+	background: var(--color-surface-muted);
+}
+.clock-controls button[aria-pressed="true"] {
+	border-color: var(--color-accent);
+	color: var(--color-on-accent);
+	background: var(--color-accent);
+}
+.clock-controls button:disabled {
+	cursor: default;
+	opacity: 0.6;
+}
+.clock-time {
+	color: var(--color-muted);
+	font-size: 0.95rem;
+	font-variant-numeric: tabular-nums;
+}
+.clock-templates {
+	display: none;
+}
 
 @media (max-width: 34rem) {
-	.world-clock-card { aspect-ratio: auto; grid-template-rows: auto auto auto; gap: 1rem; }
-	.world-clock-header { flex-wrap: wrap; }
-	.world-clock-body { grid-template-columns: minmax(0, 1fr); gap: 1rem; }
-	.analog-clock { max-width: 10rem; }
-	.clock-controls { grid-template-columns: repeat(3, minmax(0, 1fr)); width: 100%; }
-	.clock-controls button { min-width: 0; padding-inline: 0.4rem; font-size: 0.8rem; text-align: center; overflow-wrap: anywhere; }
-	.world-clock-footer { justify-content: center; }
+	.world-clock-card {
+		aspect-ratio: auto;
+		grid-template-rows: auto auto auto;
+		gap: 1rem;
+	}
+	.world-clock-header {
+		flex-wrap: wrap;
+	}
+	.world-clock-body {
+		grid-template-columns: minmax(0, 1fr);
+		gap: 1rem;
+	}
+	.analog-clock {
+		max-width: 10rem;
+	}
+	.clock-controls {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		width: 100%;
+	}
+	.clock-controls button {
+		min-width: 0;
+		padding-inline: 0.4rem;
+		font-size: 0.8rem;
+		text-align: center;
+		overflow-wrap: anywhere;
+	}
+	.world-clock-footer {
+		justify-content: center;
+	}
 }
 
 @media (max-width: 24rem) {
-	.world-clock-header { flex-direction: column; align-items: flex-start; gap: 0.25rem; }
-	.world-clock-location { text-align: left; }
-	.clock-controls { grid-template-columns: minmax(0, 1fr); }
+	.world-clock-header {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0.25rem;
+	}
+	.world-clock-location {
+		text-align: left;
+	}
+	.clock-controls {
+		grid-template-columns: minmax(0, 1fr);
+	}
 }

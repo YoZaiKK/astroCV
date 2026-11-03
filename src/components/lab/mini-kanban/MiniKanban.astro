@@ -1,0 +1,103 @@
+---
+import { t } from '../../../i18n';
+import LabCardIcons from '../../ui/LabCardIcons.astro';
+import template from './mini-kanban.html?raw';
+import './mini-kanban.css';
+
+interface Props {
+	storageKey?: string;
+}
+
+const { storageKey = 'portfolio:lab:mini-kanban:v1' } = Astro.props;
+
+const messages = {
+	labels: {
+		todo: t('lab.kanban.columns.todo'),
+		doing: t('lab.kanban.columns.doing'),
+		done: t('lab.kanban.columns.done'),
+	},
+	persistenceSaved: t('lab.kanban.persistence.saved'),
+	persistenceReadError: t('lab.kanban.persistence.readError'),
+	persistenceMemoryFallback: t('lab.kanban.persistence.memoryFallback'),
+	persistenceInvalidRestored: t('lab.kanban.persistence.invalidRestored'),
+	progressSummary: t('lab.kanban.progressSummary'),
+	progressValueText: t('lab.kanban.progressValueText'),
+	emptyColumn: t('lab.kanban.emptyColumn'),
+	added: t('lab.kanban.announcements.added'),
+	moved: t('lab.kanban.announcements.moved'),
+	deleted: t('lab.kanban.announcements.deleted'),
+	undoDone: t('lab.kanban.announcements.undo'),
+	resetDone: t('lab.kanban.announcements.reset'),
+	titleLengthValidation: t('lab.kanban.validation.titleLength'),
+	maxTasksValidation: t('lab.kanban.validation.maxTasks'),
+	taskActions: t('lab.kanban.actions.groupLabel'),
+	moveToStatus: t('lab.kanban.actions.moveToStatus'),
+	moveToPrevious: t('lab.kanban.actions.moveToPrevious'),
+	moveToNext: t('lab.kanban.actions.moveToNext'),
+	moveUp: t('lab.kanban.actions.moveUp'),
+	moveDown: t('lab.kanban.actions.moveDown'),
+	deleteTask: t('lab.kanban.actions.delete'),
+};
+
+const escapeHtml = (value: string) =>
+	value
+		.replaceAll('&', '&amp;')
+		.replaceAll('<', '&lt;')
+		.replaceAll('>', '&gt;')
+		.replaceAll('"', '&quot;')
+		.replaceAll("'", '&#39;');
+
+const templateValues: Record<string, string> = {
+	TITLE: t('lab.kanban.title'),
+	UNDO: t('lab.kanban.undo'),
+	RESET_DEMO: t('lab.kanban.resetDemo'),
+	SUMMARY: t('lab.kanban.summary'),
+	NEW_TASK_LABEL: t('lab.kanban.newTaskLabel'),
+	NEW_TASK_PLACEHOLDER: t('lab.kanban.newTaskPlaceholder'),
+	ADD_TASK: t('lab.kanban.addTask'),
+	INITIAL_PROGRESS: t('lab.kanban.progressSummary', { done: 0, total: 0 }),
+	PROGRESS_ARIA: t('lab.kanban.progressAria'),
+	TODO_COLUMN_ARIA: t('lab.kanban.columnAria.todo'),
+	DOING_COLUMN_ARIA: t('lab.kanban.columnAria.doing'),
+	DONE_COLUMN_ARIA: t('lab.kanban.columnAria.done'),
+	TODO_LABEL: t('lab.kanban.columns.todo'),
+	DOING_LABEL: t('lab.kanban.columns.doing'),
+	DONE_LABEL: t('lab.kanban.columns.done'),
+	TODO_COUNT_ARIA: t('lab.kanban.countAria.todo'),
+	DOING_COUNT_ARIA: t('lab.kanban.countAria.doing'),
+	DONE_COUNT_ARIA: t('lab.kanban.countAria.done'),
+	TODO_LIST_ARIA: t('lab.kanban.listAria.todo'),
+	DOING_LIST_ARIA: t('lab.kanban.listAria.doing'),
+	DONE_LIST_ARIA: t('lab.kanban.listAria.done'),
+	HELP: t('lab.kanban.help'),
+	PERSISTENCE_SAVED: t('lab.kanban.persistence.saved'),
+	NOSCRIPT: t('lab.kanban.noscript'),
+};
+
+const localizedTemplate = Object.entries(templateValues).reduce(
+	(markup, [token, value]) => markup.replaceAll(`{{${token}}}`, escapeHtml(value)),
+	template,
+);
+---
+
+<div class="mini-kanban-demo">
+	<mini-kanban
+		class="mini-kanban-card"
+		role="group"
+		aria-label={t('lab.kanban.title')}
+		data-storage-key={storageKey}
+		data-i18n={encodeURIComponent(JSON.stringify(messages))}
+	>
+		<LabCardIcons
+			infoTooltip={t('lab.cards.kanban.infoTooltip')}
+			rocketTooltip={t('lab.cards.kanban.rocketTooltip')}
+			rocketHref="https://github.com/YoZaiKK/kanban"
+		/>
+		<Fragment set:html={localizedTemplate} />
+	</mini-kanban>
+</div>
+
+<script>
+	import { defineMiniKanban } from './mini-kanban';
+	defineMiniKanban();
+</script>

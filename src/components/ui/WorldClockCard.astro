@@ -14,7 +14,11 @@ const mexicoCity = locations[1];
 
 <div class="world-clock-demo">
 	<world-clock class="world-clock-card" role="group" aria-labelledby="world-clock-title" data-timezone={mexicoCity.timezone} data-location={mexicoCity.label}>
-		<LabCardIcons description={t('clock.description')} />
+		<LabCardIcons
+			infoTooltip={t('lab.cards.clock.infoTooltip')}
+			rocketTooltip={t('lab.cards.clock.rocketTooltip')}
+			rocketHref="https://github.com/YoZaiKK/rustCluck"
+		/>
 		<div class="world-clock-header">
 			<h3 id="world-clock-title">{t('clock.title')}</h3>
 			<span class="world-clock-location" data-location-output>{mexicoCity.label}</span>

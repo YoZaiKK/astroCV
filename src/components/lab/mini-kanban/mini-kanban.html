@@ -1,0 +1,197 @@
+<header class="mk-header">
+	<div>
+		<h3 class="mk-title">{{TITLE}}</h3>
+	</div>
+	<div class="mk-header-actions">
+		<button
+			class="mk-button mk-button--quiet"
+			type="button"
+			data-action="undo"
+			disabled
+		>
+			{{UNDO}}
+		</button>
+		<button
+			class="mk-button mk-button--quiet"
+			type="button"
+			data-action="reset"
+		>
+			{{RESET_DEMO}}
+		</button>
+	</div>
+</header>
+
+<p class="mk-description">{{SUMMARY}}</p>
+
+<form class="mk-form" data-form>
+	<label class="mk-field">
+		<span class="mk-label">{{NEW_TASK_LABEL}}</span>
+		<input
+			class="mk-input"
+			name="title"
+			type="text"
+			placeholder="{{NEW_TASK_PLACEHOLDER}}"
+			maxlength="80"
+			autocomplete="off"
+			required
+		/>
+	</label>
+	<button class="mk-button mk-button--primary" type="submit">
+		{{ADD_TASK}}
+	</button>
+</form>
+
+<div class="mk-progress-row">
+	<span class="mk-progress-label" data-progress-label
+		>{{INITIAL_PROGRESS}}</span
+	>
+	<progress
+		class="mk-progress"
+		data-progress
+		max="1"
+		value="0"
+		aria-label="{{PROGRESS_ARIA}}"
+	></progress>
+</div>
+
+<div class="mk-board">
+	<section
+		class="mk-column"
+		data-column="todo"
+		aria-label="{{TODO_COLUMN_ARIA}}"
+	>
+		<header class="mk-column-header">
+			<h4><span class="mk-dot" aria-hidden="true"></span>{{TODO_LABEL}}</h4>
+			<span class="mk-count" data-count="todo" aria-label="{{TODO_COUNT_ARIA}}"
+				>0</span
+			>
+		</header>
+		<ul class="mk-list" data-list="todo" aria-label="{{TODO_LIST_ARIA}}"></ul>
+	</section>
+	<section
+		class="mk-column"
+		data-column="doing"
+		aria-label="{{DOING_COLUMN_ARIA}}"
+	>
+		<header class="mk-column-header">
+			<h4><span class="mk-dot" aria-hidden="true"></span>{{DOING_LABEL}}</h4>
+			<span
+				class="mk-count"
+				data-count="doing"
+				aria-label="{{DOING_COUNT_ARIA}}"
+				>0</span
+			>
+		</header>
+		<ul class="mk-list" data-list="doing" aria-label="{{DOING_LIST_ARIA}}"></ul>
+	</section>
+	<section
+		class="mk-column"
+		data-column="done"
+		aria-label="{{DONE_COLUMN_ARIA}}"
+	>
+		<header class="mk-column-header">
+			<h4><span class="mk-dot" aria-hidden="true"></span>{{DONE_LABEL}}</h4>
+			<span class="mk-count" data-count="done" aria-label="{{DONE_COUNT_ARIA}}"
+				>0</span
+			>
+		</header>
+		<ul class="mk-list" data-list="done" aria-label="{{DONE_LIST_ARIA}}"></ul>
+	</section>
+</div>
+
+<p class="mk-help">{{HELP}}</p>
+<p
+	class="mk-feedback"
+	data-feedback
+	role="status"
+	aria-live="polite"
+	aria-atomic="true"
+></p>
+<p class="mk-persistence" data-persistence>{{PERSISTENCE_SAVED}}</p>
+<noscript><p class="mk-help">{{NOSCRIPT}}</p></noscript>
+
+<template data-task-template>
+	<li class="mk-task" draggable="true" tabindex="-1">
+		<p class="mk-task-title" data-task-title></p>
+		<div class="mk-task-actions" role="group">
+			<button class="mk-icon-button" type="button" data-action="left">
+				<svg
+					aria-hidden="true"
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 24 24"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="2.2"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+				>
+					<path d="m15 18-6-6 6-6"></path>
+				</svg>
+			</button>
+			<button class="mk-icon-button" type="button" data-action="right">
+				<svg
+					aria-hidden="true"
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 24 24"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="2.2"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+				>
+					<path d="m9 18 6-6-6-6"></path>
+				</svg>
+			</button>
+			<button class="mk-icon-button" type="button" data-action="up">
+				<svg
+					aria-hidden="true"
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 24 24"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="2.2"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+				>
+					<path d="m18 15-6-6-6 6"></path>
+				</svg>
+			</button>
+			<button class="mk-icon-button" type="button" data-action="down">
+				<svg
+					aria-hidden="true"
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 24 24"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="2.2"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+				>
+					<path d="m6 9 6 6 6-6"></path>
+				</svg>
+			</button>
+			<button
+				class="mk-icon-button mk-icon-button--danger"
+				type="button"
+				data-action="delete"
+			>
+				<svg
+					aria-hidden="true"
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 24 24"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="2.1"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+				>
+					<path d="M3 6h18"></path>
+					<path d="M8 6V4h8v2"></path>
+					<path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path>
+					<path d="M10 11v6"></path>
+					<path d="M14 11v6"></path>
+				</svg>
+			</button>
+		</div>
+	</li>
+</template>

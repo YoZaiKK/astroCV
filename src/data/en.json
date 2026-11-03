@@ -244,7 +244,83 @@
     "error": "The demo request failed. Try again or reset the demo.",
     "resultsSummary": "{{count}} connections found.",
     "engineeringNotes": "How this demo works",
-    "whatItDemonstrates": "What this demonstrates"
+    "whatItDemonstrates": "What this demonstrates",
+    "kanban": {
+      "title": "Mini Kanban",
+      "description": "A compact task board demo with keyboard actions, drag and drop, and resilient local persistence.",
+      "summary": "Add a task, move it through the board, and track your progress.",
+      "newTaskLabel": "New task",
+      "newTaskPlaceholder": "What would you like to build?",
+      "addTask": "Add task",
+      "undo": "Undo",
+      "resetDemo": "Reset demo",
+      "progressSummary": "{{done}} of {{total}} done",
+      "progressAria": "Completed tasks",
+      "columns": {
+        "todo": "To do",
+        "doing": "In progress",
+        "done": "Done"
+      },
+      "columnAria": {
+        "todo": "To do column",
+        "doing": "In progress column",
+        "done": "Done column"
+      },
+      "listAria": {
+        "todo": "To do tasks",
+        "doing": "Tasks in progress",
+        "done": "Completed tasks"
+      },
+      "countAria": {
+        "todo": "Tasks in To do",
+        "doing": "Tasks in progress",
+        "done": "Completed tasks"
+      },
+      "help": "Drag cards with a mouse, or use their arrow buttons with touch or a keyboard.",
+      "noscript": "Enable JavaScript to use this interactive demo.",
+      "emptyColumn": "No tasks here yet.",
+      "persistence": {
+        "saved": "Changes are saved in this browser.",
+        "readError": "Saved data could not be read. You can still use the board.",
+        "memoryFallback": "Browser storage is unavailable. Changes will last for this session only.",
+        "invalidRestored": "Saved data was invalid. The sample board has been restored."
+      },
+      "announcements": {
+        "added": "Added {{title}} to {{status}}.",
+        "moved": "Moved {{title}} to {{status}}.",
+        "deleted": "Deleted {{title}}. Use Undo to restore it.",
+        "undo": "Last change undone.",
+        "reset": "Sample board restored. Use Undo to recover the previous board."
+      },
+      "validation": {
+        "titleLength": "Enter a task between 1 and {{max}} characters.",
+        "maxTasks": "This demo supports up to {{max}} tasks. Delete a task before adding another."
+      },
+      "actions": {
+        "groupLabel": "Actions for {{title}}",
+        "moveToStatus": "Move {{title}} to {{status}}",
+        "moveToPrevious": "Move {{title}} to the previous column",
+        "moveToNext": "Move {{title}} to the next column",
+        "moveUp": "Move {{title}} up",
+        "moveDown": "Move {{title}} down",
+        "delete": "Delete {{title}}"
+      },
+      "progressValueText": "{{done}} of {{total}} tasks completed"
+    },
+    "cards": {
+      "conway": {
+        "infoTooltip": "Scolar project",
+        "rocketTooltip": "Open Conway's Life repository"
+      },
+      "clock": {
+        "infoTooltip": "Don't lose the track of time",
+        "rocketTooltip": "Open World Clock repository"
+      },
+      "kanban": {
+        "infoTooltip": "Last University project, developed to have the degree with the thesis",
+        "rocketTooltip": "Open Kanban repository"
+      }
+    }
   },
   "notes": {
     "title": "Engineering notes",

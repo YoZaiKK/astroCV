@@ -2,18 +2,118 @@
 import { Info, Rocket } from '@lucide/astro';
 
 interface Props {
-	description: string;
+	infoTooltip: string;
+	rocketTooltip: string;
+	rocketHref: string;
 }
 
-const { description } = Astro.props;
+const { infoTooltip, rocketTooltip, rocketHref } = Astro.props;
 ---
 
 <span class="lab-card-icons">
-	<span role="img" aria-label={description} title={description}><Info size={18} aria-hidden="true" /></span>
-	<span role="img" aria-label="Interactive experiment" title="Interactive experiment"><Rocket size={18} aria-hidden="true" /></span>
+	<button type="button" class="lab-card-action" aria-label={infoTooltip} data-tooltip={infoTooltip}>
+		<Info size={18} aria-hidden="true" />
+	</button>
+	<a
+		href={rocketHref}
+		target="_blank"
+		rel="noreferrer"
+		class="lab-card-action lab-card-action-rocket"
+		aria-label={rocketTooltip}
+		data-tooltip={rocketTooltip}
+	>
+		<Rocket size={18} aria-hidden="true" />
+	</a>
 </span>
 
 <style>
-	.lab-card-icons { position: absolute; top: 0.75rem; right: 1rem; display: inline-flex; align-items: center; gap: 0.5rem; color: var(--color-muted); }
-	.lab-card-icons > span { display: inline-flex; }
+	.lab-card-icons {
+		position: absolute;
+		top: 0.75rem;
+		right: 1rem;
+		z-index: 1;
+		display: inline-flex;
+		align-items: center;
+		gap: 0.45rem;
+		color: var(--color-muted);
+	}
+
+	.lab-card-action {
+		position: relative;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 2rem;
+		height: 2rem;
+		padding: 0;
+		border: 1px solid transparent;
+		border-radius: 999px;
+		color: inherit;
+		background: transparent;
+		cursor: pointer;
+		text-decoration: none;
+		transition: color 140ms ease, background-color 140ms ease, border-color 140ms ease, transform 140ms ease;
+	}
+
+	.lab-card-action-rocket {
+		border-color: color-mix(in srgb, var(--color-border) 85%, transparent);
+		border-radius: 0.65rem;
+		background: color-mix(in srgb, var(--color-surface) 72%, transparent);
+	}
+
+	.lab-card-action:hover {
+		color: var(--color-ink);
+		background: color-mix(in srgb, var(--color-surface-muted) 84%, transparent);
+		transform: translateY(-1px);
+	}
+
+	.lab-card-action:focus-visible {
+		outline: 3px solid var(--color-focus);
+		outline-offset: 2px;
+	}
+
+	.lab-card-action::after {
+		position: absolute;
+		bottom: calc(100% + 0.45rem);
+		left: 50%;
+		transform: translateX(-50%);
+		padding: 0.3rem 0.5rem;
+		border-radius: 0.45rem;
+		color: var(--color-on-accent);
+		background: var(--color-accent);
+		font-size: 0.72rem;
+		font-weight: 600;
+		line-height: 1.25;
+		white-space: nowrap;
+		pointer-events: none;
+		content: attr(data-tooltip);
+		opacity: 0;
+		visibility: hidden;
+	}
+
+	.lab-card-action::before {
+		position: absolute;
+		bottom: calc(100% + 0.2rem);
+		left: 50%;
+		transform: translateX(-50%);
+		border-width: 0.28rem;
+		border-style: solid;
+		border-color: var(--color-accent) transparent transparent transparent;
+		pointer-events: none;
+		content: "";
+		opacity: 0;
+		visibility: hidden;
+	}
+
+	.lab-card-action:hover::after,
+	.lab-card-action:hover::before,
+	.lab-card-action:focus-visible::after,
+	.lab-card-action:focus-visible::before {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.lab-card-action, .lab-card-action::before, .lab-card-action::after { transition: none; }
+	}
 </style>
