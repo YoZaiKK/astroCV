@@ -1,43 +1,69 @@
-# Astro Starter Kit: Minimal
+# Guillermo Cardona Gómez — Portfolio
+
+Static personal CV and portfolio site for Guillermo Cardona Gómez, a Software Engineer. It presents professional experience, skills, education, contact information, and a downloadable resume.
+
+## Stack
+
+- Astro 7
+- TypeScript
+- CSS with responsive design tokens
+
+The site is statically generated and compatible with Vercel deployment.
+
+## Run locally
+
+Use Node.js 22.23.4 or newer.
 
 ```sh
-npm create astro@latest -- --template minimal
+npm install
+npm run dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+The development server is available at `http://localhost:4321`. To start Astro in background mode, use:
 
-## 🚀 Project Structure
+```sh
+npx astro dev --background
+```
 
-Inside of your Astro project, you'll see the following folders and files:
+## Commands
+
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Start the local development server. |
+| `npm run build` | Create the static production build in `dist/`. |
+| `npm run preview` | Preview the production build locally. |
+| `npm run astro -- <command>` | Run an Astro CLI command. |
+
+## Project structure
 
 ```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+src/
+├── components/
+│   ├── layout/       # Header and footer
+│   ├── sections/     # Home page sections
+│   └── ui/           # Shared UI elements
+├── data/             # Canonical English copy and portfolio data
+├── i18n/             # Translation lookup and interpolation
+├── layouts/          # Shared page layout
+├── pages/            # Astro routes
+├── styles/           # Global styles and design tokens
+└── types/            # Content TypeScript types
+public/
+├── images/           # Homepage visual assets
+└── resume/           # Public downloadable resume
+resume/               # Non-public editable resume source
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Content
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+`src/data/en.json` contains visible English copy. `src/data/portfolio.data.json` contains structured profile, experience, skills, education, language, and project data. These files are the source of truth for the site content.
 
-Any static assets, like images, can be placed in the `public/` directory.
+Only projects with `published: true` are shown. The downloadable resume is served from `public/resume/guillermo-cardona-resume.pdf`.
 
-## 🧞 Commands
+## Verification
 
-All commands are run from the root of the project, from a terminal:
+Run the production build before publishing changes:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+```sh
+npm run build
+```
