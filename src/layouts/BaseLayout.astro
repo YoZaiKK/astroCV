@@ -3,28 +3,46 @@ import '../styles/global.css';
 import Footer from '../components/layout/Footer.astro';
 import Header from '../components/layout/Header.astro';
 import { portfolio } from '../data/content';
-import { t } from '../i18n';
+import { getLocale, type Locale, t } from '../i18n';
 
 interface Props {
 	title?: string;
 	description?: string;
+	locale?: Locale;
 }
 
-const { title = t('meta.homeTitle', { name: portfolio.profile.name }), description = t('meta.homeDescription') } =
-	Astro.props;
+const {
+	title = t('meta.homeTitle', { name: portfolio.profile.name }),
+	description = t('meta.homeDescription'),
+	locale = getLocale(),
+} = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={locale}>
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="description" content={description} />
+		<script is:inline>
+			(() => {
+				const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+				let mode = 'system';
+				try {
+					const storedTheme = localStorage.getItem('theme');
+					if (storedTheme === 'dark' || storedTheme === 'light') mode = storedTheme;
+				} catch {
+					/* Use the system theme when storage is unavailable. */
+				}
+				document.documentElement.dataset.themeMode = mode;
+				document.documentElement.dataset.theme = mode === 'system' ? systemTheme : mode;
+			})();
+		</script>
 		<title>{title}</title>
 	</head>
 	<body>
 		<a class="skip-link" href="#main-content">{t('accessibility.skipToContent')}</a>
-		<Header name={portfolio.profile.name} />
+		<Header name={portfolio.profile.name} locale={locale} />
 		<slot />
 		<Footer name={portfolio.profile.name} githubUrl={portfolio.profile.githubUrl} />
 	</body>

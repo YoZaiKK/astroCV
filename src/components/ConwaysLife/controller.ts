@@ -148,7 +148,6 @@ export class ConwaysLife extends HTMLElement {
 		button?.setAttribute('aria-label', running ? 'Pause simulation' : 'Play simulation');
 		const label = this.querySelector('[data-play-label]');
 		if (label) label.textContent = running ? 'Pause' : 'Play';
-		this.querySelector('[data-play-icon]')?.setAttribute('d', running ? 'M3 2h4v12H3zM9 2h4v12H9z' : 'M4 2.5v11L13 8z');
 	}
 
 	private announce(message: string) {

@@ -1,6 +1,8 @@
 ---
+import { Play, Pause } from '@lucide/astro';
 import { createInitialGrid } from './helpers';
 import './styles.css';
+import LabCardIcons from '../ui/LabCardIcons.astro';
 
 const grid = createInitialGrid();
 ---
@@ -8,12 +10,12 @@ const grid = createInitialGrid();
 <div class="conways-life-demo">
 	<conways-life role="group" aria-label="Conways life">
 		<div class="life-card">
+			<LabCardIcons description="Conway's Game of Life: edit cells and press Play to evolve the pattern." />
 			<div class="life-header">
 				<h3>Conways life</h3>
 				<button class="life-play" type="button" data-play aria-label="Play simulation" aria-pressed="false" disabled>
-					<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
-						<path data-play-icon d="M4 2.5v11L13 8z" fill="currentColor" />
-					</svg>
+					<Play class="life-icon-play" size={16} aria-hidden="true" />
+					<Pause class="life-icon-pause" size={16} aria-hidden="true" />
 					<span data-play-label>Play</span>
 				</button>
 			</div>

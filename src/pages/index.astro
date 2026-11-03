@@ -8,9 +8,12 @@ import Hero from '../components/sections/Hero.astro';
 import Projects from '../components/sections/Projects.astro';
 import Skills from '../components/sections/Skills.astro';
 import { portfolio } from '../data/content';
+import { setLocale } from '../i18n';
+
+setLocale('en');
 ---
 
-<BaseLayout>
+<BaseLayout locale="en">
 	<main id="main-content">
 		<Hero name={portfolio.profile.name} />
 		<About />

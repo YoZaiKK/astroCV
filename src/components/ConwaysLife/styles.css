@@ -1,6 +1,7 @@
 .conways-life-demo { width: 100%; max-width: 32rem; min-width: 0; }
 conways-life { display: block; }
 .life-card {
+	position: relative;
 	display: grid;
 	grid-template-rows: auto minmax(0, 1fr) auto;
 	gap: 0.75rem;
@@ -14,6 +15,7 @@ conways-life { display: block; }
 }
 .life-header, .life-footer, .life-tools { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; }
 .life-header h3 { margin: 0; font-size: clamp(1rem, 2vw, 1.2rem); }
+.life-header { padding-top: 1rem; }
 .life-card button { cursor: pointer; }
 .life-card button:disabled { cursor: default; opacity: 0.6; }
 .life-play {
@@ -27,10 +29,12 @@ conways-life { display: block; }
 	border: 1px solid var(--color-accent);
 	border-radius: 0.45rem;
 	background: var(--color-accent);
-	color: white;
+	color: var(--color-on-accent);
 	font-weight: 650;
 }
 .life-play:hover { background: var(--color-accent-dark); }
+.life-icon-pause, .life-play[aria-pressed='true'] .life-icon-play { display: none; }
+.life-play[aria-pressed='true'] .life-icon-pause { display: block; }
 .life-board {
 	display: grid;
 	grid-template-columns: repeat(var(--life-size, 20), minmax(0, 1fr));
@@ -53,5 +57,5 @@ conways-life { display: block; }
 .life-tools button:hover, .life-options button:hover { background: var(--color-surface-muted); }
 .life-options { display: flex; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.75rem; }
 .life-options button:disabled { cursor: default; opacity: 0.6; }
-.life-pattern { flex: 1 1 7rem; color: var(--color-muted); font-size: 0.8rem; text-align: right; overflow-wrap: anywhere; }
+.life-pattern { flex: 1 1 7rem; color: var(--color-muted); font-size: 0.8rem; font-weight: 700; text-align: right; overflow-wrap: anywhere; }
 .life-hint { margin: 1rem 0 0; color: var(--color-muted); font-size: 0.9rem; }

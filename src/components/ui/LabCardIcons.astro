@@ -1,0 +1,19 @@
+---
+import { Info, Rocket } from '@lucide/astro';
+
+interface Props {
+	description: string;
+}
+
+const { description } = Astro.props;
+---
+
+<span class="lab-card-icons">
+	<span role="img" aria-label={description} title={description}><Info size={18} aria-hidden="true" /></span>
+	<span role="img" aria-label="Interactive experiment" title="Interactive experiment"><Rocket size={18} aria-hidden="true" /></span>
+</span>
+
+<style>
+	.lab-card-icons { position: absolute; top: 0.75rem; right: 1rem; display: inline-flex; align-items: center; gap: 0.5rem; color: var(--color-muted); }
+	.lab-card-icons > span { display: inline-flex; }
+</style>

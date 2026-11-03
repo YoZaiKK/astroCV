@@ -1,0 +1,335 @@
+{
+  "meta": {
+    "homeTitle": "{{name}} | Portafolio",
+    "homeDescription": "Ingeniero de software que construye aplicaciones empresariales con Angular, React y TypeScript. Explora ownership de funcionalidades, trabajo de migración frontend, proyectos y decisiones de ingeniería.",
+    "projectsTitle": "Proyectos | {{name}}",
+    "projectTitle": "{{project}} | {{name}}",
+    "labTitle": "Laboratorio Frontend | {{name}}",
+    "notFoundTitle": "Página no encontrada | {{name}}"
+  },
+  "navigation": {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "experience": "Experiencia",
+    "projects": "Lab",
+    "skills": "Habilidades",
+    "lab": "Laboratorio Frontend",
+    "notes": "Notas de ingeniería",
+    "education": "Educación",
+    "contact": "Contacto",
+    "openMenu": "Abrir menú de navegación",
+    "closeMenu": "Cerrar menú de navegación",
+    "primaryLabel": "Navegación principal"
+  },
+  "common": {
+    "viewProjects": "Ver proyectos",
+    "viewProject": "Ver proyecto",
+    "readCaseStudy": "Leer caso de estudio",
+    "viewSource": "Ver código fuente",
+    "viewDemo": "Abrir demo en vivo",
+    "watchDemo": "Ver demo",
+    "downloadResume": "Descargar CV",
+    "resumeUnavailable": "La descarga del CV no está disponible por el momento.",
+    "backToProjects": "Volver a proyectos",
+    "backToHome": "Volver al inicio",
+    "backToTop": "Volver arriba",
+    "learnMore": "Saber más",
+    "showDetails": "Mostrar detalles",
+    "hideDetails": "Ocultar detalles",
+    "present": "Actual",
+    "loading": "Cargando...",
+    "tryAgain": "Intentar de nuevo",
+    "clearFilters": "Limpiar filtros",
+    "close": "Cerrar",
+    "previous": "Anterior",
+    "next": "Siguiente",
+    "readMore": "Leer más",
+    "externalLink": "Se abre en una pestaña nueva",
+    "lastUpdated": "Última actualización: {{date}}",
+    "error": "Algo salió mal. Inténtalo de nuevo."
+  },
+  "hero": {
+    "eyebrow": "Ingeniero de software",
+    "headline": "Construyendo interfaces confiables. Asumiendo ownership más allá de la UI.",
+    "description": "Construyo y mantengo aplicaciones empresariales con Angular, React y TypeScript, llevando funcionalidades desde requerimientos y diseño técnico hasta integración, pruebas, depuración y entrega.",
+    "focus": "Profundidad en frontend, ownership técnico y una base backend en crecimiento."
+  },
+  "about": {
+    "title": "Sobre mí",
+    "intro": "Soy un ingeniero de software con experiencia construyendo aplicaciones empresariales y colaborando entre equipos para entregar soluciones mantenibles.",
+    "background": "Mi trabajo en Teradata incluye ownership de OPF y Consumption/Usage, desarrollo frontend, integración con APIs, pruebas automatizadas y resolución de problemas entre límites de aplicación e infraestructura.",
+    "approach": "Me importa entender el problema, hacer explícitas las decisiones técnicas y mantener el software comprensible para quienes lo mantienen.",
+    "direction": "Estoy profundizando mi experiencia en Angular, React y TypeScript mientras amplío mis habilidades en backend y diseño de sistemas.",
+    "principles": {
+      "ownership": {
+        "title": "Asume el resultado",
+        "description": "Sigue una funcionalidad desde requerimientos hasta entrega, incluyendo problemas de integración y coordinación entre equipos."
+      },
+      "maintainability": {
+        "title": "Construye para mantenimiento",
+        "description": "Prefiere responsabilidades claras, componentes reutilizables y pruebas que protejan comportamiento significativo."
+      },
+      "problemSolving": {
+        "title": "Investiga entre fronteras",
+        "description": "Rastrea problemas más allá de la interfaz cuando APIs, autenticación o entornos de despliegue afectan la experiencia del usuario."
+      }
+    },
+    "currentWork": "Lidero la migración de Consumption/Usage de Angular a un remoto en React dentro del monorepo existente, manteniendo ambas implementaciones mientras continúa el desarrollo de funcionalidades y alineación UX."
+  },
+  "experience": {
+    "title": "Experiencia profesional",
+    "intro": "Desarrollo empresarial, ownership de funcionalidades y entrega colaborativa.",
+    "responsibilitiesLabel": "Responsabilidades y contribuciones",
+    "teradataEngineer": {
+      "role": "Software Engineer - User Interface Engineer",
+      "summary": "Asumo el desarrollo de funcionalidades en OPF, Consumption/Usage y Connection Manager, incluyendo una migración Angular-a-React en curso, mientras contribuyo a aplicaciones empresariales en Console, AIS y Notebooks.",
+      "highlights": {
+        "ownership": "Tomé ownership end-to-end de Connection Manager durante una transición de equipo, convirtiéndome en un punto técnico principal y coordinando implementación, decisiones técnicas y resolución de incidencias entre equipos.",
+        "delivery": "Llevo funcionalidades desde análisis de requerimientos y diseño técnico hasta integración de API, implementación, pruebas automatizadas, validación en nube, depuración y entrega.",
+        "integration": "Investigo incidencias de integración que involucran aplicaciones frontend, APIs backend, flujos de autenticación, cargas en Kubernetes y entornos remotos en la nube.",
+        "architecture": "Construyo interfaces empresariales mantenibles con Angular, React, TypeScript, RxJS, Nx, Signals, componentes reutilizables, inyección de dependencias y pruebas unitarias con Jest.",
+        "collaboration": "Coordino con otros equipos de ingeniería cuando los problemas cruzan fronteras de aplicación o servicio.",
+        "ai": "Uso flujos asistidos por IA para apoyar análisis de código, depuración y tareas repetitivas de ingeniería.",
+        "migration": "Lidero la dirección técnica e implementación de la migración de Consumption/Usage de Angular a React, integrando React como remoto dentro del monorepo existente mientras se mantienen ambas implementaciones en paralelo.",
+        "uxAlignment": "Asumo el desarrollo de nuevas funcionalidades en OPF y Consumption/Usage, alineando interfaces existentes y nuevas capacidades con diseños UX y principios de diseño establecidos."
+      }
+    },
+    "teradataIntern": {
+      "role": "User Interface Engineering Intern",
+      "summary": "Contribuí a aplicaciones UI empresariales de producción antes de transicionar a un rol de ingeniería de software de tiempo completo.",
+      "highlights": {
+        "development": "Desarrollé experiencia práctica con Angular, TypeScript, testing, integración de APIs y prácticas de desarrollo a gran escala.",
+        "collaboration": "Trabajé dentro de procesos colaborativos de desarrollo, code review y entrega Agile."
+      }
+    },
+    "axolote": {
+      "role": "Full Stack Developer & Designer",
+      "summary": "Colaboré en una aplicación web responsiva para un negocio de fragancias.",
+      "highlights": {
+        "delivery": "Construí y entregué una aplicación web para cliente como parte de un equipo freelance de desarrollo.",
+        "contribution": "Contribuí en diseño UI/UX, desarrollo frontend, funcionalidad backend e implementación de requerimientos del cliente."
+      }
+    }
+  },
+  "projects": {
+    "title": "Proyectos destacados",
+    "intro": "Explora el problema, mi contribución, las decisiones técnicas y la evidencia detrás de cada proyecto.",
+    "filtersLabel": "Filtrar proyectos",
+    "filters": {
+      "all": "Todos los proyectos",
+      "frontend": "Frontend",
+      "fullStack": "Full stack",
+      "desktop": "Escritorio",
+      "engineering": "Ingeniería"
+    },
+    "resultSummary": "Mostrando {{visible}} de {{total}} proyectos.",
+    "empty": "No hay proyectos publicados que coincidan con estos filtros.",
+    "loadError": "No se pudieron cargar los proyectos. Inténtalo de nuevo.",
+    "status": {
+      "delivered": "Entregado",
+      "inProgress": "En progreso",
+      "planned": "Planeado",
+      "archived": "Archivado"
+    },
+    "categories": {
+      "professional": "Trabajo profesional",
+      "personal": "Proyecto personal",
+      "learning": "Proyecto de aprendizaje"
+    },
+    "cards": {
+      "fragranceWebsite": {
+        "title": "Sitio web para negocio de fragancias",
+        "summary": "Una aplicación para cliente, responsiva y construida colaborativamente, con contribuciones en diseño, frontend y funcionalidad backend."
+      },
+      "connectionManager": {
+        "title": "Ownership de funcionalidad empresarial",
+        "summary": "Una experiencia profesional enfocada en continuidad funcional, decisiones técnicas, troubleshooting de integración y coordinación entre equipos."
+      },
+      "connectionExplorer": {
+        "title": "Connection Explorer",
+        "summary": "Una demo frontend propuesta para explorar datos sintéticos de conexiones, filtrar resultados y manejar estados de carga, vacío y error."
+      },
+      "fullStackTracker": {
+        "title": "Engineering Project Tracker",
+        "summary": "Un proyecto full-stack propuesto para practicar diseño de APIs, modelado relacional, autenticación y despliegue."
+      },
+      "opf": {
+        "title": "Ownership de OPF y alineación UX",
+        "summary": "Implementación continua de funcionalidades y alineación de la aplicación existente con diseños UX y principios de diseño."
+      },
+      "consumptionUsage": {
+        "title": "Migración de Consumption/Usage de Angular a React",
+        "summary": "Liderazgo técnico e implementación de un remoto en React dentro del monorepo existente, manteniendo implementaciones Angular y React en paralelo."
+      }
+    }
+  },
+  "caseStudy": {
+    "overview": "Resumen",
+    "problem": "El problema",
+    "context": "Contexto y restricciones",
+    "role": "Mi rol",
+    "team": "Equipo y colaboración",
+    "scope": "Alcance",
+    "solution": "La solución",
+    "architecture": "Arquitectura",
+    "decisions": "Decisiones técnicas clave",
+    "alternatives": "Alternativas consideradas",
+    "tradeoffs": "Compromisos",
+    "implementation": "Aspectos destacados de implementación",
+    "quality": "Pruebas y calidad",
+    "accessibility": "Accesibilidad",
+    "performance": "Rendimiento",
+    "outcomes": "Resultados y evidencia",
+    "lessons": "Lo que aprendí",
+    "nextSteps": "Siguientes pasos",
+    "stack": "Stack tecnológico",
+    "evidence": "Evidencia de soporte",
+    "diagramDescription": "Diagrama de arquitectura que muestra los componentes principales y sus relaciones.",
+    "relatedProjects": "Proyectos relacionados",
+    "migrationStrategy": "Estrategia de migración",
+    "parallelImplementations": "Implementaciones en paralelo",
+    "uxAlignment": "Alineación UX"
+  },
+  "skills": {
+    "title": "Habilidades técnicas",
+    "intro": "Una vista enfocada de mi experiencia actual y las áreas que estoy desarrollando a continuación.",
+    "core": {
+      "title": "Experiencia profesional principal",
+      "description": "Angular, React, TypeScript, RxJS, Nx, componentes reutilizables, integración de APIs, migración frontend y pruebas con Jest."
+    },
+    "additional": {
+      "title": "Experiencia adicional",
+      "description": "Un toolkit más amplio que abarca frameworks frontend, desarrollo backend, bases de datos y entornos de desarrollo."
+    },
+    "growth": {
+      "title": "Siguientes objetivos de aprendizaje",
+      "description": "Proyectos planeados de aprendizaje en Python con FastAPI y PostgreSQL, seguidos por trabajo más profundo en Go, nube y sistemas distribuidos."
+    },
+    "groups": {
+      "languages": "Lenguajes de programación",
+      "frontend": "Frontend",
+      "backend": "Backend y APIs",
+      "databases": "Bases de datos",
+      "infrastructure": "Infraestructura y entornos",
+      "testing": "Pruebas y prácticas de ingeniería",
+      "ai": "Ingeniería asistida por IA",
+      "architecture": "Arquitectura frontend y modernización"
+    },
+    "viewEvidence": "Ver trabajo relacionado"
+  },
+  "lab": {
+    "title": "Laboratorio Frontend",
+    "intro": "Demos pequeñas y enfocadas que hacen visible el comportamiento de interfaces y decisiones de ingeniería.",
+    "demoLabel": "Demo interactiva",
+    "syntheticDataNotice": "Esta demo usa datos sintéticos.",
+    "controlsLabel": "Controles de la demo",
+    "searchLabel": "Buscar conexiones",
+    "searchPlaceholder": "Buscar por nombre...",
+    "statusFilterLabel": "Estado de conexión",
+    "allStatuses": "Todos los estados",
+    "nameColumn": "Nombre",
+    "statusColumn": "Estado",
+    "updatedColumn": "Última actualización",
+    "tableCaption": "Registros sintéticos de conexiones",
+    "statuses": {
+      "connected": "Conectado",
+      "disconnected": "Desconectado",
+      "pending": "Pendiente"
+    },
+    "showLoading": "Simular carga",
+    "showError": "Simular un error",
+    "showEmpty": "Simular resultados vacíos",
+    "reset": "Reiniciar demo",
+    "empty": "No hay conexiones que coincidan con tu búsqueda.",
+    "error": "Falló la solicitud de la demo. Intenta de nuevo o reinicia la demo.",
+    "resultsSummary": "{{count}} conexiones encontradas.",
+    "engineeringNotes": "Cómo funciona esta demo",
+    "whatItDemonstrates": "Qué demuestra"
+  },
+  "notes": {
+    "title": "Notas de ingeniería",
+    "intro": "Explicaciones breves de decisiones, experimentos y aprendizajes al construir software.",
+    "empty": "Aún no se han publicado notas.",
+    "readingTime": "Tiempo estimado de lectura: {{minutes}} minutos",
+    "topicsLabel": "Temas",
+    "backToNotes": "Volver a notas"
+  },
+  "education": {
+    "title": "Educación e idiomas",
+    "degree": "Ingeniería en Sistemas Computacionales",
+    "completion": "Estudios académicos concluidos en enero de 2025.",
+    "languagesTitle": "Idiomas",
+    "spanish": "Español",
+    "english": "Inglés",
+    "native": "Nativo",
+    "upperIntermediate": "Intermedio alto (B2)"
+  },
+  "contact": {
+    "title": "Hablemos",
+    "description": "Para conversaciones profesionales, colaboración o dudas sobre mi trabajo, puedes contactarme por correo o explorar mis perfiles públicos.",
+    "email": "Envíame un correo",
+    "copyEmail": "Copiar correo",
+    "emailCopied": "Dirección de correo copiada.",
+    "copyError": "No se pudo copiar la dirección de correo. Puedes seleccionarla y copiarla manualmente.",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "leetcode": "LeetCode"
+  },
+  "clock": {
+    "title": "Reloj mundial",
+    "description": "Un reloj analógico en vivo con controles de zona horaria.",
+    "tokyo": "Tokio",
+    "mexicoCity": "Ciudad de México",
+    "yourLocation": "Tu ubicación",
+    "timeLabel": "Hora actual en {{location}}",
+    "analogLabel": "Reloj analógico mostrando la hora en {{location}}"
+  },
+  "preferences": {
+    "themeLabel": "Tema de color",
+    "light": "Claro",
+    "dark": "Oscuro",
+    "system": "Usar preferencia del sistema",
+    "languageLabel": "Idioma",
+    "english": "Inglés",
+    "spanish": "Español",
+    "motionLabel": "Preferencia de movimiento",
+    "motionSystem": "Usar preferencia de movimiento del sistema",
+    "motionReduced": "Reducir movimiento"
+  },
+  "accessibility": {
+    "skipToContent": "Saltar al contenido principal",
+    "projectImageAlt": "Vista previa de la interfaz de {{project}}",
+    "portraitAlt": "Retrato de {{name}}",
+    "breadcrumbLabel": "Navegación de migas de pan",
+    "paginationLabel": "Paginación",
+    "currentPage": "Página actual: {{page}}",
+    "openProject": "Ver proyecto: {{project}}",
+    "viewSource": "Ver código fuente de {{project}}",
+    "openDemo": "Abrir demo de {{project}}"
+  },
+  "notFound": {
+    "title": "Página no encontrada",
+    "description": "Esta página pudo haberse movido o la dirección puede ser incorrecta."
+  },
+  "footer": {
+    "description": "Ingeniería de software, interfaces con criterio y aprendizaje continuo.",
+    "copyright": "Copyright {{year}} {{name}}.",
+    "source": "Código fuente del sitio"
+  },
+  "professionalWork": {
+    "title": "Responsabilidades actuales de ingeniería",
+    "intro": "Ownership de funcionalidades, alineación UX y modernización frontend en Teradata.",
+    "opf": {
+      "title": "OPF",
+      "summary": "Asumo la implementación de nuevas funcionalidades y la alineación de la aplicación existente con diseños UX y principios de diseño establecidos.",
+      "contribution": "Traduzco diseños UX en cambios de aplicación asumiendo responsabilidad por la implementación funcional y consistencia de interfaz."
+    },
+    "consumptionUsage": {
+      "title": "Consumption/Usage",
+      "summary": "Lidero e implemento una migración en curso de Angular a React mientras continúa el desarrollo de funcionalidades y alineación UX.",
+      "architecture": "Integro la aplicación de React como remoto dentro del monorepo existente.",
+      "constraint": "Mantengo implementaciones Angular y React en paralelo durante la migración.",
+      "contribution": "Asumo responsabilidad del enfoque e implementación de la migración junto con la entrega de nuevas funcionalidades."
+    }
+  }
+}

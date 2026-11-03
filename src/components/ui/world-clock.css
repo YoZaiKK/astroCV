@@ -1,5 +1,6 @@
 .world-clock-demo { width: 100%; max-width: 32rem; min-width: 0; }
 .world-clock-card {
+	position: relative;
 	display: grid;
 	grid-template-rows: auto minmax(0, 1fr) auto;
 	gap: 0.75rem;
@@ -17,15 +18,18 @@
 	justify-content: space-between;
 	gap: 0.75rem;
 }
-.world-clock-header h2 { margin: 0; font-size: clamp(1rem, 2vw, 1.2rem); }
+.world-clock-header h3 { margin: 0; font-size: clamp(1rem, 2vw, 1.2rem); }
+.world-clock-header { padding-top: 1rem; }
 .world-clock-location { color: var(--color-muted); font-size: 0.85rem; text-align: right; }
-.world-clock-body { justify-content: center; min-height: 0; }
+.world-clock-body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(6rem, 8rem); justify-content: center; min-height: 0; }
 .analog-clock {
 	position: relative;
 	display: grid;
-	width: min(12rem, 48vw);
-	height: min(12rem, 48vw);
-	flex: 0 1 12rem;
+	width: 100%;
+	max-width: 12rem;
+	height: auto;
+	aspect-ratio: 1;
+	justify-self: center;
 	place-items: center;
 	overflow: hidden;
 	border: 6px solid var(--color-ink);
@@ -67,13 +71,23 @@
 	cursor: pointer;
 }
 .clock-controls button:hover { background: var(--color-surface-muted); }
-.clock-controls button[aria-pressed='true'] { border-color: var(--color-accent); color: white; background: var(--color-accent); }
+.clock-controls button[aria-pressed='true'] { border-color: var(--color-accent); color: var(--color-on-accent); background: var(--color-accent); }
 .clock-controls button:disabled { cursor: default; opacity: 0.6; }
 .clock-time { color: var(--color-muted); font-size: 0.95rem; font-variant-numeric: tabular-nums; }
 .clock-templates { display: none; }
 
 @media (max-width: 34rem) {
-	.world-clock-body { gap: 0.5rem; }
-	.clock-controls { flex-basis: 7rem; }
-	.clock-controls button { padding-inline: 0.55rem; font-size: 0.8rem; }
+	.world-clock-card { aspect-ratio: auto; grid-template-rows: auto auto auto; gap: 1rem; }
+	.world-clock-header { flex-wrap: wrap; }
+	.world-clock-body { grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+	.analog-clock { max-width: 10rem; }
+	.clock-controls { grid-template-columns: repeat(3, minmax(0, 1fr)); width: 100%; }
+	.clock-controls button { min-width: 0; padding-inline: 0.4rem; font-size: 0.8rem; text-align: center; overflow-wrap: anywhere; }
+	.world-clock-footer { justify-content: center; }
+}
+
+@media (max-width: 24rem) {
+	.world-clock-header { flex-direction: column; align-items: flex-start; gap: 0.25rem; }
+	.world-clock-location { text-align: left; }
+	.clock-controls { grid-template-columns: minmax(0, 1fr); }
 }

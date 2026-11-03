@@ -9,9 +9,11 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "test": "node --test src/components/ConwaysLife/helpers.test.ts src/components/LanguageSelect/navigation.test.ts src/components/layout/resume-download.test.ts"
   },
   "dependencies": {
+    "@lucide/astro": "^1.66.0",
     "astro": "^7.4.4"
   }
 }

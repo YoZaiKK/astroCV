@@ -262,7 +262,7 @@
     "spanish": "Spanish",
     "english": "English",
     "native": "Native",
-    "upperIntermediate": "Upper-intermediate (B2, self-assessed)"
+    "upperIntermediate": "Upper-intermediate (B2)"
   },
   "contact": {
     "title": "Get in touch",
@@ -291,6 +291,7 @@
     "system": "Use system preference",
     "languageLabel": "Language",
     "english": "English",
+    "spanish": "Spanish",
     "motionLabel": "Motion preference",
     "motionSystem": "Use system motion preference",
     "motionReduced": "Reduce motion"

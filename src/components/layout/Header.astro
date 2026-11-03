@@ -1,12 +1,15 @@
 ---
+import { Sun, Moon } from '@lucide/astro';
+import LanguageSelect from '../LanguageSelect/LanguageSelect.astro';
 import { resumePath } from '../../data/content';
-import { t } from '../../i18n';
+import { type Locale, t } from '../../i18n';
 
 interface Props {
 	name: string;
+	locale: Locale;
 }
 
-const { name } = Astro.props;
+const { name, locale } = Astro.props;
 const links = [
 	['about', t('navigation.about')],
 	['experience', t('navigation.experience')],
@@ -28,7 +31,31 @@ const links = [
 			<ul>
 				{links.map(([id, label]) => <li><a href={`#${id}`}>{label}</a></li>)}
 			</ul>
-			<a class="button button-small" href={resumePath} download>{t('common.downloadResume')}</a>
+			<div class="header-actions">
+				<LanguageSelect locale={locale} />
+				<div class="theme-controls">
+					<button
+						class="theme-toggle"
+						type="button"
+						data-theme-toggle
+						data-theme-label={t('preferences.themeLabel')}
+						data-light-label={t('preferences.light')}
+						data-dark-label={t('preferences.dark')}
+						aria-pressed="false"
+						aria-label={t('preferences.themeLabel')}
+						disabled
+					>
+						<Sun class="icon-sun" size={20} aria-hidden="true" />
+						<Moon class="icon-moon" size={20} aria-hidden="true" />
+						<span class="sr-only" data-theme-state>{t('preferences.light')}</span>
+					</button>
+					<label class="theme-auto">
+						<input type="checkbox" data-theme-auto aria-label={`Auto: ${t('preferences.system')}`} checked />
+						<span>Auto</span>
+					</label>
+				</div>
+				<a class="button button-small" href={resumePath} download>{t('common.downloadResume')}</a>
+			</div>
 		</nav>
 	</div>
 </header>
@@ -36,6 +63,24 @@ const links = [
 <script>
 	const button = document.querySelector<HTMLButtonElement>('.menu-button');
 	const navigation = document.querySelector<HTMLElement>('#primary-navigation');
+	const themeToggle = document.querySelector<HTMLButtonElement>('[data-theme-toggle]');
+	const themeAuto = document.querySelector<HTMLInputElement>('[data-theme-auto]');
+	const themeState = themeToggle?.querySelector<HTMLElement>('[data-theme-state]');
+	const root = document.documentElement;
+	const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
+	let followsSystem = root.dataset.themeMode === 'system';
+
+	const applyTheme = (theme: 'light' | 'dark') => {
+		root.dataset.theme = theme;
+		root.dataset.themeMode = followsSystem ? 'system' : theme;
+		if (themeAuto) themeAuto.checked = followsSystem;
+		if (themeToggle) themeToggle.disabled = followsSystem;
+		themeToggle?.setAttribute('aria-pressed', String(theme === 'dark'));
+		if (!themeToggle || !themeState) return;
+		const label = theme === 'dark' ? themeToggle.dataset.darkLabel : themeToggle.dataset.lightLabel;
+		themeState.textContent = label ?? '';
+		themeToggle.setAttribute('aria-label', `${themeToggle.dataset.themeLabel}: ${label}`);
+	};
 
 	button?.addEventListener('click', () => {
 		const open = button.getAttribute('aria-expanded') === 'true';
@@ -49,4 +94,34 @@ const links = [
 			navigation?.classList.remove('is-open');
 		});
 	});
+
+	const initialTheme = root.dataset.theme === 'dark' ? 'dark' : 'light';
+	applyTheme(initialTheme);
+	systemTheme.addEventListener('change', (event) => {
+		if (followsSystem) applyTheme(event.matches ? 'dark' : 'light');
+	});
+
+	themeToggle?.addEventListener('click', () => {
+		if (followsSystem) return;
+		const nextTheme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+		followsSystem = false;
+		applyTheme(nextTheme);
+		try {
+			localStorage.setItem('theme', nextTheme);
+		} catch {
+			/* no-op */
+		}
+	});
+
+	themeAuto?.addEventListener('change', () => {
+		followsSystem = themeAuto.checked;
+		const theme = followsSystem ? (systemTheme.matches ? 'dark' : 'light') : (root.dataset.theme === 'dark' ? 'dark' : 'light');
+		applyTheme(theme);
+		try {
+			localStorage.setItem('theme', followsSystem ? 'system' : theme);
+		} catch {
+			/* The current selection still works when storage is unavailable. */
+		}
+	});
+
 </script>
