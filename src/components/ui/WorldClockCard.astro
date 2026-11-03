@@ -1,0 +1,57 @@
+---
+import { t } from '../../i18n';
+import './world-clock.css';
+
+const locations = [
+	{ label: t('clock.tokyo'), timezone: 'Asia/Tokyo' },
+	{ label: t('clock.mexicoCity'), timezone: 'America/Mexico_City' },
+	{ label: t('clock.yourLocation'), timezone: 'local' },
+];
+
+const mexicoCity = locations[1];
+---
+
+<div class="world-clock-demo">
+	<world-clock class="world-clock-card" role="group" aria-labelledby="world-clock-title" data-timezone={mexicoCity.timezone} data-location={mexicoCity.label}>
+		<div class="world-clock-header">
+			<h3 id="world-clock-title">{t('clock.title')}</h3>
+			<span class="world-clock-location" data-location-output>{mexicoCity.label}</span>
+		</div>
+		<div class="world-clock-body">
+			<div class="analog-clock" role="img" aria-label={t('clock.analogLabel', { location: mexicoCity.label })}>
+				<span class="clock-hand clock-hand-hour"></span>
+				<span class="clock-hand clock-hand-minute"></span>
+				<span class="clock-hand clock-hand-second"></span>
+				<span class="clock-center"></span>
+			</div>
+			<div class="clock-controls" aria-label={t('clock.title')}>
+				{locations.map((location) => (
+					<button
+						type="button"
+						data-timezone={location.timezone}
+						data-location={location.label}
+						aria-pressed={location.timezone === mexicoCity.timezone ? 'true' : 'false'}
+						disabled
+					>
+						{location.label}
+					</button>
+				))}
+			</div>
+		</div>
+		<div class="world-clock-footer">
+			<output class="clock-time" data-time aria-live="polite">--:--:--</output>
+		</div>
+		<span
+			class="clock-templates"
+			aria-hidden="true"
+			data-time-template={t('clock.timeLabel', { location: '{{location}}' })}
+			data-analog-template={t('clock.analogLabel', { location: '{{location}}' })}
+		></span>
+	</world-clock>
+</div>
+
+<script>
+	import { WorldClock } from './world-clock-controller';
+
+	if (!customElements.get('world-clock')) customElements.define('world-clock', WorldClock);
+</script>

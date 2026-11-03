@@ -1,0 +1,79 @@
+.world-clock-demo { width: 100%; max-width: 32rem; min-width: 0; }
+.world-clock-card {
+	display: grid;
+	grid-template-rows: auto minmax(0, 1fr) auto;
+	gap: 0.75rem;
+	width: 100%;
+	aspect-ratio: 1;
+	padding: clamp(0.75rem, 2vw, 1.5rem);
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius);
+	background: var(--color-surface);
+	box-shadow: var(--shadow);
+}
+.world-clock-header, .world-clock-footer, .world-clock-body {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.75rem;
+}
+.world-clock-header h2 { margin: 0; font-size: clamp(1rem, 2vw, 1.2rem); }
+.world-clock-location { color: var(--color-muted); font-size: 0.85rem; text-align: right; }
+.world-clock-body { justify-content: center; min-height: 0; }
+.analog-clock {
+	position: relative;
+	display: grid;
+	width: min(12rem, 48vw);
+	height: min(12rem, 48vw);
+	flex: 0 1 12rem;
+	place-items: center;
+	overflow: hidden;
+	border: 6px solid var(--color-ink);
+	border-radius: 50%;
+	background: repeating-conic-gradient(from -1.5deg, var(--color-ink) 0deg 3deg, transparent 3deg 30deg), var(--color-surface);
+}
+.analog-clock::after {
+	position: absolute;
+	width: 86%;
+	height: 86%;
+	border-radius: 50%;
+	background: var(--color-surface);
+	content: "";
+}
+.clock-hand {
+	position: absolute;
+	z-index: 1;
+	bottom: 50%;
+	left: calc(50% - 2px);
+	width: 4px;
+	transform-origin: bottom center;
+	border-radius: 999px;
+	background: var(--color-ink);
+}
+.clock-hand-hour { height: 30%; }
+.clock-hand-minute { height: 42%; }
+.clock-hand-second { width: 2px; height: 47%; background: var(--color-accent); }
+.clock-center { z-index: 2; width: 0.75rem; height: 0.75rem; border-radius: 50%; background: var(--color-accent); }
+.clock-controls { display: grid; flex: 0 1 8rem; gap: 0.5rem; }
+.clock-controls button {
+	min-height: 2.75rem;
+	padding: 0.4rem 0.75rem;
+	border: 1px solid var(--color-border);
+	border-radius: 0.4rem;
+	color: var(--color-accent);
+	background: var(--color-surface);
+	font-weight: 650;
+	text-align: left;
+	cursor: pointer;
+}
+.clock-controls button:hover { background: var(--color-surface-muted); }
+.clock-controls button[aria-pressed='true'] { border-color: var(--color-accent); color: white; background: var(--color-accent); }
+.clock-controls button:disabled { cursor: default; opacity: 0.6; }
+.clock-time { color: var(--color-muted); font-size: 0.95rem; font-variant-numeric: tabular-nums; }
+.clock-templates { display: none; }
+
+@media (max-width: 34rem) {
+	.world-clock-body { gap: 0.5rem; }
+	.clock-controls { flex-basis: 7rem; }
+	.clock-controls button { padding-inline: 0.55rem; font-size: 0.8rem; }
+}

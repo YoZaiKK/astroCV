@@ -1,0 +1,57 @@
+.conways-life-demo { width: 100%; max-width: 32rem; min-width: 0; }
+conways-life { display: block; }
+.life-card {
+	display: grid;
+	grid-template-rows: auto minmax(0, 1fr) auto;
+	gap: 0.75rem;
+	width: 100%;
+	aspect-ratio: 1;
+	padding: clamp(0.75rem, 2vw, 1.5rem);
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius);
+	background: var(--color-surface);
+	box-shadow: var(--shadow);
+}
+.life-header, .life-footer, .life-tools { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; }
+.life-header h3 { margin: 0; font-size: clamp(1rem, 2vw, 1.2rem); }
+.life-card button { cursor: pointer; }
+.life-card button:disabled { cursor: default; opacity: 0.6; }
+.life-play {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.4rem;
+	min-width: 5.5rem;
+	min-height: 2.75rem;
+	padding: 0.4rem 0.75rem;
+	border: 1px solid var(--color-accent);
+	border-radius: 0.45rem;
+	background: var(--color-accent);
+	color: white;
+	font-weight: 650;
+}
+.life-play:hover { background: var(--color-accent-dark); }
+.life-board {
+	display: grid;
+	grid-template-columns: repeat(var(--life-size, 20), minmax(0, 1fr));
+	grid-template-rows: repeat(var(--life-size, 20), minmax(0, 1fr));
+	gap: 1px;
+	justify-self: center;
+	height: 100%;
+	max-width: 100%;
+	min-height: 0;
+	aspect-ratio: 1;
+	border: 1px solid var(--color-border);
+	background: var(--color-border);
+}
+.life-cell { min-width: 0; min-height: 0; padding: 0; border: 0; border-radius: 0; background: var(--color-surface-muted); }
+.life-cell[aria-pressed='true'] { background: var(--color-accent); }
+.life-cell:hover { box-shadow: inset 0 0 0 1px var(--color-accent); }
+.life-cell:focus-visible { position: relative; z-index: 1; outline-offset: 0; }
+.life-generation { color: var(--color-muted); font-size: 0.8rem; font-variant-numeric: tabular-nums; }
+.life-tools button, .life-options button { cursor: pointer; min-height: 2.75rem; padding: 0.35rem 0.6rem; border: 1px solid var(--color-border); border-radius: 0.4rem; background: var(--color-surface); color: var(--color-accent); font-size: 0.85rem; }
+.life-tools button:hover, .life-options button:hover { background: var(--color-surface-muted); }
+.life-options { display: flex; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.75rem; }
+.life-options button:disabled { cursor: default; opacity: 0.6; }
+.life-pattern { flex: 1 1 7rem; color: var(--color-muted); font-size: 0.8rem; text-align: right; overflow-wrap: anywhere; }
+.life-hint { margin: 1rem 0 0; color: var(--color-muted); font-size: 0.9rem; }

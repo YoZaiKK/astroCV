@@ -1,6 +1,6 @@
 {
   "meta": {
-    "homeTitle": "{{name}} | Software Engineer",
+    "homeTitle": "{{name}} | Portfolio",
     "homeDescription": "Software engineer building enterprise applications with Angular, React, and TypeScript. Explore feature ownership, frontend migration work, projects, and engineering decisions.",
     "projectsTitle": "Projects | {{name}}",
     "projectTitle": "{{project}} | {{name}}",
@@ -11,7 +11,7 @@
     "home": "Home",
     "about": "About",
     "experience": "Experience",
-    "projects": "Projects",
+    "projects": "Lab",
     "skills": "Skills",
     "lab": "Frontend Lab",
     "notes": "Engineering Notes",
@@ -274,6 +274,15 @@
     "github": "GitHub",
     "linkedin": "LinkedIn",
     "leetcode": "LeetCode"
+  },
+  "clock": {
+    "title": "World clock",
+    "description": "A live analog clock with timezone controls.",
+    "tokyo": "Tokyo",
+    "mexicoCity": "Mexico City",
+    "yourLocation": "Your location",
+    "timeLabel": "Current time in {{location}}",
+    "analogLabel": "Analog clock showing time in {{location}}"
   },
   "preferences": {
     "themeLabel": "Color theme",

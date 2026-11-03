@@ -1,0 +1,56 @@
+---
+import { createInitialGrid } from './helpers';
+import './styles.css';
+
+const grid = createInitialGrid();
+---
+
+<div class="conways-life-demo">
+	<conways-life role="group" aria-label="Conways life">
+		<div class="life-card">
+			<div class="life-header">
+				<h3>Conways life</h3>
+				<button class="life-play" type="button" data-play aria-label="Play simulation" aria-pressed="false" disabled>
+					<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+						<path data-play-icon d="M4 2.5v11L13 8z" fill="currentColor" />
+					</svg>
+					<span data-play-label>Play</span>
+				</button>
+			</div>
+			<div class="life-board" role="group" aria-label="20 by 20 cell board. Use arrow keys to move and Space or Enter to toggle a cell.">
+				{grid.flatMap((line, row) => line.map((alive, column) => (
+					<button
+						type="button"
+						class="life-cell"
+						data-row={row}
+						data-column={column}
+						aria-label={`Row ${row + 1}, column ${column + 1}`}
+						aria-pressed={alive ? 'true' : 'false'}
+						tabindex={row === 0 && column === 0 ? 0 : -1}
+						disabled
+					/>
+				)))}
+			</div>
+			<div class="life-footer">
+				<span class="life-generation">Gen <span data-generation>0</span></span>
+				<div class="life-tools">
+					<button type="button" data-reset disabled>Reset</button>
+					<button type="button" data-clear disabled>Clear</button>
+				</div>
+			</div>
+		</div>
+		<div class="life-options">
+			<button type="button" data-size aria-label="Switch to 30 by 30 cells" disabled>20 × 20</button>
+			<button type="button" data-random disabled>Random</button>
+			<span class="life-pattern" data-pattern>Classic mix</span>
+		</div>
+		<span class="sr-only" data-status role="status" aria-live="polite"></span>
+	</conways-life>
+	<p class="life-hint">Select cells to create a pattern, then press Play. Three neighbors bring a cell to life; two or three keep it alive.</p>
+	<noscript><p class="life-hint">Enable JavaScript to run the simulation.</p></noscript>
+</div>
+
+<script>
+	import { ConwaysLife } from './controller';
+	if (!customElements.get('conways-life')) customElements.define('conways-life', ConwaysLife);
+</script>
