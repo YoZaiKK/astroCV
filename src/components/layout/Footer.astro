@@ -1,0 +1,23 @@
+---
+import { t } from '../../i18n';
+
+interface Props {
+	name: string;
+	githubUrl: string | null;
+}
+
+const { name, githubUrl } = Astro.props;
+---
+
+<footer class="site-footer">
+	<div class="container footer-content">
+		<div>
+			<p class="footer-name">{name}</p>
+			<p>{t('footer.description')}</p>
+		</div>
+		<div>
+			{githubUrl && <a href={githubUrl} target="_blank" rel="noreferrer">GitHub</a>}
+			<p>{t('footer.copyright', { year: new Date().getFullYear(), name })}</p>
+		</div>
+	</div>
+</footer>

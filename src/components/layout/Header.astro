@@ -1,0 +1,52 @@
+---
+import { resumePath } from '../../data/content';
+import { t } from '../../i18n';
+
+interface Props {
+	name: string;
+}
+
+const { name } = Astro.props;
+const links = [
+	['about', t('navigation.about')],
+	['experience', t('navigation.experience')],
+	['projects', t('navigation.projects')],
+	['skills', t('navigation.skills')],
+	['education', t('navigation.education')],
+	['contact', t('navigation.contact')],
+];
+---
+
+<header class="site-header">
+	<div class="container header-content">
+		<a class="brand" href="#main-content" aria-label={`${name} home`}>{name}</a>
+		<button class="menu-button" type="button" aria-expanded="false" aria-controls="primary-navigation">
+			<span class="menu-icon" aria-hidden="true"></span>
+			<span class="sr-only">{t('navigation.openMenu')}</span>
+		</button>
+		<nav id="primary-navigation" aria-label={t('navigation.primaryLabel')}>
+			<ul>
+				{links.map(([id, label]) => <li><a href={`#${id}`}>{label}</a></li>)}
+			</ul>
+			<a class="button button-small" href={resumePath} download>{t('common.downloadResume')}</a>
+		</nav>
+	</div>
+</header>
+
+<script>
+	const button = document.querySelector<HTMLButtonElement>('.menu-button');
+	const navigation = document.querySelector<HTMLElement>('#primary-navigation');
+
+	button?.addEventListener('click', () => {
+		const open = button.getAttribute('aria-expanded') === 'true';
+		button.setAttribute('aria-expanded', String(!open));
+		navigation?.classList.toggle('is-open', !open);
+	});
+
+	navigation?.querySelectorAll('a').forEach((link) => {
+		link.addEventListener('click', () => {
+			button?.setAttribute('aria-expanded', 'false');
+			navigation?.classList.remove('is-open');
+		});
+	});
+</script>

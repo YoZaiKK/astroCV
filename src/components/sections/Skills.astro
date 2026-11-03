@@ -1,0 +1,33 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import { portfolio } from '../../data/content';
+import { t } from '../../i18n';
+---
+
+<section id="skills" class="section section-muted" aria-labelledby="skills-title">
+	<div class="container">
+		<SectionHeading id="skills-title" title={t('skills.title')} intro={t('skills.intro')} />
+		<div class="skills-grid">
+			<article class="skill-group">
+				<h3>{t('skills.core.title')}</h3>
+				<p>{t('skills.core.description')}</p>
+				<ul class="tag-list">{portfolio.skills.core.map((skill) => <li>{skill}</li>)}</ul>
+			</article>
+			<article class="skill-group">
+				<h3>{t('skills.additional.title')}</h3>
+				<p>{t('skills.additional.description')}</p>
+				{Object.entries(portfolio.skills.additional).map(([group, skills]) => (
+					<div class="skill-subgroup">
+						<h4>{t(`skills.groups.${group}`)}</h4>
+						<ul class="tag-list">{skills.map((skill) => <li>{skill}</li>)}</ul>
+					</div>
+				))}
+			</article>
+			<article class="skill-group">
+				<h3>{t('skills.growth.title')}</h3>
+				<p>{t('skills.growth.description')}</p>
+				<ul class="tag-list">{portfolio.skills.growth.map((skill) => <li>{skill}</li>)}</ul>
+			</article>
+		</div>
+	</div>
+</section>

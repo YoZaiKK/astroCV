@@ -1,0 +1,48 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import { t } from '../../i18n';
+
+interface Props {
+	email: string;
+	githubUrl: string | null;
+	linkedinUrl: string | null;
+	leetcodeUrl: string | null;
+}
+
+const { email, githubUrl, linkedinUrl, leetcodeUrl } = Astro.props;
+const isValidUrl = (value: string | null) => value !== null && /^https?:\/\//.test(value);
+---
+
+<section id="contact" class="section section-muted" aria-labelledby="contact-title">
+	<div class="container contact-content">
+		<SectionHeading id="contact-title" title={t('contact.title')} intro={t('contact.description')} />
+		<div class="contact-actions">
+			<a class="button" href={`mailto:${email}`}>{t('contact.email')}</a>
+			<code>{email}</code>
+			<button class="button button-secondary" type="button" data-email={email}>{t('contact.copyEmail')}</button>
+		</div>
+		<p class="copy-status" aria-live="polite"></p>
+		<div class="profile-links">
+			{isValidUrl(githubUrl) && <a href={githubUrl} target="_blank" rel="noreferrer">{t('contact.github')}</a>}
+			{isValidUrl(linkedinUrl) && <a href={linkedinUrl} target="_blank" rel="noreferrer">{t('contact.linkedin')}</a>}
+			{isValidUrl(leetcodeUrl) && <a href={leetcodeUrl} target="_blank" rel="noreferrer">{t('contact.leetcode')}</a>}
+		</div>
+	</div>
+</section>
+
+<script>
+	const copyButton = document.querySelector<HTMLButtonElement>('[data-email]');
+	const status = document.querySelector<HTMLElement>('.copy-status');
+
+	copyButton?.addEventListener('click', async () => {
+		const email = copyButton.dataset.email;
+		if (!email || !status) return;
+
+		try {
+			await navigator.clipboard.writeText(email);
+			status.textContent = 'Email address copied.';
+		} catch {
+			status.textContent = 'The email address could not be copied. You can select and copy it manually.';
+		}
+	});
+</script>

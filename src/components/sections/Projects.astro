@@ -1,0 +1,35 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import { publishedProjects } from '../../data/content';
+import { t } from '../../i18n';
+
+const isValidUrl = (value: string | null) => value !== null && /^https?:\/\//.test(value);
+---
+
+<section id="projects" class="section" aria-labelledby="projects-title">
+	<div class="container">
+		<SectionHeading id="projects-title" title={t('projects.title')} intro={t('projects.intro')} />
+		{publishedProjects.length === 0 ? (
+			<p class="empty-message">{t('projects.empty')}</p>
+		) : (
+			<div class="project-grid">
+				{publishedProjects.map((project) => (
+					<article class="project-card">
+						{isValidUrl(project.imageUrl) && <img src={project.imageUrl} alt={t('accessibility.projectImageAlt', { project: t(`${project.contentKey}.title`) })} />}
+						<div class="project-card-content">
+							<p class="eyebrow">{t(`projects.status.${project.status}`)}</p>
+							<h3>{t(`${project.contentKey}.title`)}</h3>
+							<p>{t(`${project.contentKey}.summary`)}</p>
+							{project.technologies.length > 0 && <ul class="tag-list">{project.technologies.map((technology) => <li>{technology}</li>)}</ul>}
+							<div class="project-links">
+								{project.caseStudyPath && <a href={project.caseStudyPath}>{t('common.readCaseStudy')}</a>}
+								{isValidUrl(project.sourceUrl) && <a href={project.sourceUrl} target="_blank" rel="noreferrer">{t('common.viewSource')}</a>}
+								{isValidUrl(project.demoUrl) && <a href={project.demoUrl} target="_blank" rel="noreferrer">{t('common.viewDemo')}</a>}
+							</div>
+						</div>
+					</article>
+				))}
+			</div>
+		)}
+	</div>
+</section>

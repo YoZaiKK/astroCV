@@ -1,0 +1,38 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import { portfolio } from '../../data/content';
+import { t } from '../../i18n';
+
+const formatDate = (date: string | null) =>
+	date ? new Intl.DateTimeFormat('en', { month: 'short', year: 'numeric' }).format(new Date(`${date}-01T00:00:00`)) : t('common.present');
+---
+
+<section id="experience" class="section section-muted" aria-labelledby="experience-title">
+	<div class="container">
+		<SectionHeading id="experience-title" title={t('experience.title')} intro={t('experience.intro')} />
+		<div class="timeline">
+			{portfolio.experience.map((entry) => (
+				<article class="experience-card">
+					<div class="experience-meta">
+						<p>{formatDate(entry.startDate)} — {formatDate(entry.endDate)}</p>
+						<p>{entry.company}</p>
+					</div>
+					<div>
+						<h3>{t(`${entry.contentKey}.role`)}</h3>
+						<p>{t(`${entry.contentKey}.summary`)}</p>
+						{entry.focusAreas && <p class="current-work">{t('about.currentWork')}</p>}
+						<h4>{t('experience.responsibilitiesLabel')}</h4>
+						<ul>
+							{entry.highlightIds.map((id) => <li>{t(`${entry.contentKey}.highlights.${id}`)}</li>)}
+						</ul>
+						{entry.technologies.length > 0 && (
+							<ul class="tag-list" aria-label={`${entry.company} technologies`}>
+								{entry.technologies.map((technology) => <li>{technology}</li>)}
+							</ul>
+						)}
+					</div>
+				</article>
+			))}
+		</div>
+	</div>
+</section>

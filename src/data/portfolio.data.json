@@ -1,0 +1,321 @@
+{
+  "schemaVersion": 1,
+  "locale": "en",
+  "profile": {
+    "name": "Guillermo Cardona Gómez",
+    "email": "guillermo.cardona.gt@gmail.com",
+    "githubUrl": "https://github.com/YoZaiKK",
+    "leetcodeUrl": "https://leetcode.com/u/YoZaiKK/",
+    "linkedinUrl": null,
+    "resumeUrl": null,
+    "portraitUrl": null
+  },
+  "features": {
+    "lab": false,
+    "notes": false,
+    "languageSwitcher": false,
+    "contactForm": false
+  },
+  "experience": [
+    {
+      "id": "teradata-engineer",
+      "company": "Teradata",
+      "startDate": "2024-09",
+      "endDate": null,
+      "contentKey": "experience.teradataEngineer",
+      "highlightIds": [
+        "migration",
+        "uxAlignment",
+        "ownership",
+        "delivery",
+        "architecture",
+        "integration",
+        "collaboration",
+        "ai"
+      ],
+      "technologies": [
+        "Angular",
+        "React",
+        "TypeScript",
+        "RxJS",
+        "Nx",
+        "Angular Signals",
+        "Jest"
+      ],
+      "focusAreas": [
+        {
+          "id": "consumption-usage",
+          "contentKey": "professionalWork.consumptionUsage",
+          "status": "inProgress",
+          "technologies": [
+            "Angular",
+            "React",
+            "TypeScript",
+            "Nx"
+          ]
+        },
+        {
+          "id": "opf",
+          "contentKey": "professionalWork.opf",
+          "status": "inProgress",
+          "technologies": []
+        }
+      ]
+    },
+    {
+      "id": "teradata-intern",
+      "company": "Teradata",
+      "startDate": "2023-09",
+      "endDate": "2024-09",
+      "contentKey": "experience.teradataIntern",
+      "highlightIds": [
+        "development",
+        "collaboration"
+      ],
+      "technologies": [
+        "Angular",
+        "TypeScript"
+      ]
+    },
+    {
+      "id": "axolote",
+      "company": "Axolote Web Team",
+      "startDate": "2023-05",
+      "endDate": "2024-05",
+      "contentKey": "experience.axolote",
+      "highlightIds": [
+        "delivery",
+        "contribution"
+      ],
+      "technologies": []
+    }
+  ],
+  "education": {
+    "institution": "Escuela Superior de Cómputo",
+    "university": "Instituto Politécnico Nacional",
+    "completedDate": "2025-01",
+    "degreeKey": "education.degree",
+    "completionKey": "education.completion",
+    "languages": [
+      {
+        "languageKey": "education.spanish",
+        "levelKey": "education.native"
+      },
+      {
+        "languageKey": "education.english",
+        "levelKey": "education.upperIntermediate"
+      }
+    ]
+  },
+  "skills": {
+    "core": [
+      "Angular",
+      "React",
+      "TypeScript",
+      "RxJS",
+      "Nx",
+      "Angular Signals",
+      "Jest",
+      "REST APIs"
+    ],
+    "additional": {
+      "languages": [
+        "JavaScript",
+        "Python",
+        "SQL"
+      ],
+      "frontend": [
+        "Next.js",
+        "HTML",
+        "CSS",
+        "Angular Material",
+        "Material UI",
+        "Tailwind CSS"
+      ],
+      "backend": [
+        "Node.js",
+        "Express",
+        "Django",
+        "Flask"
+      ],
+      "databases": [
+        "PostgreSQL",
+        "MySQL",
+        "MongoDB"
+      ],
+      "infrastructure": [
+        "Docker",
+        "Kubernetes",
+        "Linux",
+        "Bash"
+      ],
+      "testing": [
+        "Git",
+        "CI/CD",
+        "Agile",
+        "Scrum",
+        "Kanban",
+        "Jira",
+        "Data Structures & Algorithms"
+      ]
+    },
+    "growth": [
+      "FastAPI",
+      "PostgreSQL",
+      "Go",
+      "Cloud",
+      "Distributed Systems"
+    ]
+  },
+  "projects": [
+    {
+      "id": "opf",
+      "contentKey": "projects.cards.opf",
+      "category": "professional",
+      "filterTags": [
+        "frontend",
+        "engineering"
+      ],
+      "status": "inProgress",
+      "published": false,
+      "featured": false,
+      "technologies": [],
+      "sourceUrl": null,
+      "demoUrl": null,
+      "imageUrl": null,
+      "caseStudyPath": null,
+      "reviewBeforePublishing": [
+        "Document personal contributions and technical decisions",
+        "Include only material that can be shared publicly",
+        "Keep the ongoing status clear and add results only when verified"
+      ]
+    },
+    {
+      "id": "consumption-usage",
+      "contentKey": "projects.cards.consumptionUsage",
+      "category": "professional",
+      "filterTags": [
+        "frontend",
+        "engineering"
+      ],
+      "status": "inProgress",
+      "published": false,
+      "featured": false,
+      "technologies": [
+        "Angular",
+        "React",
+        "TypeScript",
+        "Nx"
+      ],
+      "sourceUrl": null,
+      "demoUrl": null,
+      "imageUrl": null,
+      "caseStudyPath": null,
+      "reviewBeforePublishing": [
+        "Document personal contributions and technical decisions",
+        "Include only material that can be shared publicly",
+        "Keep the ongoing status clear and add results only when verified"
+      ]
+    },
+    {
+      "id": "fragrance-website",
+      "contentKey": "projects.cards.fragranceWebsite",
+      "category": "professional",
+      "filterTags": [
+        "frontend",
+        "fullStack"
+      ],
+      "status": "delivered",
+      "published": false,
+      "featured": false,
+      "technologies": [],
+      "sourceUrl": null,
+      "demoUrl": null,
+      "imageUrl": null,
+      "caseStudyPath": null,
+      "reviewBeforePublishing": [
+        "Confirm the actual stack",
+        "Document personal contributions",
+        "Add public evidence and verify client material can be shared"
+      ]
+    },
+    {
+      "id": "connection-manager",
+      "contentKey": "projects.cards.connectionManager",
+      "category": "professional",
+      "filterTags": [
+        "frontend",
+        "engineering"
+      ],
+      "status": "inProgress",
+      "published": false,
+      "featured": false,
+      "technologies": [],
+      "sourceUrl": null,
+      "demoUrl": null,
+      "imageUrl": null,
+      "caseStudyPath": null,
+      "reviewBeforePublishing": [
+        "Validate the scope and current status",
+        "Write an abstract account without internal implementation details",
+        "Include only material that can be shared publicly"
+      ]
+    },
+    {
+      "id": "connection-explorer",
+      "contentKey": "projects.cards.connectionExplorer",
+      "category": "personal",
+      "filterTags": [
+        "frontend",
+        "engineering"
+      ],
+      "status": "planned",
+      "published": false,
+      "featured": false,
+      "technologies": [],
+      "proposedTechnologies": [
+        "Angular",
+        "TypeScript",
+        "Angular Signals"
+      ],
+      "sourceUrl": null,
+      "demoUrl": null,
+      "imageUrl": null,
+      "caseStudyPath": null,
+      "reviewBeforePublishing": [
+        "Build the demo with synthetic data",
+        "Add meaningful behavior tests",
+        "Record evidence and document design decisions"
+      ]
+    },
+    {
+      "id": "engineering-project-tracker",
+      "contentKey": "projects.cards.fullStackTracker",
+      "category": "learning",
+      "filterTags": [
+        "fullStack",
+        "engineering"
+      ],
+      "status": "planned",
+      "published": false,
+      "featured": false,
+      "technologies": [],
+      "proposedTechnologies": [
+        "Angular",
+        "Python",
+        "FastAPI",
+        "PostgreSQL",
+        "Docker"
+      ],
+      "sourceUrl": null,
+      "demoUrl": null,
+      "imageUrl": null,
+      "caseStudyPath": null,
+      "reviewBeforePublishing": [
+        "Implement one end-to-end workflow",
+        "Verify authorization and API integration",
+        "Document schema, migrations, trade-offs, and deployment"
+      ]
+    }
+  ]
+}

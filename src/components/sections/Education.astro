@@ -1,0 +1,25 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import { portfolio } from '../../data/content';
+import { t } from '../../i18n';
+---
+
+<section id="education" class="section" aria-labelledby="education-title">
+	<div class="container">
+		<SectionHeading id="education-title" title={t('education.title')} />
+		<div class="education-grid">
+			<article>
+				<h3>{t(portfolio.education.degreeKey)}</h3>
+				<p>{portfolio.education.institution}</p>
+				<p>{portfolio.education.university}</p>
+				<p>{t(portfolio.education.completionKey)}</p>
+			</article>
+			<article>
+				<h3>{t('education.languagesTitle')}</h3>
+				<ul class="language-list">
+					{portfolio.education.languages.map((language) => <li><strong>{t(language.languageKey)}</strong><span>{t(language.levelKey)}</span></li>)}
+				</ul>
+			</article>
+		</div>
+	</div>
+</section>

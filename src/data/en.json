@@ -1,0 +1,325 @@
+{
+  "meta": {
+    "homeTitle": "{{name}} | Software Engineer",
+    "homeDescription": "Software engineer building enterprise applications with Angular, React, and TypeScript. Explore feature ownership, frontend migration work, projects, and engineering decisions.",
+    "projectsTitle": "Projects | {{name}}",
+    "projectTitle": "{{project}} | {{name}}",
+    "labTitle": "Frontend Lab | {{name}}",
+    "notFoundTitle": "Page not found | {{name}}"
+  },
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "experience": "Experience",
+    "projects": "Projects",
+    "skills": "Skills",
+    "lab": "Frontend Lab",
+    "notes": "Engineering Notes",
+    "education": "Education",
+    "contact": "Contact",
+    "openMenu": "Open navigation menu",
+    "closeMenu": "Close navigation menu",
+    "primaryLabel": "Main navigation"
+  },
+  "common": {
+    "viewProjects": "View projects",
+    "viewProject": "View project",
+    "readCaseStudy": "Read case study",
+    "viewSource": "View source code",
+    "viewDemo": "Open live demo",
+    "watchDemo": "Watch demo",
+    "downloadResume": "Download resume",
+    "resumeUnavailable": "Resume download is currently unavailable.",
+    "backToProjects": "Back to projects",
+    "backToHome": "Back to home",
+    "backToTop": "Back to top",
+    "learnMore": "Learn more",
+    "showDetails": "Show details",
+    "hideDetails": "Hide details",
+    "present": "Present",
+    "loading": "Loading...",
+    "tryAgain": "Try again",
+    "clearFilters": "Clear filters",
+    "close": "Close",
+    "previous": "Previous",
+    "next": "Next",
+    "readMore": "Read more",
+    "externalLink": "Opens in a new tab",
+    "lastUpdated": "Last updated: {{date}}",
+    "error": "Something went wrong. Please try again."
+  },
+  "hero": {
+    "eyebrow": "Software Engineer",
+    "headline": "Building reliable interfaces. Taking ownership beyond the UI.",
+    "description": "I build and maintain enterprise applications with Angular, React, and TypeScript, taking features from requirements and technical design through integration, testing, debugging, and delivery.",
+    "focus": "Frontend depth, technical ownership, and a growing backend foundation."
+  },
+  "about": {
+    "title": "About me",
+    "intro": "I am a software engineer with experience building enterprise applications and collaborating across teams to deliver maintainable solutions.",
+    "background": "My work at Teradata includes ownership of OPF and Consumption/Usage, frontend development, API integration, automated testing, and troubleshooting across application and infrastructure boundaries.",
+    "approach": "I care about understanding the problem, making technical decisions explicit, and keeping software understandable for the people who maintain it.",
+    "direction": "I am deepening my Angular, React, and TypeScript expertise while expanding my backend and system design skills.",
+    "principles": {
+      "ownership": {
+        "title": "Own the outcome",
+        "description": "Follow a feature from requirements to delivery, including integration issues and cross-team coordination."
+      },
+      "maintainability": {
+        "title": "Build for maintenance",
+        "description": "Prefer clear responsibilities, reusable components, and tests that protect meaningful behavior."
+      },
+      "problemSolving": {
+        "title": "Investigate across boundaries",
+        "description": "Trace issues beyond the interface when APIs, authentication, or deployment environments affect the user experience."
+      }
+    },
+    "currentWork": "I lead the Consumption/Usage migration from Angular to a React remote within the existing monorepo, maintaining both implementations while continuing feature development and UX alignment."
+  },
+  "experience": {
+    "title": "Professional experience",
+    "intro": "Enterprise development, feature ownership, and collaborative delivery.",
+    "responsibilitiesLabel": "Responsibilities and contributions",
+    "teradataEngineer": {
+      "role": "Software Engineer - User Interface Engineer",
+      "summary": "Own feature development across OPF, Consumption/Usage, and Connection Manager, including an ongoing Angular-to-React migration, while contributing to enterprise applications across Console, AIS, and Notebooks.",
+      "highlights": {
+        "ownership": "Took end-to-end ownership of Connection Manager during a team transition, becoming a primary technical point of contact and coordinating implementation, technical decisions, and issue resolution across teams.",
+        "delivery": "Own features from requirements analysis and technical design through API integration, implementation, automated testing, cloud validation, debugging, and delivery.",
+        "integration": "Investigate integration issues involving frontend applications, backend APIs, authentication flows, Kubernetes workloads, and remote cloud environments.",
+        "architecture": "Build maintainable enterprise interfaces with Angular, React, TypeScript, RxJS, Nx, Signals, reusable components, dependency injection, and Jest-based unit testing.",
+        "collaboration": "Coordinate with other engineering teams when problems cross application or service boundaries.",
+        "ai": "Use AI-assisted workflows to support code analysis, debugging, and repetitive engineering tasks.",
+        "migration": "Lead the technical direction and implementation of the Consumption/Usage migration from Angular to React, integrating React as a remote within the existing monorepo while maintaining both implementations in parallel.",
+        "uxAlignment": "Own new feature development across OPF and Consumption/Usage, aligning existing interfaces and new functionality with UX designs and established design principles."
+      }
+    },
+    "teradataIntern": {
+      "role": "User Interface Engineering Intern",
+      "summary": "Contributed to production enterprise UI applications before transitioning into a full-time software engineering role.",
+      "highlights": {
+        "development": "Developed practical experience with Angular, TypeScript, testing, API integration, and large-scale development practices.",
+        "collaboration": "Worked within collaborative development, code review, and Agile delivery processes."
+      }
+    },
+    "axolote": {
+      "role": "Full Stack Developer & Designer",
+      "summary": "Collaborated on a responsive web application for a fragrance business.",
+      "highlights": {
+        "delivery": "Built and delivered a client web application as part of a freelance development team.",
+        "contribution": "Contributed to UI/UX design, frontend development, backend functionality, and implementation of client requirements."
+      }
+    }
+  },
+  "projects": {
+    "title": "Selected projects",
+    "intro": "Explore the problem, my contribution, the technical decisions, and the evidence behind each project.",
+    "filtersLabel": "Filter projects",
+    "filters": {
+      "all": "All projects",
+      "frontend": "Frontend",
+      "fullStack": "Full stack",
+      "desktop": "Desktop",
+      "engineering": "Engineering"
+    },
+    "resultSummary": "Showing {{visible}} of {{total}} projects.",
+    "empty": "No published projects match these filters.",
+    "loadError": "Projects could not be loaded. Please try again.",
+    "status": {
+      "delivered": "Delivered",
+      "inProgress": "In progress",
+      "planned": "Planned",
+      "archived": "Archived"
+    },
+    "categories": {
+      "professional": "Professional work",
+      "personal": "Personal project",
+      "learning": "Learning project"
+    },
+    "cards": {
+      "fragranceWebsite": {
+        "title": "Fragrance business website",
+        "summary": "A responsive client application built collaboratively, with contributions across design, frontend development, and backend functionality."
+      },
+      "connectionManager": {
+        "title": "Enterprise feature ownership",
+        "summary": "A professional experience focused on feature continuity, technical decisions, integration troubleshooting, and cross-team coordination."
+      },
+      "connectionExplorer": {
+        "title": "Connection Explorer",
+        "summary": "A proposed frontend demo for exploring synthetic connection data, filtering results, and handling loading, empty, and error states."
+      },
+      "fullStackTracker": {
+        "title": "Engineering Project Tracker",
+        "summary": "A proposed full-stack project for practicing API design, relational data modeling, authentication, and deployment."
+      },
+      "opf": {
+        "title": "OPF feature ownership and UX alignment",
+        "summary": "Ongoing feature implementation and alignment of the existing application with UX designs and design principles."
+      },
+      "consumptionUsage": {
+        "title": "Consumption/Usage Angular-to-React migration",
+        "summary": "Technical leadership and implementation of a React remote within the existing monorepo, maintaining Angular and React implementations in parallel."
+      }
+    }
+  },
+  "caseStudy": {
+    "overview": "Overview",
+    "problem": "The problem",
+    "context": "Context and constraints",
+    "role": "My role",
+    "team": "Team and collaboration",
+    "scope": "Scope",
+    "solution": "The solution",
+    "architecture": "Architecture",
+    "decisions": "Key technical decisions",
+    "alternatives": "Alternatives considered",
+    "tradeoffs": "Trade-offs",
+    "implementation": "Implementation highlights",
+    "quality": "Testing and quality",
+    "accessibility": "Accessibility",
+    "performance": "Performance",
+    "outcomes": "Outcomes and evidence",
+    "lessons": "What I learned",
+    "nextSteps": "Next steps",
+    "stack": "Technology stack",
+    "evidence": "Supporting evidence",
+    "diagramDescription": "Architecture diagram showing the main components and their relationships.",
+    "relatedProjects": "Related projects",
+    "migrationStrategy": "Migration strategy",
+    "parallelImplementations": "Parallel implementations",
+    "uxAlignment": "UX alignment"
+  },
+  "skills": {
+    "title": "Technical skills",
+    "intro": "A focused view of my current experience and the areas I am developing next.",
+    "core": {
+      "title": "Core professional experience",
+      "description": "Angular, React, TypeScript, RxJS, Nx, reusable components, API integration, frontend migration, and Jest-based testing."
+    },
+    "additional": {
+      "title": "Additional experience",
+      "description": "A broader toolkit spanning frontend frameworks, backend development, databases, and development environments."
+    },
+    "growth": {
+      "title": "Next learning goals",
+      "description": "Planned learning projects in Python with FastAPI and PostgreSQL, followed by deeper work in Go, cloud, and distributed systems."
+    },
+    "groups": {
+      "languages": "Programming languages",
+      "frontend": "Frontend",
+      "backend": "Backend and APIs",
+      "databases": "Databases",
+      "infrastructure": "Infrastructure and environments",
+      "testing": "Testing and engineering practices",
+      "ai": "AI-assisted engineering",
+      "architecture": "Frontend architecture and modernization"
+    },
+    "viewEvidence": "See related work"
+  },
+  "lab": {
+    "title": "Frontend Lab",
+    "intro": "Small, focused demos that make interface behavior and engineering decisions visible.",
+    "demoLabel": "Interactive demo",
+    "syntheticDataNotice": "This demo uses synthetic data.",
+    "controlsLabel": "Demo controls",
+    "searchLabel": "Search connections",
+    "searchPlaceholder": "Search by name...",
+    "statusFilterLabel": "Connection status",
+    "allStatuses": "All statuses",
+    "nameColumn": "Name",
+    "statusColumn": "Status",
+    "updatedColumn": "Last updated",
+    "tableCaption": "Synthetic connection records",
+    "statuses": {
+      "connected": "Connected",
+      "disconnected": "Disconnected",
+      "pending": "Pending"
+    },
+    "showLoading": "Simulate loading",
+    "showError": "Simulate an error",
+    "showEmpty": "Simulate empty results",
+    "reset": "Reset demo",
+    "empty": "No connections match your search.",
+    "error": "The demo request failed. Try again or reset the demo.",
+    "resultsSummary": "{{count}} connections found.",
+    "engineeringNotes": "How this demo works",
+    "whatItDemonstrates": "What this demonstrates"
+  },
+  "notes": {
+    "title": "Engineering notes",
+    "intro": "Short explanations of decisions, experiments, and lessons from building software.",
+    "empty": "No notes have been published yet.",
+    "readingTime": "Estimated reading time: {{minutes}} minutes",
+    "topicsLabel": "Topics",
+    "backToNotes": "Back to notes"
+  },
+  "education": {
+    "title": "Education and languages",
+    "degree": "Computing Systems Engineering",
+    "completion": "Academic studies completed in January 2025.",
+    "languagesTitle": "Languages",
+    "spanish": "Spanish",
+    "english": "English",
+    "native": "Native",
+    "upperIntermediate": "Upper-intermediate (B2, self-assessed)"
+  },
+  "contact": {
+    "title": "Get in touch",
+    "description": "For professional conversations, collaboration, or questions about my work, you can reach me by email or explore my public profiles.",
+    "email": "Email me",
+    "copyEmail": "Copy email address",
+    "emailCopied": "Email address copied.",
+    "copyError": "The email address could not be copied. You can select and copy it manually.",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "leetcode": "LeetCode"
+  },
+  "preferences": {
+    "themeLabel": "Color theme",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "Use system preference",
+    "languageLabel": "Language",
+    "english": "English",
+    "motionLabel": "Motion preference",
+    "motionSystem": "Use system motion preference",
+    "motionReduced": "Reduce motion"
+  },
+  "accessibility": {
+    "skipToContent": "Skip to main content",
+    "projectImageAlt": "{{project}} interface preview",
+    "portraitAlt": "Portrait of {{name}}",
+    "breadcrumbLabel": "Breadcrumb navigation",
+    "paginationLabel": "Pagination",
+    "currentPage": "Current page: {{page}}",
+    "openProject": "View project: {{project}}",
+    "viewSource": "View source code for {{project}}",
+    "openDemo": "Open demo for {{project}}"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "This page may have moved, or the address may be incorrect."
+  },
+  "footer": {
+    "description": "Software engineering, thoughtful interfaces, and continuous learning.",
+    "copyright": "Copyright {{year}} {{name}}.",
+    "source": "Website source code"
+  },
+  "professionalWork": {
+    "title": "Current engineering responsibilities",
+    "intro": "Feature ownership, UX alignment, and frontend modernization at Teradata.",
+    "opf": {
+      "title": "OPF",
+      "summary": "Own new feature implementation and align the existing application with UX designs and established design principles.",
+      "contribution": "Translate UX designs into application changes while taking responsibility for feature implementation and interface consistency."
+    },
+    "consumptionUsage": {
+      "title": "Consumption/Usage",
+      "summary": "Lead and implement an ongoing Angular-to-React migration while continuing feature development and UX alignment.",
+      "architecture": "Integrate the React application as a remote within the existing monorepo.",
+      "constraint": "Maintain the Angular and React implementations in parallel during the migration.",
+      "contribution": "Take responsibility for the migration approach and implementation alongside new feature delivery."
+    }
+  }
+}

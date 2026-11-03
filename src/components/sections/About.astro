@@ -1,0 +1,27 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import { t } from '../../i18n';
+
+const principles = ['ownership', 'maintainability', 'problemSolving'];
+---
+
+<section id="about" class="section" aria-labelledby="about-title">
+	<div class="container">
+		<SectionHeading id="about-title" title={t('about.title')} intro={t('about.intro')} />
+		<div class="about-grid">
+			<div class="prose">
+				<p>{t('about.background')}</p>
+				<p>{t('about.approach')}</p>
+				<p>{t('about.direction')}</p>
+			</div>
+			<ul class="principles">
+				{principles.map((principle) => (
+					<li>
+						<h3>{t(`about.principles.${principle}.title`)}</h3>
+						<p>{t(`about.principles.${principle}.description`)}</p>
+					</li>
+				))}
+			</ul>
+		</div>
+	</div>
+</section>
