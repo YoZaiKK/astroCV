@@ -2,6 +2,8 @@
 
 Static personal CV and portfolio site for Guillermo Cardona Gómez, a Software Engineer. It presents professional experience, skills, education, contact information, and a downloadable resume.
 
+![Portfolio homepage preview](public/images/portfolio-home-preview.png)
+
 ## Stack
 
 - Astro 7
