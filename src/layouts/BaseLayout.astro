@@ -4,6 +4,7 @@ import Footer from '../components/layout/Footer.astro';
 import Header from '../components/layout/Header.astro';
 import { portfolio } from '../data/content';
 import { getLocale, type Locale, t } from '../i18n';
+import { themeBootstrap } from '../components/layout/theme';
 
 interface Props {
 	title?: string;
@@ -24,20 +25,7 @@ const {
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="description" content={description} />
-		<script is:inline>
-			(() => {
-				const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-				let mode = 'system';
-				try {
-					const storedTheme = localStorage.getItem('theme');
-					if (storedTheme === 'dark' || storedTheme === 'light') mode = storedTheme;
-				} catch {
-					/* Use the system theme when storage is unavailable. */
-				}
-				document.documentElement.dataset.themeMode = mode;
-				document.documentElement.dataset.theme = mode === 'system' ? systemTheme : mode;
-			})();
-		</script>
+		<script is:inline set:html={themeBootstrap} />
 		<title>{title}</title>
 	</head>
 	<body>

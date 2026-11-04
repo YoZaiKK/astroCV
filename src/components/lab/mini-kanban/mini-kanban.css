@@ -5,36 +5,29 @@
 }
 
 mini-kanban.mini-kanban-card {
-	--mk-bg: var(--blog-surface, var(--color-surface-muted));
-	--mk-card: color-mix(in srgb, var(--mk-bg) 90%, white);
-	--mk-text: var(--blog-text, var(--color-ink));
-	--mk-muted: var(--blog-text-muted, var(--color-muted));
-	--mk-line: color-mix(in srgb, var(--mk-bg) 74%, var(--mk-text));
+	--mk-bg: var(--color-panel);
+	--mk-card: var(--color-surface);
+	--mk-text: var(--color-ink);
+	--mk-muted: var(--color-muted);
+	--mk-line: var(--color-control-border);
 	--mk-accent: var(--color-accent);
 	--mk-on-accent: var(--color-on-accent);
-	--mk-danger: #a82138;
-	--mk-shadow-light: var(--blog-shadow-light, #ffffff);
-	--mk-shadow-dark: var(--blog-shadow-dark, #c5cbd3);
+	--mk-danger: var(--color-danger);
 	position: relative;
 	display: block;
 	container-type: inline-size;
 	width: 100%;
 	min-width: 0;
 	padding: clamp(1rem, 2vw, 1.5rem);
-	border: 0;
-	border-radius: var(--blog-radius, 24px);
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius);
 	color: var(--mk-text);
 	background: var(--mk-bg);
-	box-shadow: var(--blog-shadow, 8px 8px 16px var(--mk-shadow-dark), -8px -8px 16px var(--mk-shadow-light));
+	box-shadow: var(--shadow);
 	font: inherit;
 	line-height: 1.5;
 }
 
-:root[data-theme='dark'] mini-kanban.mini-kanban-card {
-	--mk-card: color-mix(in srgb, var(--mk-bg) 94%, white);
-	--mk-line: color-mix(in srgb, var(--mk-bg) 68%, var(--mk-text));
-	--mk-danger: #ff7a91;
-}
 
 mini-kanban, mini-kanban * { box-sizing: border-box; }
 mini-kanban button, mini-kanban input { font: inherit; }
@@ -45,9 +38,9 @@ mini-kanban :where(button, input, .mk-task):focus-visible {
 	outline-offset: 3px;
 }
 mini-kanban .lab-card-icons {
-	top: 0.85rem !important;
-	left: auto !important;
-	right: 0.85rem !important;
+	top: 0.85rem;
+	left: auto;
+	right: 0.85rem;
 	z-index: 4;
 	color: var(--mk-text);
 }
@@ -59,7 +52,7 @@ mini-kanban .lab-card-action:hover {
 	background: color-mix(in srgb, var(--mk-card) 78%, var(--mk-text));
 }
 mini-kanban .lab-card-action-rocket {
-	border-radius: 0.65rem;
+	border-radius: var(--control-radius);
 }
 
 mini-kanban .mk-header,
@@ -69,7 +62,7 @@ mini-kanban .mk-task-actions { display: flex; align-items: center; gap: 0.5rem; 
 mini-kanban .mk-header { justify-content: space-between; flex-wrap: wrap; gap: 1rem; padding-top: 2.4rem; }
 mini-kanban .mk-header-actions { flex-wrap: wrap; }
 mini-kanban .mk-eyebrow { margin: 0 0 0.15rem; color: var(--mk-muted); font-size: 0.75rem; letter-spacing: 0.07em; text-transform: uppercase; }
-mini-kanban .mk-title { margin: 0; font-size: clamp(1.05rem, 2vw, 1.25rem); line-height: 1.3; }
+mini-kanban .mk-title { margin: 0; font-size: clamp(1.4rem, 2vw, 1.8rem); line-height: 1.3; }
 mini-kanban .mk-description { margin: 0.75rem 0 1rem; color: var(--mk-muted); font-size: 0.875rem; }
 mini-kanban .mk-form { display: flex; align-items: end; gap: 0.75rem; }
 mini-kanban .mk-field { display: grid; gap: 0.35rem; min-width: 0; flex: 1; }
@@ -80,22 +73,23 @@ mini-kanban .mk-input {
 	min-height: 44px;
 	padding: 0.65rem 0.8rem;
 	border: 1px solid var(--mk-line);
-	border-radius: 0.75rem;
+	border-radius: var(--control-radius);
 	color: var(--mk-text);
 	background: var(--mk-bg);
-	box-shadow: inset 3px 3px 7px var(--mk-shadow-dark), inset -3px -3px 7px var(--mk-shadow-light);
+	box-shadow: var(--shadow-inset);
 }
+mini-kanban .mk-input:invalid:not(:placeholder-shown) { border-color: var(--mk-danger); border-style: dashed; }
 mini-kanban .mk-input::placeholder { color: var(--mk-muted); opacity: 1; }
 mini-kanban .mk-button {
 	min-height: 44px;
 	padding: 0.55rem 0.85rem;
 	border: 1px solid var(--mk-line);
-	border-radius: 0.75rem;
+	border-radius: var(--control-radius);
 	color: var(--mk-text);
 	background: var(--mk-card);
 	font-size: 0.8125rem;
 	font-weight: 600;
-	transition: background-color 180ms ease, transform 180ms ease;
+	transition: background-color var(--motion-duration) ease, border-color var(--motion-duration) ease;
 }
 mini-kanban .mk-button--primary { color: var(--mk-on-accent); background: var(--mk-accent); border-color: var(--mk-accent); }
 mini-kanban .mk-button--quiet { padding-inline: 0.7rem; }
@@ -111,21 +105,21 @@ mini-kanban .mk-column {
 	min-width: 0;
 	padding: 0.65rem;
 	border: 1px solid var(--mk-line);
-	border-radius: 0.9rem;
+	border-radius: var(--radius);
 	background: var(--mk-bg);
-	box-shadow: inset 3px 3px 7px var(--mk-shadow-dark), inset -3px -3px 7px var(--mk-shadow-light);
+	box-shadow: var(--shadow-inset);
 }
 mini-kanban .mk-column[data-drop-active] { outline: 2px dashed var(--mk-accent); outline-offset: 2px; }
 mini-kanban .mk-column-header { justify-content: space-between; gap: 0.4rem; padding: 0.1rem 0.15rem 0.65rem; }
 mini-kanban .mk-column-header h4 { display: flex; align-items: center; gap: 0.4rem; margin: 0; font-size: 0.8125rem; }
 mini-kanban .mk-dot { width: 0.5rem; height: 0.5rem; flex-shrink: 0; border-radius: 50%; background: var(--mk-muted); }
 mini-kanban [data-column="doing"] .mk-dot { background: var(--mk-accent); }
-mini-kanban [data-column="done"] .mk-dot { background: #08764b; }
+mini-kanban [data-column="done"] .mk-dot { background: var(--color-success); }
 mini-kanban .mk-count {
 	min-width: 1.5rem;
 	padding: 0.05rem 0.35rem;
 	border: 1px solid var(--mk-line);
-	border-radius: 0.4rem;
+	border-radius: var(--control-radius);
 	background: var(--mk-card);
 	text-align: center;
 	font-size: 0.75rem;
@@ -145,12 +139,12 @@ mini-kanban .mk-task {
 	min-width: 0;
 	padding: 0.7rem;
 	border: 1px solid var(--mk-line);
-	border-radius: 0.7rem;
+	border-radius: var(--control-radius);
 	background: var(--mk-card);
-	box-shadow: 2px 3px 6px rgb(20 35 60 / 7%);
+	box-shadow: var(--shadow);
 	cursor: grab;
 }
-mini-kanban .mk-task[data-dragging="true"] { opacity: 0.45; }
+mini-kanban .mk-task[data-dragging="true"] { opacity: 0.6; border-style: dashed; }
 mini-kanban .mk-task-title { margin: 0 0 0.65rem; font-size: 0.875rem; color: var(--mk-text); overflow-wrap: anywhere; }
 mini-kanban .mk-task-actions { gap: 0.3rem; flex-wrap: wrap; }
 mini-kanban .mk-icon-button {
@@ -161,7 +155,7 @@ mini-kanban .mk-icon-button {
 	min-height: 30px;
 	padding: 0.15rem;
 	border: 1px solid var(--mk-line);
-	border-radius: 0.45rem;
+	border-radius: var(--control-radius);
 	color: var(--mk-text);
 	background: var(--mk-bg);
 	font-size: 1rem;
@@ -182,7 +176,7 @@ mini-kanban .mk-persistence { margin-top: 0.25rem; }
 @media (hover: hover) and (pointer: fine) {
 	mini-kanban .mk-button:not(:disabled):hover { background: color-mix(in srgb, var(--mk-card) 82%, var(--mk-text)); }
 	mini-kanban .mk-button--primary:not(:disabled):hover { background: var(--color-accent-dark); }
-	mini-kanban .mk-task:hover { transform: translateY(-2px); transition: transform 180ms ease; }
+	mini-kanban .mk-task:hover { border-color: var(--mk-text); }
 }
 
 @container (max-width: 50rem) {
@@ -199,5 +193,5 @@ mini-kanban .mk-persistence { margin-top: 0.25rem; }
 @media (prefers-reduced-motion: reduce) {
 	mini-kanban *,
 	mini-kanban *::before,
-	mini-kanban *::after { transition: none !important; animation: none !important; }
+	mini-kanban *::after { transition: none; animation: none; }
 }

@@ -52,19 +52,18 @@ const { infoTooltip, rocketTooltip, rocketHref } = Astro.props;
 		background: transparent;
 		cursor: pointer;
 		text-decoration: none;
-		transition: color 140ms ease, background-color 140ms ease, border-color 140ms ease, transform 140ms ease;
+		transition: color var(--motion-duration) ease, background-color var(--motion-duration) ease, border-color var(--motion-duration) ease;
 	}
 
 	.lab-card-action-rocket {
 		border-color: color-mix(in srgb, var(--color-border) 85%, transparent);
-		border-radius: 0.65rem;
+		border-radius: var(--control-radius);
 		background: color-mix(in srgb, var(--color-surface) 72%, transparent);
 	}
 
 	.lab-card-action:hover {
 		color: var(--color-ink);
 		background: color-mix(in srgb, var(--color-surface-muted) 84%, transparent);
-		transform: translateY(-1px);
 	}
 
 	.lab-card-action:focus-visible {
@@ -75,16 +74,18 @@ const { infoTooltip, rocketTooltip, rocketHref } = Astro.props;
 	.lab-card-action::after {
 		position: absolute;
 		bottom: calc(100% + 0.45rem);
-		left: 50%;
-		transform: translateX(-50%);
+		right: 0;
+		width: max-content;
+		max-width: min(16rem, calc(100vw - 6rem));
 		padding: 0.3rem 0.5rem;
-		border-radius: 0.45rem;
+		border-radius: var(--control-radius);
 		color: var(--color-on-accent);
 		background: var(--color-accent);
 		font-size: 0.72rem;
 		font-weight: 600;
 		line-height: 1.25;
-		white-space: nowrap;
+		white-space: normal;
+		text-align: left;
 		pointer-events: none;
 		content: attr(data-tooltip);
 		opacity: 0;

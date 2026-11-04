@@ -1,0 +1,40 @@
+{
+  "count": 184,
+  "min": 5.81,
+  "failures": [],
+  "tokens": {
+    "--color-ink": "#e8d8c9",
+    "--color-muted": "#bcb4aa",
+    "--color-accent": "#f3701e",
+    "--color-accent-dark": "#ff9048",
+    "--color-on-accent": "#111110",
+    "--color-focus": "#a99acb",
+    "--color-control-border": "#8c8277",
+    "--color-danger": "#ff959d",
+    "--color-success": "#8acb9b"
+  },
+  "controls": {
+    "--color-focus": [
+      7.35,
+      6.64,
+      5.71
+    ],
+    "--color-control-border": [
+      5.02,
+      4.53,
+      3.9
+    ],
+    "--color-danger": [
+      9.03,
+      8.16,
+      7.01
+    ],
+    "--color-success": [
+      9.98,
+      9.02,
+      7.75
+    ]
+  },
+  "accentText": 6.43,
+  "hoverText": 8.4
+}

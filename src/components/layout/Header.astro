@@ -38,19 +38,19 @@ const links = [
 						class="theme-toggle"
 						type="button"
 						data-theme-toggle
-						data-theme-label={t('preferences.themeLabel')}
-						data-light-label={t('preferences.light')}
-						data-dark-label={t('preferences.dark')}
-						aria-pressed="false"
+						role="switch"
+						aria-checked="false"
 						aria-label={t('preferences.themeLabel')}
 						disabled
 					>
-						<Sun class="icon-sun" size={20} aria-hidden="true" />
-						<Moon class="icon-moon" size={20} aria-hidden="true" />
-						<span class="sr-only" data-theme-state>{t('preferences.light')}</span>
+						<span class="theme-switch-track" aria-hidden="true">
+							<Sun class="icon-sun" size={16} />
+							<Moon class="icon-moon" size={16} />
+							<span class="theme-switch-thumb"></span>
+						</span>
 					</button>
 					<label class="theme-auto">
-						<input type="checkbox" data-theme-auto aria-label={`Auto: ${t('preferences.system')}`} checked />
+						<input type="checkbox" data-theme-auto aria-label={`Auto: ${t('preferences.system')}`} disabled />
 						<span>Auto</span>
 					</label>
 				</div>
@@ -61,25 +61,25 @@ const links = [
 </header>
 
 <script>
+	import { resolveTheme, toggleTheme, type Theme, type ThemeMode } from './theme';
 	const button = document.querySelector<HTMLButtonElement>('.menu-button');
 	const navigation = document.querySelector<HTMLElement>('#primary-navigation');
 	const themeToggle = document.querySelector<HTMLButtonElement>('[data-theme-toggle]');
 	const themeAuto = document.querySelector<HTMLInputElement>('[data-theme-auto]');
-	const themeState = themeToggle?.querySelector<HTMLElement>('[data-theme-state]');
 	const root = document.documentElement;
 	const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
-	let followsSystem = root.dataset.themeMode === 'system';
+	let mode = root.dataset.themeMode as ThemeMode;
 
 	const applyTheme = (theme: 'light' | 'dark') => {
 		root.dataset.theme = theme;
-		root.dataset.themeMode = followsSystem ? 'system' : theme;
-		if (themeAuto) themeAuto.checked = followsSystem;
-		if (themeToggle) themeToggle.disabled = followsSystem;
-		themeToggle?.setAttribute('aria-pressed', String(theme === 'dark'));
-		if (!themeToggle || !themeState) return;
-		const label = theme === 'dark' ? themeToggle.dataset.darkLabel : themeToggle.dataset.lightLabel;
-		themeState.textContent = label ?? '';
-		themeToggle.setAttribute('aria-label', `${themeToggle.dataset.themeLabel}: ${label}`);
+		root.dataset.themeMode = mode;
+		if (themeAuto) { themeAuto.checked = mode === 'system'; themeAuto.disabled = false; }
+		if (themeToggle) themeToggle.disabled = false;
+		themeToggle?.setAttribute('aria-checked', String(theme === 'dark'));
+	};
+
+	const saveMode = () => {
+		try { localStorage.setItem('theme', mode); } catch { /* In-memory controls still work. */ }
 	};
 
 	button?.addEventListener('click', () => {
@@ -98,30 +98,20 @@ const links = [
 	const initialTheme = root.dataset.theme === 'dark' ? 'dark' : 'light';
 	applyTheme(initialTheme);
 	systemTheme.addEventListener('change', (event) => {
-		if (followsSystem) applyTheme(event.matches ? 'dark' : 'light');
+		if (mode === 'system') applyTheme(event.matches ? 'dark' : 'light');
 	});
 
 	themeToggle?.addEventListener('click', () => {
-		if (followsSystem) return;
-		const nextTheme = root.dataset.theme === 'dark' ? 'light' : 'dark';
-		followsSystem = false;
-		applyTheme(nextTheme);
-		try {
-			localStorage.setItem('theme', nextTheme);
-		} catch {
-			/* no-op */
-		}
+		const next = toggleTheme(root.dataset.theme as Theme);
+		mode = next.mode;
+		applyTheme(next.theme);
+		saveMode();
 	});
 
 	themeAuto?.addEventListener('change', () => {
-		followsSystem = themeAuto.checked;
-		const theme = followsSystem ? (systemTheme.matches ? 'dark' : 'light') : (root.dataset.theme === 'dark' ? 'dark' : 'light');
-		applyTheme(theme);
-		try {
-			localStorage.setItem('theme', followsSystem ? 'system' : theme);
-		} catch {
-			/* The current selection still works when storage is unavailable. */
-		}
+		mode = themeAuto.checked ? 'system' : root.dataset.theme as Theme;
+		applyTheme(resolveTheme(mode, systemTheme.matches).theme);
+		saveMode();
 	});
 
 </script>

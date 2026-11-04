@@ -3,12 +3,25 @@ interface Props {
 	id: string;
 	title: string;
 	intro?: string;
+	index?: string;
 }
 
 const { id, title, intro } = Astro.props;
+const indices: Record<string, string> = {
+	'about-title': '01',
+	'experience-title': '02',
+	'projects-title': '03',
+	'skills-title': '04',
+	'education-title': '05',
+	'contact-title': '06',
+};
+const index = Astro.props.index ?? indices[id];
 ---
 
 <div class="section-heading">
-	<h2 id={id}>{title}</h2>
-	{intro && <p>{intro}</p>}
+	<span class="section-index" aria-hidden="true">{index}</span>
+	<div>
+		<h2 id={id}>{title}</h2>
+		{intro && <p>{intro}</p>}
+	</div>
 </div>

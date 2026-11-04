@@ -19,7 +19,7 @@ const isValidUrl = (value: string | null) => value !== null && /^https?:\/\//.te
 		<div class="contact-actions">
 			<a class="button" href={`mailto:${email}`}>{t('contact.email')}</a>
 			<code>{email}</code>
-			<button class="button button-secondary" type="button" data-email={email}>{t('contact.copyEmail')}</button>
+			<button class="button button-secondary" type="button" data-email={email} disabled>{t('contact.copyEmail')}</button>
 		</div>
 		<p class="copy-status" aria-live="polite"></p>
 		<div class="profile-links">
@@ -33,6 +33,7 @@ const isValidUrl = (value: string | null) => value !== null && /^https?:\/\//.te
 <script>
 	const copyButton = document.querySelector<HTMLButtonElement>('[data-email]');
 	const status = document.querySelector<HTMLElement>('.copy-status');
+	if (copyButton) copyButton.disabled = false;
 
 	copyButton?.addEventListener('click', async () => {
 		const email = copyButton.dataset.email;

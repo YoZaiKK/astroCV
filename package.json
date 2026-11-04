@@ -10,7 +10,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "test": "node --test src/components/ConwaysLife/helpers.test.ts src/components/LanguageSelect/navigation.test.ts src/components/layout/resume-download.test.ts"
+    "test": "node --test src/components/ConwaysLife/helpers.test.ts src/components/LanguageSelect/navigation.test.ts src/components/layout/resume-download.test.ts src/components/layout/theme.test.ts"
   },
   "dependencies": {
     "@lucide/astro": "^1.66.0",

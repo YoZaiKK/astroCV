@@ -1,0 +1,587 @@
+{
+  "date": "2026-11-04T00:25:57.007Z",
+  "browser": "156.0.8078.75",
+  "matrix": [
+    {
+      "locale": "en",
+      "theme": "light",
+      "width": 360,
+      "scrollWidth": 360,
+      "outside": [],
+      "h1": 1,
+      "clippedHeadings": [],
+      "clockRatio": 1
+    },
+    {
+      "locale": "en",
+      "theme": "light",
+      "width": 390,
+      "scrollWidth": 390,
+      "outside": [],
+      "h1": 1,
+      "clippedHeadings": [],
+      "clockRatio": 1
+    },
+    {
+      "locale": "en",
+      "theme": "light",
+      "width": 768,
+      "scrollWidth": 768,
+      "outside": [],
+      "h1": 1,
+      "clippedHeadings": [],
+      "clockRatio": 1
+    },
+    {
+      "locale": "en",
+      "theme": "light",
+      "width": 1024,
+      "scrollWidth": 1024,
+      "outside": [],
+      "h1": 1,
+      "clippedHeadings": [],
+      "clockRatio": 1
+    },
+    {
+      "locale": "en",
+      "theme": "light",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "outside": [],
+      "h1": 1,
+      "clippedHeadings": [],
+      "clockRatio": 1
+    },
+    {
+      "locale": "en",
+      "theme": "dark",
+      "width": 360,
+      "scrollWidth": 360,
+      "outside": [],
+      "h1": 1,
+      "clippedHeadings": [],
+      "clockRatio": 1
+    },
+    {
+      "locale": "en",
+      "theme": "dark",
+      "width": 390,
+      "scrollWidth": 390,
+      "outside": [],
+      "h1": 1,
+      "clippedHeadings": [],
+      "clockRatio": 1
+    },
+    {
+      "locale": "en",
+      "theme": "dark",
+      "width": 768,
+      "scrollWidth": 768,
+      "outside": [],
+      "h1": 1,
+      "clippedHeadings": [],
+      "clockRatio": 1
+    },
+    {
+      "locale": "en",
+      "theme": "dark",
+      "width": 1024,
+      "scrollWidth": 1024,
+      "outside": [],
+      "h1": 1,
+      "clippedHeadings": [],
+      "clockRatio": 1
+    },
+    {
+      "locale": "en",
+      "theme": "dark",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "outside": [],
+      "h1": 1,
+      "clippedHeadings": [],
+      "clockRatio": 1
+    },
+    {
+      "locale": "es",
+      "theme": "light",
+      "width": 360,
+      "scrollWidth": 360,
+      "outside": [],
+      "h1": 1,
+      "clippedHeadings": [],
+      "clockRatio": 1
+    },
+    {
+      "locale": "es",
+      "theme": "light",
+      "width": 390,
+      "scrollWidth": 390,
+      "outside": [],
+      "h1": 1,
+      "clippedHeadings": [],
+      "clockRatio": 1
+    },
+    {
+      "locale": "es",
+      "theme": "light",
+      "width": 768,
+      "scrollWidth": 768,
+      "outside": [],
+      "h1": 1,
+      "clippedHeadings": [],
+      "clockRatio": 1
+    },
+    {
+      "locale": "es",
+      "theme": "light",
+      "width": 1024,
+      "scrollWidth": 1024,
+      "outside": [],
+      "h1": 1,
+      "clippedHeadings": [],
+      "clockRatio": 1
+    },
+    {
+      "locale": "es",
+      "theme": "light",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "outside": [],
+      "h1": 1,
+      "clippedHeadings": [],
+      "clockRatio": 1
+    },
+    {
+      "locale": "es",
+      "theme": "dark",
+      "width": 360,
+      "scrollWidth": 360,
+      "outside": [],
+      "h1": 1,
+      "clippedHeadings": [],
+      "clockRatio": 1
+    },
+    {
+      "locale": "es",
+      "theme": "dark",
+      "width": 390,
+      "scrollWidth": 390,
+      "outside": [],
+      "h1": 1,
+      "clippedHeadings": [],
+      "clockRatio": 1
+    },
+    {
+      "locale": "es",
+      "theme": "dark",
+      "width": 768,
+      "scrollWidth": 768,
+      "outside": [],
+      "h1": 1,
+      "clippedHeadings": [],
+      "clockRatio": 1
+    },
+    {
+      "locale": "es",
+      "theme": "dark",
+      "width": 1024,
+      "scrollWidth": 1024,
+      "outside": [],
+      "h1": 1,
+      "clippedHeadings": [],
+      "clockRatio": 1
+    },
+    {
+      "locale": "es",
+      "theme": "dark",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "outside": [],
+      "h1": 1,
+      "clippedHeadings": [],
+      "clockRatio": 1
+    }
+  ],
+  "checks": [
+    {
+      "name": "en/light: text and control contrast",
+      "pass": true,
+      "detail": {
+        "count": 184,
+        "min": 6.22,
+        "failures": [],
+        "tokens": {
+          "--color-ink": "#172033",
+          "--color-muted": "#586174",
+          "--color-accent": "#1d4ed8",
+          "--color-accent-dark": "#163ba4",
+          "--color-on-accent": "#fff",
+          "--color-focus": "#1d4ed8",
+          "--color-control-border": "#858a93",
+          "--color-danger": "#b42337",
+          "--color-success": "#167044"
+        },
+        "controls": {
+          "--color-focus": [
+            6.7,
+            6.7,
+            5.83
+          ],
+          "--color-control-border": [
+            3.47,
+            3.47,
+            3.02
+          ],
+          "--color-danger": [
+            6.49,
+            6.49,
+            5.64
+          ],
+          "--color-success": [
+            6.11,
+            6.11,
+            5.31
+          ]
+        },
+        "accentText": 6.7,
+        "hoverText": 9.56
+      }
+    },
+    {
+      "name": "en/light: tooltips, hover and keyboard focus",
+      "pass": true,
+      "detail": "Focus outline and visible tooltip on all three widgets; no horizontal overflow."
+    },
+    {
+      "name": "en/light: dropdown, hover and error contrast",
+      "pass": true,
+      "detail": "No text contrast failures in open/active dropdown, primary and secondary hover, delete hover and invalid input state."
+    },
+    {
+      "name": "en/light: reduced motion",
+      "pass": true,
+      "detail": {
+        "scroll": "auto",
+        "duration": "0s",
+        "thumb": "0s"
+      }
+    },
+    {
+      "name": "en/light: 200% layout reflow",
+      "pass": true,
+      "detail": {
+        "width": 720,
+        "scrollWidth": 720,
+        "outside": [],
+        "h1": 1,
+        "clippedHeadings": [],
+        "clockRatio": 1,
+        "method": "720 CSS px: layout equivalent of 1440px at 200%; browser chrome zoom not automated"
+      }
+    },
+    {
+      "name": "en/light: print",
+      "pass": true,
+      "detail": {
+        "background": "rgb(255, 255, 255)",
+        "ink": "rgb(23, 32, 51)",
+        "headerPosition": "static",
+        "nav": "none"
+      }
+    },
+    {
+      "name": "en/dark: text and control contrast",
+      "pass": true,
+      "detail": {
+        "count": 184,
+        "min": 5.81,
+        "failures": [],
+        "tokens": {
+          "--color-ink": "#e8d8c9",
+          "--color-muted": "#bcb4aa",
+          "--color-accent": "#f3701e",
+          "--color-accent-dark": "#ff9048",
+          "--color-on-accent": "#111110",
+          "--color-focus": "#a99acb",
+          "--color-control-border": "#8c8277",
+          "--color-danger": "#ff959d",
+          "--color-success": "#8acb9b"
+        },
+        "controls": {
+          "--color-focus": [
+            7.35,
+            6.64,
+            5.71
+          ],
+          "--color-control-border": [
+            5.02,
+            4.53,
+            3.9
+          ],
+          "--color-danger": [
+            9.03,
+            8.16,
+            7.01
+          ],
+          "--color-success": [
+            9.98,
+            9.02,
+            7.75
+          ]
+        },
+        "accentText": 6.43,
+        "hoverText": 8.4
+      }
+    },
+    {
+      "name": "en/dark: tooltips, hover and keyboard focus",
+      "pass": true,
+      "detail": "Focus outline and visible tooltip on all three widgets; no horizontal overflow."
+    },
+    {
+      "name": "en/dark: dropdown, hover and error contrast",
+      "pass": true,
+      "detail": "No text contrast failures in open/active dropdown, primary and secondary hover, delete hover and invalid input state."
+    },
+    {
+      "name": "en: flat dark surfaces including floating dropdown and pseudo elements",
+      "pass": true,
+      "detail": "No computed box shadows on elements or pseudo elements."
+    },
+    {
+      "name": "en/dark: reduced motion",
+      "pass": true,
+      "detail": {
+        "scroll": "auto",
+        "duration": "0s",
+        "thumb": "0s"
+      }
+    },
+    {
+      "name": "en/dark: 200% layout reflow",
+      "pass": true,
+      "detail": {
+        "width": 720,
+        "scrollWidth": 720,
+        "outside": [],
+        "h1": 1,
+        "clippedHeadings": [],
+        "clockRatio": 1,
+        "method": "720 CSS px: layout equivalent of 1440px at 200%; browser chrome zoom not automated"
+      }
+    },
+    {
+      "name": "en/dark: print",
+      "pass": true,
+      "detail": {
+        "background": "rgb(255, 255, 255)",
+        "ink": "rgb(23, 32, 51)",
+        "headerPosition": "static",
+        "nav": "none"
+      }
+    },
+    {
+      "name": "es/light: text and control contrast",
+      "pass": true,
+      "detail": {
+        "count": 184,
+        "min": 6.22,
+        "failures": [],
+        "tokens": {
+          "--color-ink": "#172033",
+          "--color-muted": "#586174",
+          "--color-accent": "#1d4ed8",
+          "--color-accent-dark": "#163ba4",
+          "--color-on-accent": "#fff",
+          "--color-focus": "#1d4ed8",
+          "--color-control-border": "#858a93",
+          "--color-danger": "#b42337",
+          "--color-success": "#167044"
+        },
+        "controls": {
+          "--color-focus": [
+            6.7,
+            6.7,
+            5.83
+          ],
+          "--color-control-border": [
+            3.47,
+            3.47,
+            3.02
+          ],
+          "--color-danger": [
+            6.49,
+            6.49,
+            5.64
+          ],
+          "--color-success": [
+            6.11,
+            6.11,
+            5.31
+          ]
+        },
+        "accentText": 6.7,
+        "hoverText": 9.56
+      }
+    },
+    {
+      "name": "es/light: tooltips, hover and keyboard focus",
+      "pass": true,
+      "detail": "Focus outline and visible tooltip on all three widgets; no horizontal overflow."
+    },
+    {
+      "name": "es/light: dropdown, hover and error contrast",
+      "pass": true,
+      "detail": "No text contrast failures in open/active dropdown, primary and secondary hover, delete hover and invalid input state."
+    },
+    {
+      "name": "es/light: reduced motion",
+      "pass": true,
+      "detail": {
+        "scroll": "auto",
+        "duration": "0s",
+        "thumb": "0s"
+      }
+    },
+    {
+      "name": "es/light: 200% layout reflow",
+      "pass": true,
+      "detail": {
+        "width": 720,
+        "scrollWidth": 720,
+        "outside": [],
+        "h1": 1,
+        "clippedHeadings": [],
+        "clockRatio": 1,
+        "method": "720 CSS px: layout equivalent of 1440px at 200%; browser chrome zoom not automated"
+      }
+    },
+    {
+      "name": "es/light: print",
+      "pass": true,
+      "detail": {
+        "background": "rgb(255, 255, 255)",
+        "ink": "rgb(23, 32, 51)",
+        "headerPosition": "static",
+        "nav": "none"
+      }
+    },
+    {
+      "name": "es/dark: text and control contrast",
+      "pass": true,
+      "detail": {
+        "count": 184,
+        "min": 5.81,
+        "failures": [],
+        "tokens": {
+          "--color-ink": "#e8d8c9",
+          "--color-muted": "#bcb4aa",
+          "--color-accent": "#f3701e",
+          "--color-accent-dark": "#ff9048",
+          "--color-on-accent": "#111110",
+          "--color-focus": "#a99acb",
+          "--color-control-border": "#8c8277",
+          "--color-danger": "#ff959d",
+          "--color-success": "#8acb9b"
+        },
+        "controls": {
+          "--color-focus": [
+            7.35,
+            6.64,
+            5.71
+          ],
+          "--color-control-border": [
+            5.02,
+            4.53,
+            3.9
+          ],
+          "--color-danger": [
+            9.03,
+            8.16,
+            7.01
+          ],
+          "--color-success": [
+            9.98,
+            9.02,
+            7.75
+          ]
+        },
+        "accentText": 6.43,
+        "hoverText": 8.4
+      }
+    },
+    {
+      "name": "es/dark: tooltips, hover and keyboard focus",
+      "pass": true,
+      "detail": "Focus outline and visible tooltip on all three widgets; no horizontal overflow."
+    },
+    {
+      "name": "es/dark: dropdown, hover and error contrast",
+      "pass": true,
+      "detail": "No text contrast failures in open/active dropdown, primary and secondary hover, delete hover and invalid input state."
+    },
+    {
+      "name": "es: flat dark surfaces including floating dropdown and pseudo elements",
+      "pass": true,
+      "detail": "No computed box shadows on elements or pseudo elements."
+    },
+    {
+      "name": "es/dark: reduced motion",
+      "pass": true,
+      "detail": {
+        "scroll": "auto",
+        "duration": "0s",
+        "thumb": "0s"
+      }
+    },
+    {
+      "name": "es/dark: 200% layout reflow",
+      "pass": true,
+      "detail": {
+        "width": 720,
+        "scrollWidth": 720,
+        "outside": [],
+        "h1": 1,
+        "clippedHeadings": [],
+        "clockRatio": 1,
+        "method": "720 CSS px: layout equivalent of 1440px at 200%; browser chrome zoom not automated"
+      }
+    },
+    {
+      "name": "es/dark: print",
+      "pass": true,
+      "detail": {
+        "background": "rgb(255, 255, 255)",
+        "ink": "rgb(23, 32, 51)",
+        "headerPosition": "static",
+        "nav": "none"
+      }
+    },
+    {
+      "name": "en: JavaScript disabled",
+      "pass": true,
+      "detail": {
+        "width": 390,
+        "scrollWidth": 390,
+        "outside": [],
+        "h1": 1,
+        "clippedHeadings": [],
+        "clockRatio": 1
+      }
+    },
+    {
+      "name": "es: JavaScript disabled",
+      "pass": true,
+      "detail": {
+        "width": 390,
+        "scrollWidth": 390,
+        "outside": [],
+        "h1": 1,
+        "clippedHeadings": [],
+        "clockRatio": 1
+      }
+    }
+  ],
+  "errors": []
+}

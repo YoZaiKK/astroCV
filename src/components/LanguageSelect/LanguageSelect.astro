@@ -46,6 +46,12 @@ const options = [
 	</div>
 </language-picker>
 
+<noscript>
+	<div class="language-fallback" aria-label={t('preferences.languageLabel')}>
+		{options.map(option => <a href={option.href} lang={option.value}>{option.label}</a>)}
+	</div>
+</noscript>
+
 <script>
 	import { LanguagePicker } from './controller';
 	if (!customElements.get('language-picker')) customElements.define('language-picker', LanguagePicker);

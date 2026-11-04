@@ -1,25 +1,21 @@
 .language-picker, .language-panel {
-	--language-surface: color-mix(in srgb, var(--color-surface) 96%, var(--color-ink));
+	--language-surface: var(--color-surface-overlay);
 	--language-text: var(--color-ink);
 	--language-focus: var(--color-focus);
 	--language-shadow-dark: color-mix(in srgb, var(--language-surface) 82%, black);
 	--language-shadow-light: color-mix(in srgb, var(--language-surface) 20%, white);
-	--language-radius: 13px;
-	--language-panel-radius: 16px;
-	--language-option-radius: 9px;
-	--language-inset: inset 3px 3px 6px var(--language-shadow-dark), inset -3px -3px 6px var(--language-shadow-light);
-	--language-raised: 4px 4px 8px var(--language-shadow-dark), -4px -4px 8px var(--language-shadow-light);
-	--language-highlight: color-mix(in srgb, var(--color-accent) 12%, var(--language-surface));
-	--language-duration: 180ms;
+	--language-radius: var(--control-radius);
+	--language-panel-radius: var(--radius);
+	--language-option-radius: var(--control-radius);
+	--language-inset: var(--shadow-inset);
+	--language-raised: var(--shadow-raised);
+	--language-highlight: color-mix(in srgb, var(--color-accent) 16%, var(--language-surface));
+	--language-duration: var(--motion-duration);
 	color: var(--language-text);
 	font-size: 0.85rem;
 	font-weight: 600;
 }
 
-:root[data-theme='dark'] :is(.language-picker, .language-panel) {
-	--language-shadow-dark: color-mix(in srgb, var(--language-surface) 70%, black);
-	--language-shadow-light: color-mix(in srgb, var(--language-surface) 94%, white);
-}
 
 .language-picker { display: inline-block; flex: 0 0 auto; }
 .language-trigger {
@@ -32,6 +28,7 @@
 	min-width: 9rem;
 	height: 44px;
 	padding: 0 14px;
+	border: 1px solid var(--color-control-border);
 	border-radius: var(--language-radius);
 	background: var(--language-surface);
 	cursor: pointer;
@@ -65,6 +62,7 @@
 	padding: 8px;
 	overflow-y: auto;
 	overscroll-behavior: contain;
+	border: 1px solid var(--color-control-border);
 	border-radius: var(--language-panel-radius);
 	background: var(--language-surface);
 	box-shadow: var(--language-raised);
@@ -81,7 +79,7 @@
 	cursor: pointer;
 }
 .language-option > svg { visibility: hidden; flex-shrink: 0; }
-.language-option[aria-selected='true'] { box-shadow: inset 2px 2px 4px var(--language-shadow-dark), inset -2px -2px 4px var(--language-shadow-light); }
+.language-option[aria-selected='true'] { box-shadow: var(--shadow-inset); background: var(--color-selected); }
 .language-option[aria-selected='true'] > svg { visibility: visible; }
 .language-option[data-active='true'] { outline: 2px solid var(--language-focus); outline-offset: -2px; background: var(--language-highlight); }
 @media (hover: hover) {

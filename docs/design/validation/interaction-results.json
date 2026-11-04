@@ -1,0 +1,210 @@
+{
+  "date": "2026-11-04T00:25:32.729Z",
+  "checks": [
+    {
+      "name": "bootstrap null/light",
+      "pass": true
+    },
+    {
+      "name": "bootstrap null/dark",
+      "pass": true
+    },
+    {
+      "name": "bootstrap invalid/light",
+      "pass": true
+    },
+    {
+      "name": "bootstrap invalid/dark",
+      "pass": true
+    },
+    {
+      "name": "bootstrap light/light",
+      "pass": true
+    },
+    {
+      "name": "bootstrap light/dark",
+      "pass": true
+    },
+    {
+      "name": "bootstrap dark/light",
+      "pass": true
+    },
+    {
+      "name": "bootstrap dark/dark",
+      "pass": true
+    },
+    {
+      "name": "bootstrap system/light",
+      "pass": true
+    },
+    {
+      "name": "bootstrap system/dark",
+      "pass": true
+    },
+    {
+      "name": "blocked storage: light fallback, manual/Auto controls and Kanban work",
+      "pass": true
+    },
+    {
+      "name": "en/390: Auto, switch click/keyboard, persistence and OS changes",
+      "pass": true,
+      "detail": {
+        "stableAccessibleName": "Color theme"
+      }
+    },
+    {
+      "name": "en/390: Conway clear, keyboard editing, Play/Pause, Random, Reset and sizes",
+      "pass": true
+    },
+    {
+      "name": "en/390: clock cities, local timezone, time output and circular dial",
+      "pass": true
+    },
+    {
+      "name": "en/390: Kanban validation, create, keyboard move/reorder, delete, Undo, reset, persistence",
+      "pass": true
+    },
+    {
+      "name": "en/390: theme changes preserve widget nodes, board, city, tasks, draft, Undo and open menu",
+      "pass": true,
+      "detail": "Identity retained for custom elements, all 400 cells, task nodes, input, navigation and Document; paused generation and every state field unchanged."
+    },
+    {
+      "name": "en/390: running simulation survives theme change",
+      "pass": true
+    },
+    {
+      "name": "en/390: locale navigation preserves hash and manual/Auto mode",
+      "pass": true
+    },
+    {
+      "name": "en/1440: Auto, switch click/keyboard, persistence and OS changes",
+      "pass": true,
+      "detail": {
+        "stableAccessibleName": "Color theme"
+      }
+    },
+    {
+      "name": "en/1440: Conway clear, keyboard editing, Play/Pause, Random, Reset and sizes",
+      "pass": true
+    },
+    {
+      "name": "en/1440: clock cities, local timezone, time output and circular dial",
+      "pass": true
+    },
+    {
+      "name": "en/1440: Kanban validation, create, keyboard move/reorder, delete, Undo, reset, persistence",
+      "pass": true
+    },
+    {
+      "name": "en/1440: theme changes preserve widget nodes, board, city, tasks, draft, Undo and open menu",
+      "pass": true,
+      "detail": "Identity retained for custom elements, all 400 cells, task nodes, input, navigation and Document; paused generation and every state field unchanged."
+    },
+    {
+      "name": "en/1440: running simulation survives theme change",
+      "pass": true
+    },
+    {
+      "name": "en/1440: real mouse drag/drop",
+      "pass": true
+    },
+    {
+      "name": "en/1440: locale navigation preserves hash and manual/Auto mode",
+      "pass": true
+    },
+    {
+      "name": "es/390: Auto, switch click/keyboard, persistence and OS changes",
+      "pass": true,
+      "detail": {
+        "stableAccessibleName": "Tema de color"
+      }
+    },
+    {
+      "name": "es/390: Conway clear, keyboard editing, Play/Pause, Random, Reset and sizes",
+      "pass": true
+    },
+    {
+      "name": "es/390: clock cities, local timezone, time output and circular dial",
+      "pass": true
+    },
+    {
+      "name": "es/390: Kanban validation, create, keyboard move/reorder, delete, Undo, reset, persistence",
+      "pass": true
+    },
+    {
+      "name": "es/390: theme changes preserve widget nodes, board, city, tasks, draft, Undo and open menu",
+      "pass": true,
+      "detail": "Identity retained for custom elements, all 400 cells, task nodes, input, navigation and Document; paused generation and every state field unchanged."
+    },
+    {
+      "name": "es/390: running simulation survives theme change",
+      "pass": true
+    },
+    {
+      "name": "es/390: locale navigation preserves hash and manual/Auto mode",
+      "pass": true
+    },
+    {
+      "name": "es/1440: Auto, switch click/keyboard, persistence and OS changes",
+      "pass": true,
+      "detail": {
+        "stableAccessibleName": "Tema de color"
+      }
+    },
+    {
+      "name": "es/1440: Conway clear, keyboard editing, Play/Pause, Random, Reset and sizes",
+      "pass": true
+    },
+    {
+      "name": "es/1440: clock cities, local timezone, time output and circular dial",
+      "pass": true
+    },
+    {
+      "name": "es/1440: Kanban validation, create, keyboard move/reorder, delete, Undo, reset, persistence",
+      "pass": true
+    },
+    {
+      "name": "es/1440: theme changes preserve widget nodes, board, city, tasks, draft, Undo and open menu",
+      "pass": true,
+      "detail": "Identity retained for custom elements, all 400 cells, task nodes, input, navigation and Document; paused generation and every state field unchanged."
+    },
+    {
+      "name": "es/1440: running simulation survives theme change",
+      "pass": true
+    },
+    {
+      "name": "es/1440: real mouse drag/drop",
+      "pass": true
+    },
+    {
+      "name": "es/1440: locale navigation preserves hash and manual/Auto mode",
+      "pass": true
+    },
+    {
+      "name": "en: anchors, real resume PDF, clipboard success and fallback",
+      "pass": true
+    },
+    {
+      "name": "es: anchors, real resume PDF, clipboard success and fallback",
+      "pass": true
+    },
+    {
+      "name": "en/light: touch Kanban and theme",
+      "pass": true
+    },
+    {
+      "name": "en/dark: touch Kanban and theme",
+      "pass": true
+    },
+    {
+      "name": "es/light: touch Kanban and theme",
+      "pass": true
+    },
+    {
+      "name": "es/dark: touch Kanban and theme",
+      "pass": true
+    }
+  ],
+  "errors": []
+}

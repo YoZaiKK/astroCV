@@ -1,6 +1,7 @@
 ---
 import { resumePath } from '../../data/content';
 import { t } from '../../i18n';
+import HeroArtwork from '../ui/HeroArtwork.astro';
 
 interface Props {
 	name: string;
@@ -11,14 +12,17 @@ const { name } = Astro.props;
 
 <section class="hero" aria-labelledby="hero-title">
 	<div class="container hero-content">
-		<p class="eyebrow">{t('hero.eyebrow')}</p>
-		<h1 id="hero-title">{name}</h1>
-		<p class="hero-headline">{t('hero.headline')}</p>
-		<p class="hero-description">{t('hero.description')}</p>
-		<p class="hero-focus">{t('hero.focus')}</p>
-		<div class="actions">
-			<a class="button" href="#projects">{t('common.viewProjects')}</a>
-			<a class="button button-secondary" href={resumePath} download>{t('common.downloadResume')}</a>
+		<div class="hero-copy">
+			<p class="eyebrow">{t('hero.eyebrow')}</p>
+			<h1 id="hero-title">{name}</h1>
+			<p class="hero-headline">{t('hero.headline')}</p>
+			<p class="hero-description">{t('hero.description')}</p>
+			<p class="hero-focus">{t('hero.focus')}</p>
+			<div class="actions">
+				<a class="button" href="#projects">{t('common.viewProjects')}</a>
+				<a class="button button-secondary" href={resumePath} download>{t('common.downloadResume')}</a>
+			</div>
 		</div>
+		<HeroArtwork />
 	</div>
 </section>
