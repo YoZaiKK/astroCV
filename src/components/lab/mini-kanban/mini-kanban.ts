@@ -13,6 +13,7 @@ interface SavedBoard {
 }
 
 interface MiniKanbanMessages {
+	sampleTitles: Record<string, string>;
 	labels: Record<Status, string>;
 	persistenceSaved: string;
 	persistenceReadError: string;
@@ -50,6 +51,7 @@ const SAMPLE_TASKS: Task[] = [
 const memoryBoards = new Map<string, SavedBoard>();
 
 const DEFAULT_MESSAGES: MiniKanbanMessages = {
+	sampleTitles: Object.fromEntries(SAMPLE_TASKS.map(task => [task.id, task.title])),
 	labels: { todo: 'To do', doing: 'In progress', done: 'Done' },
 	persistenceSaved: 'Changes are saved in this browser.',
 	persistenceReadError: 'Saved data could not be read. You can still use the board.',
@@ -127,7 +129,7 @@ const mergeMessages = (value: unknown): MiniKanbanMessages => {
 	if (!isRecord(value)) return { ...DEFAULT_MESSAGES };
 
 	const readString = (
-		key: keyof Omit<MiniKanbanMessages, 'labels'>,
+		key: keyof Omit<MiniKanbanMessages, 'labels' | 'sampleTitles'>,
 	): string => {
 		const candidate = value[key];
 		return typeof candidate === 'string' ? candidate : DEFAULT_MESSAGES[key];
@@ -148,6 +150,11 @@ const mergeMessages = (value: unknown): MiniKanbanMessages => {
 
 	return {
 		labels,
+		sampleTitles: Object.fromEntries(SAMPLE_TASKS.map(task => [
+			task.id,
+			isRecord(value.sampleTitles) && typeof value.sampleTitles[task.id] === 'string'
+				? value.sampleTitles[task.id] : task.title,
+		])),
 		persistenceSaved: readString('persistenceSaved'),
 		persistenceReadError: readString('persistenceReadError'),
 		persistenceMemoryFallback: readString('persistenceMemoryFallback'),
@@ -249,7 +256,7 @@ export const defineMiniKanban = (): void => {
 				const raw = localStorage.getItem(this.storageKey);
 				if (raw === null) {
 					if (memory) return copy(memory.tasks);
-					return copy(SAMPLE_TASKS);
+					return this.sampleTasks();
 				}
 
 				const value: unknown = JSON.parse(raw);
@@ -264,7 +271,11 @@ export const defineMiniKanban = (): void => {
 				if (memory) return copy(memory.tasks);
 			}
 
-			return copy(SAMPLE_TASKS);
+			return this.sampleTasks();
+		}
+
+		private sampleTasks(): Task[] {
+			return SAMPLE_TASKS.map(task => ({ ...task, title: this.text.sampleTitles[task.id] ?? task.title }));
 		}
 
 		private save(): void {
@@ -385,7 +396,7 @@ export const defineMiniKanban = (): void => {
 			}
 
 			if (action === 'reset') {
-				this.commit(copy(SAMPLE_TASKS), this.text.resetDone);
+				this.commit(this.sampleTasks(), this.text.resetDone);
 				return;
 			}
 

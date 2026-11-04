@@ -1,11 +1,13 @@
-import en from '../data/en.json';
-import es from '../data/es.json';
+import en from '../data/en.json' with { type: 'json' };
+import es from '../data/es.json' with { type: 'json' };
+import ja from '../data/ja.json' with { type: 'json' };
+import type { Locale } from './locales.ts';
+export type { Locale } from './locales.ts';
 
 type InterpolationValues = Record<string, string | number>;
 type MessageTree = Record<string, unknown>;
-export type Locale = 'en' | 'es';
 
-const dictionaries = { en, es } as const;
+const dictionaries = { en, es, ja } as const;
 let activeLocale: Locale = 'en';
 
 export const setLocale = (locale: Locale) => {

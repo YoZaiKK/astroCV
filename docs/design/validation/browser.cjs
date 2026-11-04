@@ -162,7 +162,7 @@ async function check(name, fn) {
       assert.equal(await page.locator('[data-email]').isDisabled(),true);
       assert.equal(await page.locator('.mk-form').isVisible(),false);
       assert.equal(await page.locator('.menu-button').isVisible(),false);
-      assert.equal(await page.locator('.language-fallback a').count(),2);
+      assert.equal(await page.locator('.language-fallback a').count(),3);
       const data=await layout(page); assert.equal(data.scrollWidth,390); assert.deepEqual(data.outside,[]);
       await page.screenshot({path:path.join(out,`${locale}-no-js.png`),fullPage:true}); await context.close(); return data;
     });

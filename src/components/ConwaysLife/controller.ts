@@ -1,17 +1,20 @@
 import { createEmptyGrid, createInitialGrid, GRID_SIZE, nextGeneration, resizeGrid, STEP_INTERVAL_MS, type GridSize } from './helpers';
-import { DEFAULT_PATTERN_ID, PATTERNS, randomPatternId, type PatternId } from './patterns';
+import { DEFAULT_PATTERN_ID, randomPatternId, type PatternId } from './patterns';
 
 export class ConwaysLife extends HTMLElement {
 	private grid = createInitialGrid();
 	private generation = 0;
 	private size: GridSize = GRID_SIZE;
 	private patternId: PatternId = DEFAULT_PATTERN_ID;
-	private patternLabel = 'Classic mix';
+	private patternLabel = '';
+	private messages: Record<string, string> = {};
 	private timer: ReturnType<typeof setInterval> | undefined;
 	private events?: AbortController;
 	private cells: HTMLButtonElement[] = [];
 
 	connectedCallback() {
+		this.messages = JSON.parse(this.dataset.i18n ?? '{}');
+		this.patternLabel = this.message(this.patternId);
 		this.events?.abort();
 		this.events = new AbortController();
 		const { signal } = this.events;
@@ -22,17 +25,17 @@ export class ConwaysLife extends HTMLElement {
 			else this.play();
 		}, { signal });
 		this.querySelector('[data-reset]')?.addEventListener('click', () => {
-			this.patternLabel = PATTERNS.find(pattern => pattern.id === this.patternId)!.name;
-			this.replaceGrid(createInitialGrid(this.size, this.patternId), `${this.patternLabel} restored.`);
+			this.patternLabel = this.message(this.patternId);
+			this.replaceGrid(createInitialGrid(this.size, this.patternId), this.message('restored', { pattern: this.patternLabel }));
 		}, { signal });
 		this.querySelector('[data-clear]')?.addEventListener('click', () => {
-			this.patternLabel = 'Empty board';
-			this.replaceGrid(createEmptyGrid(this.size), 'Board cleared. Select cells to create a pattern.');
+			this.patternLabel = this.message('empty');
+			this.replaceGrid(createEmptyGrid(this.size), this.message('cleared'));
 		}, { signal });
 		this.querySelector('[data-random]')?.addEventListener('click', () => {
 			this.patternId = randomPatternId(this.patternId);
-			this.patternLabel = PATTERNS.find(pattern => pattern.id === this.patternId)!.name;
-			this.replaceGrid(createInitialGrid(this.size, this.patternId), `${this.patternLabel} loaded. Press Play to start.`);
+			this.patternLabel = this.message(this.patternId);
+			this.replaceGrid(createInitialGrid(this.size, this.patternId), this.message('loaded', { pattern: this.patternLabel }));
 		}, { signal });
 		this.querySelector('[data-size]')?.addEventListener('click', () => {
 			this.pause(false);
@@ -41,7 +44,7 @@ export class ConwaysLife extends HTMLElement {
 			this.generation = 0;
 			this.rebuildBoard();
 			this.render();
-			this.announce(`Board resized to ${this.size} by ${this.size}. Cells outside the board are removed. Simulation paused.`);
+			this.announce(this.message('resized', { size: this.size }));
 		}, { signal });
 		this.querySelector('.life-board')?.addEventListener('click', event => {
 			const cell = (event.target as HTMLElement).closest<HTMLButtonElement>('.life-cell');
@@ -51,10 +54,10 @@ export class ConwaysLife extends HTMLElement {
 			const column = Number(cell.dataset.column);
 			this.grid[row][column] = !this.grid[row][column];
 			this.generation = 0;
-			this.patternLabel = 'Custom pattern';
+			this.patternLabel = this.message('custom');
 			this.setActiveCell(cell);
 			this.render();
-			this.announce('Pattern updated. Press Play to start.');
+			this.announce(this.message('updated'));
 		}, { signal });
 		this.addEventListener('keydown', event => this.moveFocus(event), { signal });
 		document.addEventListener('visibilitychange', () => {
@@ -68,9 +71,13 @@ export class ConwaysLife extends HTMLElement {
 		this.events?.abort();
 	}
 
+	private message(key: string, values: Record<string, string | number> = {}) {
+		return this.messages[key].replace(/\{\{(\w+)\}\}/g, (_, name: string) => String(values[name] ?? `{{${name}}}`));
+	}
+
 	private play() {
 		if (!this.grid.some(line => line.some(Boolean))) {
-			this.announce('The board is empty. Select cells or press Reset first.');
+			this.announce(this.message('emptyPlay'));
 			return;
 		}
 		this.timer = setInterval(() => {
@@ -81,18 +88,18 @@ export class ConwaysLife extends HTMLElement {
 			this.render();
 			if (stable) {
 				this.pause(false);
-				this.announce('Simulation stopped. The pattern is stable or empty.');
+				this.announce(this.message('stopped'));
 			}
 		}, STEP_INTERVAL_MS);
 		this.updatePlayButton(true);
-		this.announce('Simulation running.');
+		this.announce(this.message('running'));
 	}
 
 	private pause(announce = true) {
 		clearInterval(this.timer);
 		this.timer = undefined;
 		this.updatePlayButton(false);
-		if (announce) this.announce('Simulation paused.');
+		if (announce) this.announce(this.message('paused'));
 	}
 
 	private replaceGrid(grid: boolean[][], message: string) {
@@ -115,7 +122,7 @@ export class ConwaysLife extends HTMLElement {
 		if (sizeButton) {
 			sizeButton.textContent = `${this.size} × ${this.size}`;
 			const nextSize = this.size === 20 ? 30 : 20;
-			sizeButton.setAttribute('aria-label', `Switch to ${nextSize} by ${nextSize} cells`);
+			sizeButton.setAttribute('aria-label', this.message('sizeLabel', { size: nextSize }));
 		}
 	}
 
@@ -123,7 +130,7 @@ export class ConwaysLife extends HTMLElement {
 		const board = this.querySelector<HTMLElement>('.life-board');
 		if (!board) return;
 		board.style.setProperty('--life-size', String(this.size));
-		board.setAttribute('aria-label', `${this.size} by ${this.size} cell board. Use arrow keys to move and Space or Enter to toggle a cell.`);
+		board.setAttribute('aria-label', this.message('boardLabel', { size: this.size }));
 		const fragment = document.createDocumentFragment();
 		this.cells = [];
 		for (let row = 0; row < this.size; row++) {
@@ -133,7 +140,7 @@ export class ConwaysLife extends HTMLElement {
 				cell.className = 'life-cell';
 				cell.dataset.row = String(row);
 				cell.dataset.column = String(column);
-				cell.setAttribute('aria-label', `Row ${row + 1}, column ${column + 1}`);
+				cell.setAttribute('aria-label', this.message('cellLabel', { row: row + 1, column: column + 1 }));
 				cell.tabIndex = row === 0 && column === 0 ? 0 : -1;
 				this.cells.push(cell);
 				fragment.append(cell);
@@ -145,9 +152,9 @@ export class ConwaysLife extends HTMLElement {
 	private updatePlayButton(running: boolean) {
 		const button = this.querySelector('[data-play]');
 		button?.setAttribute('aria-pressed', String(running));
-		button?.setAttribute('aria-label', running ? 'Pause simulation' : 'Play simulation');
+		button?.setAttribute('aria-label', this.message(running ? 'pauseLabel' : 'playLabel'));
 		const label = this.querySelector('[data-play-label]');
-		if (label) label.textContent = running ? 'Pause' : 'Play';
+		if (label) label.textContent = this.message(running ? 'pause' : 'play');
 	}
 
 	private announce(message: string) {

@@ -218,6 +218,39 @@
     "viewEvidence": "See related work"
   },
   "lab": {
+    "conway": {
+      "title": "Conways life",
+      "play": "Play",
+      "pause": "Pause",
+      "playLabel": "Play simulation",
+      "pauseLabel": "Pause simulation",
+      "generation": "Gen",
+      "reset": "Reset",
+      "clear": "Clear",
+      "random": "Random",
+      "boardLabel": "{{size}} by {{size}} cell board. Use arrow keys to move and Space or Enter to toggle a cell.",
+      "cellLabel": "Row {{row}}, column {{column}}",
+      "sizeLabel": "Switch to {{size}} by {{size}} cells",
+      "hint": "Select cells to create a pattern, then press Play. Three neighbors bring a cell to life; two or three keep it alive.",
+      "noscript": "Enable JavaScript to run the simulation.",
+      "classic-mix": "Classic mix",
+      "glider": "Glider",
+      "lwss": "Lightweight spaceship",
+      "toad": "Toad",
+      "beacon": "Beacon",
+      "pulsar": "Pulsar",
+      "empty": "Empty board",
+      "custom": "Custom pattern",
+      "restored": "{{pattern}} restored.",
+      "cleared": "Board cleared. Select cells to create a pattern.",
+      "loaded": "{{pattern}} loaded. Press Play to start.",
+      "resized": "Board resized to {{size}} by {{size}}. Cells outside the board are removed. Simulation paused.",
+      "updated": "Pattern updated. Press Play to start.",
+      "emptyPlay": "The board is empty. Select cells or press Reset first.",
+      "stopped": "Simulation stopped. The pattern is stable or empty.",
+      "running": "Simulation running.",
+      "paused": "Simulation paused."
+    },
     "title": "Frontend Lab",
     "intro": "Small, focused demos that make interface behavior and engineering decisions visible.",
     "demoLabel": "Interactive demo",
@@ -246,6 +279,11 @@
     "engineeringNotes": "How this demo works",
     "whatItDemonstrates": "What this demonstrates",
     "kanban": {
+      "samples": {
+        "layout": "Sketch the page layout",
+        "widget": "Build a small interactive widget",
+        "content": "Write the introduction"
+      },
       "title": "Mini Kanban",
       "description": "A compact task board demo with keyboard actions, drag and drop, and resilient local persistence.",
       "summary": "Add a task, move it through the board, and track your progress.",
@@ -361,6 +399,8 @@
     "analogLabel": "Analog clock showing time in {{location}}"
   },
   "preferences": {
+    "auto": "Auto",
+    "japanese": "Japanese",
     "themeLabel": "Color theme",
     "light": "Light",
     "dark": "Dark",

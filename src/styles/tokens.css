@@ -73,6 +73,10 @@
   --heading-transform: uppercase;
 }
 
+:root:lang(ja) {
+  --font-body: 'Yu Gothic UI', 'Hiragino Kaku Gothic ProN', Meiryo, 'Segoe UI', sans-serif;
+}
+
 @media (prefers-reduced-motion: reduce) {
   :root { --motion-duration: 0ms; }
 }

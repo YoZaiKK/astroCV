@@ -1,15 +1,22 @@
 ---
 import { Play, Pause } from '@lucide/astro';
 import { createInitialGrid } from './helpers';
+import { DEFAULT_PATTERN_ID, PATTERNS } from './patterns';
 import './styles.css';
 import LabCardIcons from '../ui/LabCardIcons.astro';
 import { t } from '../../i18n';
 
 const grid = createInitialGrid();
+const messageKeys = [
+	'play', 'pause', 'playLabel', 'pauseLabel', 'boardLabel', 'cellLabel', 'sizeLabel',
+	'empty', 'custom', 'restored', 'cleared', 'loaded', 'resized', 'updated',
+	'emptyPlay', 'stopped', 'running', 'paused', ...PATTERNS.map(pattern => pattern.id),
+];
+const messages = Object.fromEntries(messageKeys.map(key => [key, t(`lab.conway.${key}`)]));
 ---
 
 <div class="conways-life-demo">
-	<conways-life role="group" aria-label="Conways life">
+	<conways-life role="group" aria-label={t('lab.conway.title')} data-i18n={JSON.stringify(messages)}>
 		<div class="life-card">
 			<LabCardIcons
 				infoTooltip={t('lab.cards.conway.infoTooltip')}
@@ -17,21 +24,21 @@ const grid = createInitialGrid();
 				rocketHref="https://github.com/YoZaiKK/gameOfLife"
 			/>
 			<div class="life-header">
-				<h3>Conways life</h3>
-				<button class="life-play" type="button" data-play aria-label="Play simulation" aria-pressed="false" disabled>
+				<h3>{t('lab.conway.title')}</h3>
+				<button class="life-play" type="button" data-play aria-label={t('lab.conway.playLabel')} aria-pressed="false" disabled>
 					<Play class="life-icon-play" size={16} aria-hidden="true" />
 					<Pause class="life-icon-pause" size={16} aria-hidden="true" />
-					<span data-play-label>Play</span>
+					<span data-play-label>{t('lab.conway.play')}</span>
 				</button>
 			</div>
-			<div class="life-board" role="group" aria-label="20 by 20 cell board. Use arrow keys to move and Space or Enter to toggle a cell.">
+			<div class="life-board" role="group" aria-label={t('lab.conway.boardLabel', { size: grid.length })}>
 				{grid.flatMap((line, row) => line.map((alive, column) => (
 					<button
 						type="button"
 						class="life-cell"
 						data-row={row}
 						data-column={column}
-						aria-label={`Row ${row + 1}, column ${column + 1}`}
+						aria-label={t('lab.conway.cellLabel', { row: row + 1, column: column + 1 })}
 						aria-pressed={alive ? 'true' : 'false'}
 						tabindex={row === 0 && column === 0 ? 0 : -1}
 						disabled
@@ -39,22 +46,22 @@ const grid = createInitialGrid();
 				)))}
 			</div>
 			<div class="life-footer">
-				<span class="life-generation">Gen <span data-generation>0</span></span>
+				<span class="life-generation">{t('lab.conway.generation')} <span data-generation>0</span></span>
 				<div class="life-tools">
-					<button type="button" data-reset disabled>Reset</button>
-					<button type="button" data-clear disabled>Clear</button>
+					<button type="button" data-reset disabled>{t('lab.conway.reset')}</button>
+					<button type="button" data-clear disabled>{t('lab.conway.clear')}</button>
 				</div>
 			</div>
 		</div>
 		<div class="life-options">
-			<button type="button" data-size aria-label="Switch to 30 by 30 cells" disabled>20 × 20</button>
-			<button type="button" data-random disabled>Random</button>
-			<span class="life-pattern" data-pattern>Classic mix</span>
+			<button type="button" data-size aria-label={t('lab.conway.sizeLabel', { size: 30 })} disabled>20 × 20</button>
+			<button type="button" data-random disabled>{t('lab.conway.random')}</button>
+			<span class="life-pattern" data-pattern>{t(`lab.conway.${DEFAULT_PATTERN_ID}`)}</span>
 		</div>
 		<span class="sr-only" data-status role="status" aria-live="polite"></span>
 	</conways-life>
-	<p class="life-hint">Select cells to create a pattern, then press Play. Three neighbors bring a cell to life; two or three keep it alive.</p>
-	<noscript><p class="life-hint">Enable JavaScript to run the simulation.</p></noscript>
+	<p class="life-hint">{t('lab.conway.hint')}</p>
+	<noscript><p class="life-hint">{t('lab.conway.noscript')}</p></noscript>
 </div>
 
 <script>

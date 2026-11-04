@@ -22,7 +22,7 @@ const links = [
 
 <header class="site-header">
 	<div class="container header-content">
-		<a class="brand" href="#main-content" aria-label={`${name} home`}>{name}</a>
+		<a class="brand" href="#main-content" aria-label={`${name} — ${t('navigation.home')}`}>{name}</a>
 		<button class="menu-button" type="button" aria-expanded="false" aria-controls="primary-navigation">
 			<span class="menu-icon" aria-hidden="true"></span>
 			<span class="sr-only">{t('navigation.openMenu')}</span>
@@ -50,8 +50,8 @@ const links = [
 						</span>
 					</button>
 					<label class="theme-auto">
-						<input type="checkbox" data-theme-auto aria-label={`Auto: ${t('preferences.system')}`} disabled />
-						<span>Auto</span>
+						<input type="checkbox" data-theme-auto aria-label={`${t('preferences.auto')}: ${t('preferences.system')}`} disabled />
+						<span>{t('preferences.auto')}</span>
 					</label>
 				</div>
 				<a class="button button-small" href={resumePath} download>{t('common.downloadResume')}</a>

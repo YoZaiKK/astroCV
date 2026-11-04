@@ -159,11 +159,13 @@ const storage=(preference,extra=[])=>({cookies:[],origins:[{origin:base,localSto
         // Start with a manual choice; the return trip separately checks Auto.
         await page.locator('[data-theme-toggle]').click();
         const initial=await page.evaluate(()=>({theme:document.documentElement.dataset.theme,mode:document.documentElement.dataset.themeMode}));
-        await page.locator('[role="combobox"]').press('Enter');await page.locator('[role="combobox"]').press(locale==='en'?'End':'Home');
+        await page.locator('[role="combobox"]').press('Enter');await page.locator('[role="combobox"]').press('Home');
+        if(locale==='en') await page.locator('[role="combobox"]').press('ArrowDown');
         await Promise.all([page.waitForURL(locale==='en'?'**/es/#projects':'**/#projects'),page.locator('[role="combobox"]').press('Enter')]);
         await page.locator('[data-play]:enabled').waitFor({state:'attached'});await theme(page,initial.theme,initial.mode);
         await menu(page);await page.locator('[data-theme-auto]').check();
-        await page.locator('[role="combobox"]').press('Enter');await page.locator('[role="combobox"]').press(locale==='en'?'Home':'End');
+        await page.locator('[role="combobox"]').press('Enter');await page.locator('[role="combobox"]').press('Home');
+        if(locale==='es') await page.locator('[role="combobox"]').press('ArrowDown');
         await Promise.all([page.waitForURL(locale==='en'?'**/#projects':'**/es/#projects'),page.locator('[role="combobox"]').press('Enter')]);
         await page.locator('[data-play]:enabled').waitFor({state:'attached'});await theme(page,'light','system');
         assert.equal(new URL(page.url()).hash,'#projects');
@@ -179,9 +181,9 @@ const storage=(preference,extra=[])=>({cookies:[],origins:[{origin:base,localSto
       assert.equal(response.status(),200);assert.equal((await response.body()).subarray(0,4).toString(),'%PDF');
       const button=page.locator('[data-email]');await button.click();
       assert.equal(await page.evaluate(()=>navigator.clipboard.readText()),await button.getAttribute('data-email'));
-      assert.match(await page.locator('.copy-status').textContent(),/copied/);
+      assert.equal(await page.locator('.copy-status').textContent(),await button.getAttribute('data-copy-success'));
       await page.evaluate(()=>{navigator.clipboard.writeText=()=>Promise.reject(new Error('Clipboard denied for validation'));});await button.click();
-      await page.waitForFunction(()=>document.querySelector('.copy-status').textContent.includes('could not'));
+      await page.waitForFunction(()=>document.querySelector('.copy-status').textContent===document.querySelector('[data-email]').dataset.copyError);
       await context.close();
     });
     for(const locale of ['en','es']) for(const color of ['light','dark']) await check(`${locale}/${color}: touch Kanban and theme`,async()=>{

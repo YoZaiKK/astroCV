@@ -1,0 +1,451 @@
+{
+  "meta": {
+    "homeTitle": "{{name}} | ポートフォリオ",
+    "homeDescription": "Angular、React、TypeScriptでエンタープライズ向けアプリケーションを開発するソフトウェアエンジニアです。機能開発、フロントエンドの移行、プロジェクト、技術的な判断をご紹介します。",
+    "projectsTitle": "プロジェクト | {{name}}",
+    "projectTitle": "{{project}} | {{name}}",
+    "labTitle": "フロントエンドラボ | {{name}}",
+    "notFoundTitle": "ページが見つかりません | {{name}}"
+  },
+  "navigation": {
+    "home": "ホーム",
+    "about": "自己紹介",
+    "experience": "職務経歴",
+    "projects": "ラボ",
+    "skills": "スキル",
+    "lab": "フロントエンドラボ",
+    "notes": "技術ノート",
+    "education": "学歴",
+    "contact": "お問い合わせ",
+    "openMenu": "ナビゲーションメニューを開く",
+    "closeMenu": "ナビゲーションメニューを閉じる",
+    "primaryLabel": "メインナビゲーション"
+  },
+  "common": {
+    "viewProjects": "プロジェクトを見る",
+    "viewProject": "プロジェクトを見る",
+    "readCaseStudy": "事例を読む",
+    "viewSource": "ソースコードを見る",
+    "viewDemo": "デモを開く",
+    "watchDemo": "デモを見る",
+    "downloadResume": "履歴書をダウンロード",
+    "resumeUnavailable": "現在、履歴書はダウンロードできません。",
+    "backToProjects": "プロジェクト一覧に戻る",
+    "backToHome": "ホームに戻る",
+    "backToTop": "ページの先頭へ",
+    "learnMore": "詳しく見る",
+    "showDetails": "詳細を表示",
+    "hideDetails": "詳細を非表示",
+    "present": "現在",
+    "loading": "読み込み中…",
+    "tryAgain": "再試行",
+    "clearFilters": "絞り込みを解除",
+    "close": "閉じる",
+    "previous": "前へ",
+    "next": "次へ",
+    "readMore": "続きを読む",
+    "externalLink": "新しいタブで開きます",
+    "lastUpdated": "最終更新日：{{date}}",
+    "error": "エラーが発生しました。もう一度お試しください。"
+  },
+  "hero": {
+    "eyebrow": "ソフトウェアエンジニア",
+    "headline": "信頼できるインターフェースを。UIの先まで、責任を持って。",
+    "description": "Angular、React、TypeScriptでエンタープライズ向けアプリケーションを開発・保守しています。要件定義と技術設計から、連携、テスト、デバッグ、リリースまで、一貫して機能開発を担当します。",
+    "focus": "フロントエンドの専門性、技術面での主体性、そして広がり続けるバックエンドの知識。"
+  },
+  "about": {
+    "title": "自己紹介",
+    "intro": "エンタープライズ向けアプリケーションの開発と、チームを横断した協働を通じて、保守しやすいソリューションを提供してきたソフトウェアエンジニアです。",
+    "background": "Teradataでは、OPFとConsumption/Usageの機能開発、フロントエンド開発、API連携、自動テストに加え、アプリケーションとインフラを横断する問題の調査・解決を担当しています。",
+    "approach": "課題を理解し、技術的な判断の根拠を明確にし、保守する人にとって理解しやすいソフトウェアをつくることを大切にしています。",
+    "direction": "Angular、React、TypeScriptの専門性を深めながら、バックエンドとシステム設計のスキルを広げています。",
+    "principles": {
+      "ownership": {
+        "title": "成果まで責任を持つ",
+        "description": "要件からリリースまで機能開発を担当し、連携時の問題解決やチーム間の調整にも取り組みます。"
+      },
+      "maintainability": {
+        "title": "保守を見据えてつくる",
+        "description": "明確な責務、再利用可能なコンポーネント、重要な振る舞いを守るテストを重視します。"
+      },
+      "problemSolving": {
+        "title": "境界を越えて調査する",
+        "description": "API、認証、デプロイ環境がユーザー体験に影響する場合は、画面の外まで原因を追究します。"
+      }
+    },
+    "currentWork": "既存のモノレポ内で、Consumption/UsageをAngularからReactのリモートアプリケーションへ移行する取り組みを主導しています。両実装を維持しながら、機能開発とUXとの整合性向上を進めています。"
+  },
+  "experience": {
+    "title": "職務経歴",
+    "intro": "エンタープライズ開発、主体的な機能開発、チームでの成果創出。",
+    "responsibilitiesLabel": "担当業務と貢献",
+    "teradataEngineer": {
+      "role": "ソフトウェアエンジニア — UIエンジニア",
+      "summary": "OPF、Consumption/Usage、Connection Managerの機能開発を担当。AngularからReactへの移行を進めるとともに、Console、AIS、Notebooksのエンタープライズ向けアプリケーション開発にも貢献しています。",
+      "highlights": {
+        "ownership": "チーム体制の移行期にConnection Managerの開発を一貫して担当。技術面の主要な窓口として、実装、技術的な判断、チーム横断の問題解決を調整しました。",
+        "delivery": "要件分析と技術設計から、API連携、実装、自動テスト、クラウド環境での検証、デバッグ、リリースまで担当しています。",
+        "integration": "フロントエンド、バックエンドAPI、認証フロー、Kubernetesワークロード、リモートのクラウド環境にまたがる連携の問題を調査しています。",
+        "architecture": "Angular、React、TypeScript、RxJS、Nx、Signals、再利用可能なコンポーネント、依存性注入、Jestによる単体テストを用い、保守しやすいインターフェースを開発しています。",
+        "collaboration": "課題がアプリケーションやサービスの境界を越える場合は、他のエンジニアリングチームと連携しています。",
+        "ai": "AIを活用したワークフローで、コード分析、デバッグ、反復的な開発作業を支援しています。",
+        "migration": "Consumption/UsageのAngularからReactへの移行について、技術方針と実装を主導しています。既存のモノレポ内にReactをリモートとして統合し、両実装を並行して維持しています。",
+        "uxAlignment": "OPFとConsumption/Usageの新機能開発を担当し、既存の画面と新しい機能をUXデザインおよび既存の設計原則に合わせています。"
+      }
+    },
+    "teradataIntern": {
+      "role": "UIエンジニアリング インターン",
+      "summary": "本番運用されているエンタープライズ向けUIアプリケーションの開発に貢献し、その後、正社員のソフトウェアエンジニアへ移行しました。",
+      "highlights": {
+        "development": "Angular、TypeScript、テスト、API連携、大規模開発の実務経験を積みました。",
+        "collaboration": "チーム開発、コードレビュー、アジャイルな開発・リリースのプロセスに参加しました。"
+      }
+    },
+    "axolote": {
+      "role": "フルスタック開発者・デザイナー",
+      "summary": "香水販売事業向けのレスポンシブWebアプリケーションを共同開発しました。",
+      "highlights": {
+        "delivery": "フリーランスの開発チームの一員として、顧客向けWebアプリケーションを開発・納品しました。",
+        "contribution": "UI/UXデザイン、フロントエンド開発、バックエンド機能、顧客要件の実装に貢献しました。"
+      }
+    }
+  },
+  "projects": {
+    "title": "主なプロジェクト",
+    "intro": "各プロジェクトの課題、私の貢献、技術的な判断、取り組みを裏付ける資料をご紹介します。",
+    "filtersLabel": "プロジェクトの絞り込み",
+    "filters": {
+      "all": "すべて",
+      "frontend": "フロントエンド",
+      "fullStack": "フルスタック",
+      "desktop": "デスクトップ",
+      "engineering": "エンジニアリング"
+    },
+    "resultSummary": "{{total}}件中{{visible}}件のプロジェクトを表示しています。",
+    "empty": "この条件に一致する公開済みプロジェクトはありません。",
+    "loadError": "プロジェクトを読み込めませんでした。もう一度お試しください。",
+    "status": {
+      "delivered": "リリース済み",
+      "inProgress": "進行中",
+      "planned": "計画中",
+      "archived": "アーカイブ済み"
+    },
+    "categories": {
+      "professional": "業務プロジェクト",
+      "personal": "個人プロジェクト",
+      "learning": "学習プロジェクト"
+    },
+    "cards": {
+      "fragranceWebsite": {
+        "title": "香水販売事業のWebサイト",
+        "summary": "デザイン、フロントエンド開発、バックエンド機能に携わり、チームで開発したレスポンシブな顧客向けアプリケーションです。"
+      },
+      "connectionManager": {
+        "title": "エンタープライズ機能の開発責任",
+        "summary": "機能開発の継続、技術的な判断、連携の問題調査、チーム間の調整を担った業務経験です。"
+      },
+      "connectionExplorer": {
+        "title": "Connection Explorer",
+        "summary": "架空の接続データの閲覧、絞り込み、読み込み中・空・エラーの状態を扱う、計画段階のフロントエンドデモです。"
+      },
+      "fullStackTracker": {
+        "title": "Engineering Project Tracker",
+        "summary": "API設計、リレーショナルデータモデリング、認証、デプロイを学ぶための、計画段階のフルスタックプロジェクトです。"
+      },
+      "opf": {
+        "title": "OPFの機能開発とUXとの整合性向上",
+        "summary": "新機能の実装と、既存アプリケーションをUXデザインおよび設計原則に合わせる取り組みを進めています。"
+      },
+      "consumptionUsage": {
+        "title": "Consumption/UsageのAngularからReactへの移行",
+        "summary": "既存のモノレポ内でReactのリモートアプリケーションを導入するため、技術面での主導と実装を担当し、AngularとReactの両実装を並行して維持しています。"
+      }
+    }
+  },
+  "caseStudy": {
+    "overview": "概要",
+    "problem": "課題",
+    "context": "背景と制約",
+    "role": "私の役割",
+    "team": "チームと協働",
+    "scope": "対象範囲",
+    "solution": "解決策",
+    "architecture": "アーキテクチャ",
+    "decisions": "主な技術的判断",
+    "alternatives": "検討した代替案",
+    "tradeoffs": "トレードオフ",
+    "implementation": "実装のポイント",
+    "quality": "テストと品質",
+    "accessibility": "アクセシビリティ",
+    "performance": "パフォーマンス",
+    "outcomes": "成果と裏付け",
+    "lessons": "学んだこと",
+    "nextSteps": "今後の取り組み",
+    "stack": "技術スタック",
+    "evidence": "参考資料",
+    "diagramDescription": "主なコンポーネントとそれぞれの関係を示すアーキテクチャ図。",
+    "relatedProjects": "関連プロジェクト",
+    "migrationStrategy": "移行戦略",
+    "parallelImplementations": "並行する実装",
+    "uxAlignment": "UXとの整合性"
+  },
+  "skills": {
+    "title": "技術スキル",
+    "intro": "現在の実務経験と、これから伸ばしていく分野をご紹介します。",
+    "core": {
+      "title": "主な実務経験",
+      "description": "Angular、React、TypeScript、RxJS、Nx、再利用可能なコンポーネント、API連携、フロントエンドの移行、Jestによるテスト。"
+    },
+    "additional": {
+      "title": "その他の経験",
+      "description": "フロントエンドフレームワーク、バックエンド開発、データベース、開発環境にまたがる幅広い技術。"
+    },
+    "growth": {
+      "title": "今後の学習目標",
+      "description": "Python、FastAPI、PostgreSQLを使う学習プロジェクトを計画しています。その後、Go、クラウド、分散システムの理解を深めていきます。"
+    },
+    "groups": {
+      "languages": "プログラミング言語",
+      "frontend": "フロントエンド",
+      "backend": "バックエンド・API",
+      "databases": "データベース",
+      "infrastructure": "インフラ・環境",
+      "testing": "テスト・開発手法",
+      "ai": "AIを活用した開発",
+      "architecture": "フロントエンドの設計と刷新"
+    },
+    "viewEvidence": "関連する取り組みを見る"
+  },
+  "lab": {
+    "conway": {
+      "title": "ライフゲーム",
+      "play": "開始",
+      "pause": "一時停止",
+      "playLabel": "シミュレーションを開始",
+      "pauseLabel": "シミュレーションを一時停止",
+      "generation": "世代",
+      "reset": "リセット",
+      "clear": "クリア",
+      "random": "ランダム",
+      "boardLabel": "{{size}}×{{size}}の盤面。矢印キーで移動し、スペースキーまたはEnterキーでセルを切り替えられます。",
+      "cellLabel": "{{row}}行{{column}}列",
+      "sizeLabel": "{{size}}×{{size}}の盤面に切り替える",
+      "hint": "セルを選択してパターンをつくり、「開始」を押してください。隣接する生きたセルが3つあると誕生し、2つまたは3つあると生存します。",
+      "noscript": "シミュレーションを実行するにはJavaScriptを有効にしてください。",
+      "classic-mix": "基本パターン集",
+      "glider": "グライダー",
+      "lwss": "軽量宇宙船",
+      "toad": "ヒキガエル",
+      "beacon": "ビーコン",
+      "pulsar": "パルサー",
+      "empty": "空の盤面",
+      "custom": "カスタムパターン",
+      "restored": "「{{pattern}}」を復元しました。",
+      "cleared": "盤面をクリアしました。セルを選択してパターンをつくってください。",
+      "loaded": "「{{pattern}}」を読み込みました。「開始」を押してください。",
+      "resized": "盤面を{{size}}×{{size}}に変更しました。盤面の外のセルは削除されました。シミュレーションは一時停止中です。",
+      "updated": "パターンを更新しました。「開始」を押してください。",
+      "emptyPlay": "盤面が空です。セルを選択するか、「リセット」を押してください。",
+      "stopped": "シミュレーションが停止しました。パターンが安定したか、盤面が空になりました。",
+      "running": "シミュレーションを実行中です。",
+      "paused": "シミュレーションを一時停止しました。"
+    },
+    "title": "フロントエンドラボ",
+    "intro": "インターフェースの動作と技術的な判断を体験できる、小さなデモ集です。",
+    "demoLabel": "インタラクティブデモ",
+    "syntheticDataNotice": "このデモでは架空のデータを使用しています。",
+    "controlsLabel": "デモの操作",
+    "searchLabel": "接続を検索",
+    "searchPlaceholder": "名前で検索…",
+    "statusFilterLabel": "接続状態",
+    "allStatuses": "すべての状態",
+    "nameColumn": "名前",
+    "statusColumn": "状態",
+    "updatedColumn": "最終更新",
+    "tableCaption": "架空の接続レコード",
+    "statuses": {
+      "connected": "接続済み",
+      "disconnected": "未接続",
+      "pending": "処理待ち"
+    },
+    "showLoading": "読み込み中を再現",
+    "showError": "エラーを再現",
+    "showEmpty": "検索結果なしを再現",
+    "reset": "デモをリセット",
+    "empty": "検索条件に一致する接続はありません。",
+    "error": "デモのリクエストに失敗しました。再試行するか、デモをリセットしてください。",
+    "resultsSummary": "{{count}}件の接続が見つかりました。",
+    "engineeringNotes": "このデモの仕組み",
+    "whatItDemonstrates": "このデモで確認できること",
+    "kanban": {
+      "samples": {
+        "layout": "ページのレイアウトを描く",
+        "widget": "小さなインタラクティブ部品をつくる",
+        "content": "自己紹介を書く"
+      },
+      "title": "ミニカンバン",
+      "description": "キーボード操作、ドラッグ＆ドロップ、エラーに対応したローカル保存を備えた、小さなタスクボードのデモです。",
+      "summary": "タスクを追加し、列の間を移動させて、進捗を確認できます。",
+      "newTaskLabel": "新しいタスク",
+      "newTaskPlaceholder": "何をつくりたいですか？",
+      "addTask": "タスクを追加",
+      "undo": "元に戻す",
+      "resetDemo": "デモをリセット",
+      "progressSummary": "{{total}}件中{{done}}件完了",
+      "progressAria": "完了したタスク",
+      "columns": {
+        "todo": "未着手",
+        "doing": "進行中",
+        "done": "完了"
+      },
+      "columnAria": {
+        "todo": "未着手の列",
+        "doing": "進行中の列",
+        "done": "完了の列"
+      },
+      "listAria": {
+        "todo": "未着手のタスク",
+        "doing": "進行中のタスク",
+        "done": "完了したタスク"
+      },
+      "countAria": {
+        "todo": "未着手のタスク数",
+        "doing": "進行中のタスク数",
+        "done": "完了したタスク数"
+      },
+      "help": "マウスでカードをドラッグするか、タッチまたはキーボードで矢印ボタンを操作してください。",
+      "noscript": "このデモを操作するにはJavaScriptを有効にしてください。",
+      "emptyColumn": "この列にはまだタスクがありません。",
+      "persistence": {
+        "saved": "変更はこのブラウザーに保存されます。",
+        "readError": "保存データを読み込めませんでした。ボードは引き続き操作できます。",
+        "memoryFallback": "ブラウザーの保存領域を利用できません。変更はこのセッション中のみ保持されます。",
+        "invalidRestored": "保存データが無効なため、サンプルのボードを復元しました。"
+      },
+      "announcements": {
+        "added": "「{{title}}」を「{{status}}」に追加しました。",
+        "moved": "「{{title}}」を「{{status}}」に移動しました。",
+        "deleted": "「{{title}}」を削除しました。「元に戻す」で復元できます。",
+        "undo": "直前の変更を元に戻しました。",
+        "reset": "サンプルのボードを復元しました。「元に戻す」で前の状態に戻せます。"
+      },
+      "validation": {
+        "titleLength": "タスク名を1〜{{max}}文字で入力してください。",
+        "maxTasks": "このデモでは最大{{max}}件のタスクを扱えます。追加する前にタスクを削除してください。"
+      },
+      "actions": {
+        "groupLabel": "「{{title}}」の操作",
+        "moveToStatus": "「{{title}}」を「{{status}}」に移動",
+        "moveToPrevious": "「{{title}}」を前の列に移動",
+        "moveToNext": "「{{title}}」を次の列に移動",
+        "moveUp": "「{{title}}」を上に移動",
+        "moveDown": "「{{title}}」を下に移動",
+        "delete": "「{{title}}」を削除"
+      },
+      "progressValueText": "全{{total}}件のタスクのうち{{done}}件が完了"
+    },
+    "cards": {
+      "conway": {
+        "infoTooltip": "学校の授業で制作したプロジェクト",
+        "rocketTooltip": "ライフゲームのリポジトリを開く"
+      },
+      "clock": {
+        "infoTooltip": "時刻をいつでも確認できます",
+        "rocketTooltip": "世界時計のリポジトリを開く"
+      },
+      "kanban": {
+        "infoTooltip": "学位取得のための卒業論文とともに制作した最終プロジェクト",
+        "rocketTooltip": "カンバンのリポジトリを開く"
+      }
+    }
+  },
+  "notes": {
+    "title": "技術ノート",
+    "intro": "ソフトウェア開発での判断、実験、学びを短くまとめています。",
+    "empty": "公開済みのノートはまだありません。",
+    "readingTime": "読了時間の目安：{{minutes}}分",
+    "topicsLabel": "トピック",
+    "backToNotes": "ノート一覧に戻る"
+  },
+  "education": {
+    "title": "学歴と言語",
+    "degree": "コンピューターシステム工学",
+    "completion": "2025年1月に学業を修了。",
+    "languagesTitle": "言語",
+    "spanish": "スペイン語",
+    "english": "英語",
+    "native": "母語",
+    "upperIntermediate": "中上級（B2）"
+  },
+  "contact": {
+    "title": "お問い合わせ",
+    "description": "仕事のご相談、協業、取り組みに関するご質問は、メールでご連絡いただくか、公開プロフィールをご覧ください。",
+    "email": "メールを送る",
+    "copyEmail": "メールアドレスをコピー",
+    "emailCopied": "メールアドレスをコピーしました。",
+    "copyError": "メールアドレスをコピーできませんでした。アドレスを選択して手動でコピーしてください。",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "leetcode": "LeetCode"
+  },
+  "clock": {
+    "title": "世界時計",
+    "description": "タイムゾーンを切り替えられるアナログ時計です。",
+    "tokyo": "東京",
+    "mexicoCity": "メキシコシティ",
+    "yourLocation": "現在地",
+    "timeLabel": "{{location}}の現在時刻",
+    "analogLabel": "{{location}}の時刻を示すアナログ時計"
+  },
+  "preferences": {
+    "auto": "自動",
+    "japanese": "日本語",
+    "themeLabel": "配色テーマ",
+    "light": "ライト",
+    "dark": "ダーク",
+    "system": "システムの設定に合わせる",
+    "languageLabel": "言語",
+    "english": "英語",
+    "spanish": "スペイン語",
+    "motionLabel": "アニメーションの設定",
+    "motionSystem": "システムのアニメーション設定に合わせる",
+    "motionReduced": "アニメーションを減らす"
+  },
+  "accessibility": {
+    "skipToContent": "メインコンテンツへ移動",
+    "projectImageAlt": "{{project}}のインターフェースのプレビュー",
+    "portraitAlt": "{{name}}のポートレート",
+    "breadcrumbLabel": "パンくずナビゲーション",
+    "paginationLabel": "ページ送り",
+    "currentPage": "現在のページ：{{page}}",
+    "openProject": "プロジェクトを見る：{{project}}",
+    "viewSource": "{{project}}のソースコードを見る",
+    "openDemo": "{{project}}のデモを開く"
+  },
+  "notFound": {
+    "title": "ページが見つかりません",
+    "description": "ページが移動したか、アドレスが間違っている可能性があります。"
+  },
+  "footer": {
+    "description": "ソフトウェア開発、使いやすいインターフェース、そして継続的な学び。",
+    "copyright": "著作権 © {{year}} {{name}}。",
+    "source": "このサイトのソースコード"
+  },
+  "professionalWork": {
+    "title": "現在の開発業務",
+    "intro": "Teradataにおける機能開発、UXとの整合性向上、フロントエンドの刷新。",
+    "opf": {
+      "title": "OPF",
+      "summary": "新機能の実装を担当し、既存アプリケーションをUXデザインおよび既存の設計原則に合わせています。",
+      "contribution": "UXデザインをアプリケーションの変更に落とし込み、機能の実装と画面の一貫性に責任を持って取り組んでいます。"
+    },
+    "consumptionUsage": {
+      "title": "Consumption/Usage",
+      "summary": "AngularからReactへの移行を主導・実装しながら、機能開発とUXとの整合性向上も継続しています。",
+      "architecture": "既存のモノレポ内にReactアプリケーションをリモートとして統合しています。",
+      "constraint": "移行期間中はAngularとReactの実装を並行して維持しています。",
+      "contribution": "新機能の開発とともに、移行方針とその実装を担当しています。"
+    }
+  }
+}

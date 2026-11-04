@@ -1,6 +1,7 @@
 ---
 import { Languages, ChevronDown, Check } from '@lucide/astro';
 import { t, type Locale } from '../../i18n';
+import { languageOptions as options } from '../../i18n/locales';
 import './styles.css';
 
 interface Props {
@@ -9,10 +10,6 @@ interface Props {
 
 const { locale } = Astro.props;
 const id = `language-${crypto.randomUUID()}`;
-const options = [
-	{ value: 'en', label: 'English', href: '/' },
-	{ value: 'es', label: 'Espanol', href: '/es/' },
-];
 ---
 
 <language-picker class="language-picker" data-locale={locale}>

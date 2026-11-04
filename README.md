@@ -1,12 +1,12 @@
 # Guillermo Cardona Gómez — Portfolio
 
-A personal CV and portfolio built with Astro and TypeScript. It presents professional experience, skills, education, contact links, a downloadable resume, and an interactive Frontend Lab in English and Spanish.
+A personal CV and portfolio built with Astro and TypeScript. It presents professional experience, skills, education, contact links, a downloadable resume, and an interactive Frontend Lab in English, Spanish, and Japanese.
 
 ## Screenshots
 
 The light theme pairs white surfaces with blue controls. The dark theme uses an editorial Japanese retro style: ink black, cream, orange, condensed headings, flat panels, and an original geometric SVG poster.
 
-All screenshots below show the English version of the production build. Click an image to open it at its original size.
+The desktop, mobile, and Lab previews show the English version of the production build. Japanese previews follow below. Click an image to open it at its original size.
 
 ### Desktop · 1440 × 1000
 
@@ -26,10 +26,17 @@ All screenshots below show the English version of the production build. Click an
 | --- | --- |
 | [![Conway, world clock, and Mini Kanban in the light theme](public/images/readme-lab-light.png)](public/images/readme-lab-light.png) | [![Conway, world clock, and Mini Kanban in the dark theme](public/images/readme-lab-dark.png)](public/images/readme-lab-dark.png) |
 
+### Japanese version
+
+| View | Light theme | Dark theme |
+| --- | --- | --- |
+| Desktop · 1440 px | [![Japanese desktop portfolio in the light theme](docs/design/validation/japanese/ja-light-1440-home.png)](docs/design/validation/japanese/ja-light-1440-home.png) | [![Japanese desktop portfolio in the dark theme](docs/design/validation/japanese/ja-dark-1440-home.png)](docs/design/validation/japanese/ja-dark-1440-home.png) |
+| Mobile · 390 px | [![Japanese mobile portfolio in the light theme](docs/design/validation/japanese/ja-light-390-home.png)](docs/design/validation/japanese/ja-light-390-home.png) | [![Japanese mobile portfolio in the dark theme](docs/design/validation/japanese/ja-dark-390-home.png)](docs/design/validation/japanese/ja-dark-390-home.png) |
+
 ## Features
 
 - **Two visual themes:** light and dark, plus an Auto option that follows the operating system. The first visit defaults to light; valid saved preferences are restored before the first paint. Using the switch while Auto is active selects a manual theme.
-- **English and Spanish routes:** `/` and `/es/`, with a keyboard-accessible language picker that preserves the current section anchor.
+- **Three language routes:** English at `/`, Spanish at `/es/`, and Japanese at `/ja/`, with a keyboard-accessible language picker that preserves the current section anchor and theme preference.
 - **Responsive layout:** desktop navigation, a collapsible menu on smaller screens, and layouts that adapt the content and Lab to the available width.
 - **Conway's Game of Life:** editable cells, keyboard navigation, Play/Pause, Reset, Clear, preset selection through Random, and 20 × 20 or 30 × 30 boards.
 - **World clock:** an analog dial and digital time for Tokyo, Mexico City, or the browser's local time zone.
@@ -96,7 +103,7 @@ src/
 ├── data/                 # Translation dictionaries and structured portfolio data
 ├── i18n/                 # Locale selection, translation lookup, and interpolation
 ├── layouts/              # Shared document layout and theme bootstrap
-├── pages/                # English (/) and Spanish (/es/) pages
+├── pages/                # English (/), Spanish (/es/), and Japanese (/ja/) pages
 ├── styles/               # Theme tokens and global responsive styles
 └── types/                # Portfolio content types
 public/
@@ -111,8 +118,9 @@ docs/design/              # Design brief, references, and local validation evide
 | File or directory | Purpose |
 | --- | --- |
 | `src/data/portfolio.data.json` | Profile links, work history, technologies, education, and project metadata. |
-| `src/data/en.json` and `src/data/es.json` | Translation dictionaries for the portfolio and localized controls. Some widget text is defined directly in its component or controller. |
+| `src/data/en.json`, `src/data/es.json`, and `src/data/ja.json` | Translation dictionaries for the portfolio, widget controls, validation, and accessible status messages. All three use the same keys and interpolation placeholders. |
 | `src/i18n/index.ts` | Translation lookup, English fallback, and `{{placeholder}}` interpolation. |
+| `src/i18n/locales.ts` | Shared language names, locale codes, and route paths used by the language picker and navigation helpers. |
 | `src/components/sections/` | Section markup and composition. `Projects.astro` contains the Frontend Lab and portfolio project cards. |
 | `src/styles/tokens.css` | Theme colors, typography, surfaces, borders, spacing, and motion tokens. |
 | `src/styles/global.css` | Shared layout, section styles, responsive rules, and print styles. |
@@ -122,6 +130,8 @@ Project cards are excluded when `published` is explicitly `false`. All current p
 
 The theme preference uses `localStorage.theme` with `light`, `dark`, or `system`. Mini Kanban stores its board separately under `portfolio:lab:mini-kanban:v1`; Undo history lasts for the current page session.
 
+Switching languages keeps saved Kanban task titles unchanged, including Japanese input. A fresh sample board uses the current language. Work-history dates are formatted for the selected locale; the resume download remains the same PDF on every route.
+
 ## Verification
 
 ```sh
@@ -130,9 +140,17 @@ npm run build
 git diff --check
 ```
 
-The unit suite covers Conway helpers and patterns, language navigation with section anchors, resume download wiring, and theme resolution/bootstrap, including blocked storage. There is no separate type-check command configured; a successful build is not a complete TypeScript check.
+The unit suite covers Conway helpers and patterns, language navigation with section anchors, translation completeness and placeholder consistency, Japanese interpolation, resume download wiring, and theme resolution/bootstrap, including blocked storage. There is no separate type-check command configured; a successful build is not a complete TypeScript check.
 
 Optional browser validation scripts and saved results are available in `docs/design/validation/`. They use an existing Playwright installation and Chrome; Playwright is not a project dependency.
+
+To check all three languages, both themes, responsive layouts, keyboard language changes, Japanese text input, translated widget actions, and the no-JavaScript fallback:
+
+```sh
+node docs/design/validation/run.cjs japanese.cjs
+```
+
+This check requires a production build. Its screenshots and results are saved in `docs/design/validation/japanese/`.
 
 To regenerate the six README screenshots after building, set `PLAYWRIGHT_PATH` to an installed Playwright package if needed, then run:
 

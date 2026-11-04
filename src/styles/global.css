@@ -16,6 +16,8 @@ h2 { font-size: clamp(2rem, 3.8vw, 3.5rem); letter-spacing: -0.035em; margin-bot
 h3 { font-size: 1.35rem; letter-spacing: -0.02em; }
 h4 { margin: 1.5rem 0 0.5rem; font-size: 0.9rem; }
 :root[data-theme='dark'] :is(h1, h2, h3) { letter-spacing: 0.01em; }
+:root:lang(ja) :is(h2, h3) { font-family: var(--font-body); font-weight: 700; letter-spacing: 0; line-height: 1.35; }
+:root:lang(ja) { line-break: strict; }
 .container { width: min(var(--max-width), calc(100% - 3rem)); margin-inline: auto; min-width: 0; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; }
 .skip-link { position: fixed; top: -6rem; left: 1rem; z-index: 200; padding: 0.75rem 1rem; color: var(--color-on-accent); background: var(--color-accent); }

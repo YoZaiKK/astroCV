@@ -218,6 +218,39 @@
     "viewEvidence": "Ver trabajo relacionado"
   },
   "lab": {
+    "conway": {
+      "title": "Juego de la vida",
+      "play": "Iniciar",
+      "pause": "Pausar",
+      "playLabel": "Iniciar simulación",
+      "pauseLabel": "Pausar simulación",
+      "generation": "Gen",
+      "reset": "Restablecer",
+      "clear": "Vaciar",
+      "random": "Aleatorio",
+      "boardLabel": "Tablero de {{size}} por {{size}} celdas. Usa las flechas para desplazarte y Espacio o Enter para cambiar una celda.",
+      "cellLabel": "Fila {{row}}, columna {{column}}",
+      "sizeLabel": "Cambiar a {{size}} por {{size}} celdas",
+      "hint": "Selecciona celdas para crear un patrón y pulsa Iniciar. Tres vecinas dan vida a una celda; dos o tres la mantienen viva.",
+      "noscript": "Activa JavaScript para ejecutar la simulación.",
+      "classic-mix": "Mezcla clásica",
+      "glider": "Planeador",
+      "lwss": "Nave ligera",
+      "toad": "Sapo",
+      "beacon": "Baliza",
+      "pulsar": "Púlsar",
+      "empty": "Tablero vacío",
+      "custom": "Patrón personalizado",
+      "restored": "Se restableció {{pattern}}.",
+      "cleared": "Tablero vacío. Selecciona celdas para crear un patrón.",
+      "loaded": "Se cargó {{pattern}}. Pulsa Iniciar para comenzar.",
+      "resized": "Tablero de {{size}} por {{size}}. Se eliminaron las celdas fuera del tablero. Simulación pausada.",
+      "updated": "Patrón actualizado. Pulsa Iniciar para comenzar.",
+      "emptyPlay": "El tablero está vacío. Selecciona celdas o pulsa Restablecer primero.",
+      "stopped": "Simulación detenida. El patrón es estable o está vacío.",
+      "running": "Simulación en curso.",
+      "paused": "Simulación pausada."
+    },
     "title": "Laboratorio Frontend",
     "intro": "Demos pequeñas y enfocadas que hacen visible el comportamiento de interfaces y decisiones de ingeniería.",
     "demoLabel": "Demo interactiva",
@@ -245,6 +278,73 @@
     "resultsSummary": "{{count}} conexiones encontradas.",
     "engineeringNotes": "Cómo funciona esta demo",
     "whatItDemonstrates": "Qué demuestra",
+    "kanban": {
+      "title": "Mini Kanban",
+      "description": "Un pequeño tablero de tareas con acciones de teclado, arrastre y almacenamiento local resistente a errores.",
+      "summary": "Agrega una tarea, muévela entre columnas y sigue tu progreso.",
+      "newTaskLabel": "Nueva tarea",
+      "newTaskPlaceholder": "¿Qué te gustaría crear?",
+      "addTask": "Agregar tarea",
+      "undo": "Deshacer",
+      "resetDemo": "Restablecer demo",
+      "progressSummary": "{{done}} de {{total}} completadas",
+      "progressAria": "Tareas completadas",
+      "columns": {
+        "todo": "Por hacer",
+        "doing": "En progreso",
+        "done": "Completadas"
+      },
+      "columnAria": {
+        "todo": "Columna de tareas por hacer",
+        "doing": "Columna de tareas en progreso",
+        "done": "Columna de tareas completadas"
+      },
+      "listAria": {
+        "todo": "Tareas por hacer",
+        "doing": "Tareas en progreso",
+        "done": "Tareas completadas"
+      },
+      "countAria": {
+        "todo": "Cantidad de tareas por hacer",
+        "doing": "Cantidad de tareas en progreso",
+        "done": "Cantidad de tareas completadas"
+      },
+      "help": "Arrastra las tarjetas con el ratón o usa sus botones de flechas con una pantalla táctil o el teclado.",
+      "noscript": "Activa JavaScript para usar esta demo interactiva.",
+      "emptyColumn": "Todavía no hay tareas aquí.",
+      "persistence": {
+        "saved": "Los cambios se guardan en este navegador.",
+        "readError": "No se pudieron leer los datos guardados. Puedes seguir usando el tablero.",
+        "memoryFallback": "El almacenamiento del navegador no está disponible. Los cambios solo se conservarán durante esta sesión.",
+        "invalidRestored": "Los datos guardados no eran válidos. Se restableció el tablero de ejemplo."
+      },
+      "announcements": {
+        "added": "Se agregó {{title}} a {{status}}.",
+        "moved": "Se movió {{title}} a {{status}}.",
+        "deleted": "Se eliminó {{title}}. Usa Deshacer para recuperarla.",
+        "undo": "Se deshizo el último cambio.",
+        "reset": "Se restableció el tablero de ejemplo. Usa Deshacer para recuperar el tablero anterior."
+      },
+      "validation": {
+        "titleLength": "Escribe una tarea de entre 1 y {{max}} caracteres.",
+        "maxTasks": "Esta demo admite hasta {{max}} tareas. Elimina una antes de agregar otra."
+      },
+      "actions": {
+        "groupLabel": "Acciones para {{title}}",
+        "moveToStatus": "Mover {{title}} a {{status}}",
+        "moveToPrevious": "Mover {{title}} a la columna anterior",
+        "moveToNext": "Mover {{title}} a la siguiente columna",
+        "moveUp": "Subir {{title}}",
+        "moveDown": "Bajar {{title}}",
+        "delete": "Eliminar {{title}}"
+      },
+      "samples": {
+        "layout": "Dibujar el diseño de la página",
+        "widget": "Crear un pequeño widget interactivo",
+        "content": "Escribir la introducción"
+      },
+      "progressValueText": "{{done}} de {{total}} tareas completadas"
+    },
     "cards": {
       "conway": {
         "infoTooltip": "Proyecto escolar",
@@ -299,6 +399,8 @@
     "analogLabel": "Reloj analógico mostrando la hora en {{location}}"
   },
   "preferences": {
+    "auto": "Auto",
+    "japanese": "Japonés",
     "themeLabel": "Tema de color",
     "light": "Claro",
     "dark": "Oscuro",

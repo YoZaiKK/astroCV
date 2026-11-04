@@ -1,10 +1,10 @@
-import type { Locale } from '../../i18n';
+import { languageOptions, type Locale } from '../../i18n/locales.ts';
 
 export const normalizeLocale = (locale: string): Locale =>
-	locale === 'es' ? 'es' : 'en';
+	languageOptions.find(option => option.value === locale)?.value ?? 'en';
 
 export const localeHref = (locale: Locale): string =>
-	locale === 'es' ? '/es/' : '/';
+	languageOptions.find(option => option.value === locale)!.href;
 
 export const languageNavigationTarget = (locale: string, hash = ''): string =>
 	`${localeHref(normalizeLocale(locale))}${hash || ''}`;

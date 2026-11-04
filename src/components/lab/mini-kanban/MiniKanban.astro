@@ -11,6 +11,11 @@ interface Props {
 const { storageKey = 'portfolio:lab:mini-kanban:v1' } = Astro.props;
 
 const messages = {
+	sampleTitles: {
+		'sample-layout': t('lab.kanban.samples.layout'),
+		'sample-widget': t('lab.kanban.samples.widget'),
+		'sample-content': t('lab.kanban.samples.content'),
+	},
 	labels: {
 		todo: t('lab.kanban.columns.todo'),
 		doing: t('lab.kanban.columns.doing'),
